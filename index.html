@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abcweb - Web Dizajn, SEO & Copywriting Studio Zagreb</title>
-    <meta name="description" content="Mi smo abecreations, studio iz Zagreba. Specijalizirani smo za izradu web stranica, strateški web dizajn i SEO optimizaciju koja donosi stvarne poslovne rezultate.">
+    <!-- AŽURIRAN NASLOV -->
+    <title>abcweb.studio - Web Dizajn, SEO & Copywriting Studio Zagreb</title>
+    <!-- AŽURIRAN OPIS -->
+    <meta name="description" content="Mi smo abcweb.studio, studio iz Zagreba. Specijalizirani smo za izradu web stranica, strateški web dizajn i SEO optimizaciju koja donosi stvarne poslovne rezultate.">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -24,7 +26,6 @@
             text-transform: uppercase; /* Sva velika slova kao u primjeru */
             letter-spacing: 0.025em; /* Lagani razmak */
         }
-        /* Stilovi za accordion su uklonjeni */
     </style>
     
     <script>
@@ -51,7 +52,7 @@
     <header class="sticky top-0 bg-base/90 backdrop-blur-md z-50 border-b border-surface">
         <div class="container mx-auto max-w-7xl px-6 py-5">
             <div class="flex justify-between items-center">
-                <!-- Logo -->
+                <!-- AŽURIRAN LOGO -->
                 <a href="index.html" class="text-2xl font-bold text-accent font-heading">
                     abcweb
                 </a>
@@ -69,12 +70,31 @@
                     Kontakt
                 </a>
                 
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden text-accent">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <!-- AŽURIRAN: Mobile Menu Button s ID-jevima i dvije ikone -->
+                <button id="mobile-menu-button" class="md:hidden text-accent z-50 relative w-6 h-6">
+                    <!-- Hamburger Icon (Open) -->
+                    <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 transition-opacity duration-200 ease-in-out">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
+                    <!-- Close Icon (X) -->
+                    <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hidden transition-opacity duration-200 ease-in-out">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
                 </button>
+            </div>
+        </div>
+
+        <!-- DODANO: Mobile Menu (Popup) -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-surface border-b border-gray-700 z-40 md:hidden">
+            <!-- Povećao sam padding za bolji izgled na mobitelu -->
+            <div class="container mx-auto max-w-7xl px-6 py-8 space-y-6">
+                <a href="#services" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Usluge</a>
+                <a href="#work" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Radovi</a>
+                <a href="#about" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">O nama</a>
+                <a href="#" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Blog</a>
+                <a href="#contact" class="block w-full text-center bg-accent text-base font-semibold px-5 py-3 rounded-lg hover:bg-accent-dark transition-all">
+                    Kontakt
+                </a>
             </div>
         </div>
     </header>
@@ -90,9 +110,9 @@
                 <h1 class="font-heading text-6xl md:text-8xl lg:text-9xl text-primary leading-none tracking-tighter">
                     OTKLJUČAJTE SVOJ<span class="text-accent">.</span> <br>DIGITALNI POTENCIJAL
                 </h1>
-                <!-- SEO OPTIMIZIRAN PODNASLOV -->
+                <!-- AŽURIRAN OPIS -->
                 <p class="mt-8 text-lg md:text-xl text-secondary max-w-2xl mx-auto">
-                    Mi smo <span class="text-accent/80">abecreations</span>, studio iz Zagreba. Specijalizirani smo za <span class="text-primary">izradu web stranica</span>, strateški <span class="text-primary">web dizajn</span> i <span class="text-primary">SEO optimizaciju</span> koja donosi stvarne poslovne rezultate.
+                    Mi smo <span class="text-accent/80">abcweb</span>, studio iz Zagreba. Specijalizirani smo za <span class="text-primary">izradu web stranica</span>, strateški <span class="text-primary">web dizajn</span> i <span class="text-primary">SEO optimizaciju</span> koja donosi stvarne poslovne rezultate.
                 </p>
                 <a href="#contact" class="mt-12 inline-block bg-accent text-base px-10 py-4 rounded-lg text-lg font-bold hover:bg-accent-dark transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
                     Započnimo Suradnju
@@ -261,7 +281,8 @@
                 <h2 class="text-base font-semibold text-secondary uppercase tracking-wider">Što Klijenti Kažu</h2>
                 <blockquote class="mt-8">
                     <p class="text-3xl md:text-4xl font-semibold text-primary leading-snug">
-                        "<span class="text-accent/80">Abecreations</span> nije samo izradio web stranicu; izgradili su motor za naše novo poslovanje. Njihov proces je bio jasan, kreativan i usmjeren na rezultate."
+                        <!-- AŽURIRANO IME -->
+                        "<span class="text-accent/80">abcweb</span> nije samo izradio web stranicu; izgradili su motor za naše novo poslovanje. Njihov proces je bio jasan, kreativan i usmjeren na rezultate."
                     </p>
                     <footer class="mt-8">
                         <div class="font-semibold text-primary text-lg">Ivana Horvat</div>
@@ -277,9 +298,9 @@
                 <h2 class="text-5xl md:text-6xl font-heading text-primary">
                     Više od studija.
                 </h2>
-                <!-- SEO OPTIMIZIRAN OPIS -->
+                <!-- AŽURIRAN OPIS -->
                 <p class="mt-8 text-xl text-secondary leading-relaxed">
-                    "<span class="text-accent/80">Abecreations</span>" je specijalizirani <span class="text-primary">studio za web dizajn iz Zagreba</span>, utemeljen na uvjerenju da je dobar dizajn dobar posao. Mi smo mali, posvećeni tim kreativaca koji vjeruju da <span class="text-primary">izrada web stranica</span> nije samo tehnički, već i strateški proces. Naša misija je koristiti <span class="text-primary">SEO optimizaciju</span> i vrhunski dizajn kako bismo stvorili digitalna rješenja koja su ne samo lijepa, već i učinkovita.
+                    "<span class="text-accent/80">abcweb</span>" je specijalizirani <span class="text-primary">studio za web dizajn iz Zagreba</span>, utemeljen na uvjerenju da je dobar dizajn dobar posao. Mi smo mali, posvećeni tim kreativaca koji vjeruju da <span class="text-primary">izrada web stranica</span> nije samo tehnički, već i strateški proces. Naša misija je koristiti <span class="text-primary">SEO optimizaciju</span> i vrhunski dizajn kako bismo stvorili digitalna rješenja koja su ne samo lijepa, već i učinkovita.
                 </p>
             </div>
         </section>
@@ -293,8 +314,9 @@
                 <p class="mt-6 text-xl text-gray-800 max-w-2xl mx-auto">
                     Voljeli bismo čuti vaše ideje. Dogovorimo poziv i vidimo kako možemo pomoći vašem brendu da raste online.
                 </p>
-                <a href="mailto:hello@abecreations.com" class="mt-10 inline-block bg-base text-primary px-10 py-4 rounded-lg text-lg font-bold hover:bg-surface transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
-                    hello@abecreations.com
+                <!-- AŽURIRAN EMAIL I MAILTO LINK -->
+                <a href="mailto:hello@abcweb.studio" class="mt-10 inline-block bg-base text-primary px-10 py-4 rounded-lg text-lg font-bold hover:bg-surface transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                    hello@abcweb.studio
                 </a>
             </div>
         </section>
@@ -306,11 +328,13 @@
         <div class="container mx-auto max-w-7xl px-6 py-12">
             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <div>
+                    <!-- AŽURIRAN LOGO -->
                     <a href="index.html" class="text-2xl font-bold text-accent font-heading">
-                        abecreations
+                        abcweb
                     </a>
+                    <!-- AŽURIRAN COPYRIGHT -->
                     <p class="text-secondary mt-2">
-                        &copy; 2025 Abecreations Studio. Sva prava pridržana. Zagreb, Hrvatska.
+                        &copy; 2025 abcweb.studio. Sva prava pridržana. Zagreb, Hrvatska.
                     </p>
                 </div>
                 <div class="flex justify-center space-x-6 mt-6 md:mt-0">
@@ -322,7 +346,50 @@
         </div>
     </footer>
 
-    <!-- Nema više JavaScripta za Accordion -->
+    <!-- DODANO: JavaScript za Mobilni Izbornik -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('icon-open');
+            const iconClose = document.getElementById('icon-close');
+
+            if (menuButton && mobileMenu && iconOpen && iconClose) {
+                // Funkcija za prebacivanje (toggle) izbornika
+                const toggleMenu = () => {
+                    mobileMenu.classList.toggle('hidden');
+                    iconOpen.classList.toggle('hidden');
+                    iconClose.classList.toggle('hidden');
+                };
+                
+                // Prebaci izbornik klikom na gumb
+                menuButton.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Spriječava da se klik odmah prenese na document
+                    toggleMenu();
+                });
+
+                // Zatvori izbornik kada se klikne na link (za single-page navigaciju)
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            toggleMenu();
+                        }
+                    });
+                });
+
+                // Opcionalno: Zatvori izbornik ako se klikne bilo gdje izvan njega
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                        toggleMenu();
+                    }
+                });
+
+            } else {
+                console.error("Elementi mobilnog izbornika nisu pronađeni.");
+            }
+        });
+    </script>
 
 </body>
 </html>
