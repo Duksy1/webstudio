@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abecreations - Web Dizajn, SEO & Copywriting Studio Zagreb</title>
-    <meta name="description" content="Abecreations je kreativni studio iz Zagreba specijaliziran za web dizajn, SEO i copywriting. Pomažemo vašem brendu da raste online.">
+    <meta name="description" content="Mi smo abecreations, studio iz Zagreba. Specijalizirani smo za izradu web stranica, strateški web dizajn i SEO optimizaciju koja donosi stvarne poslovne rezultate.">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -24,18 +24,7 @@
             text-transform: uppercase; /* Sva velika slova kao u primjeru */
             letter-spacing: 0.025em; /* Lagani razmak */
         }
-
-        /* Stilovi za accordion ikonu (animacija + i -) */
-        .accordion-icon span {
-            transition: transform 0.3s ease-in-out;
-        }
-        .accordion-header.active .accordion-icon .vertical-line {
-            transform: rotate(90deg);
-        }
-        .accordion-header.active .accordion-icon .horizontal-line {
-            transform: rotate(180deg);
-            opacity: 0;
-        }
+        /* Stilovi za accordion su uklonjeni */
     </style>
     
     <script>
@@ -63,7 +52,7 @@
         <div class="container mx-auto max-w-7xl px-6 py-5">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <a href="#" class="text-2xl font-bold text-accent font-heading">
+                <a href="index.html" class="text-2xl font-bold text-accent font-heading">
                     abecreations
                 </a>
                 
@@ -123,80 +112,52 @@
                     </h2>
                 </div>
 
-                <!-- Services Accordion -->
+                <!-- Lista Usluga (zamjenjuje Accordion) -->
                 <div class="mt-20 max-w-6xl mx-auto space-y-4">
                     
-                    <!-- Accordion Item 1: Web Dizajn -->
-                    <div class="border-b border-surface">
-                        <button class="accordion-header flex justify-between items-center w-full py-6 text-left" aria-expanded="false">
-                            <span class="font-heading text-4xl md:text-5xl text-primary hover:text-accent transition-colors">WEB DIZAJN</span>
-                            <!-- Ikona -->
-                            <div class="accordion-icon relative w-8 h-8 flex items-center justify-center text-accent">
-                                <span class="horizontal-line absolute w-6 h-0.5 bg-accent transition-all duration-300"></span>
-                                <span class="vertical-line absolute w-0.5 h-6 bg-accent transition-all duration-300"></span>
-                            </div>
-                        </button>
-                        <!-- SEO OPTIMIZIRAN OPIS -->
-                        <div class="accordion-content hidden overflow-hidden">
-                            <p class="text-secondary text-lg max-w-3xl pt-2 pb-8 leading-relaxed">
-                                Dobar <span class="text-primary">web dizajn</span> nije samo estetika; to je strategija. Naš proces započinje analizom vašeg brenda i ciljane publike. Nudimo kompletne usluge <span class="text-primary">UI/UX dizajna</span> (dizajn korisničkog sučelja i iskustva) koje osiguravaju da je vaša stranica intuitivna i laka za korištenje. Izrađujemo <span class="text-primary">vizualni identitet</span> koji vas izdvaja od konkurencije. Naš cilj je stvoriti dizajn koji ne samo da je lijep, već i <span class="text-primary">povećava konverzije</span> i zadržava korisnike na stranici.
-                            </p>
+                    <!-- Usluga 1: Web Dizajn -->
+                    <a href="usluge-web-dizajn.html" class="block border-b border-surface group">
+                        <div class="flex justify-between items-center w-full py-6 text-left">
+                            <span class="font-heading text-4xl md:text-5xl text-primary group-hover:text-accent transition-colors">WEB DIZAJN</span>
+                            <!-- Ikona za link -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-accent transform transition-transform duration-300 group-hover:translate-x-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
                         </div>
-                    </div>
+                    </a>
 
-                    <!-- Accordion Item 2: Web Izrada -->
-                    <div class="border-b border-surface">
-                        <button class="accordion-header flex justify-between items-center w-full py-6 text-left" aria-expanded="false">
-                            <span class="font-heading text-4xl md:text-5xl text-primary hover:text-accent transition-colors">WEB IZRADA</span>
-                            <!-- Ikona -->
-                            <div class="accordion-icon relative w-8 h-8 flex items-center justify-center text-accent">
-                                <span class="horizontal-line absolute w-6 h-0.5 bg-accent transition-all duration-300"></span>
-                                <span class="vertical-line absolute w-0.5 h-6 bg-accent transition-all duration-300"></span>
-                            </div>
-                        </button>
-                        <!-- SEO OPTIMIZIRAN OPIS -->
-                        <div class="accordion-content hidden overflow-hidden">
-                            <p class="text-secondary text-lg max-w-3xl pt-2 pb-8 leading-relaxed">
-                                Naša usluga <span class="text-primary">izrade web stranica</span> (web development) u Zagrebu fokusirana je na brzinu, sigurnost i skalabilnost. Specijalizirani smo za <span class="text-primary">izradu responzivnih web stranica</span> koje savršeno rade na svim uređajima, od mobitela do desktopa. Bilo da trebate jednostavnu <span class="text-primary">poslovnu web stranicu</span>, kompleksni korporativni portal ili <span class="text-primary">izradu web shopa (e-commerce)</span>, naš tim koristi moderne tehnologije. Svaka stranica koju izradimo je tehnički optimizirana za <span class="text-primary">brzo učitavanje</span> (Core Web Vitals) i spremna za rast.
-                            </p>
+                    <!-- Usluga 2: Web Izrada -->
+                    <a href="usluge-web-izrada.html" class="block border-b border-surface group">
+                        <div class="flex justify-between items-center w-full py-6 text-left">
+                            <span class="font-heading text-4xl md:text-5xl text-primary group-hover:text-accent transition-colors">WEB IZRADA</span>
+                            <!-- Ikona za link -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-accent transform transition-transform duration-300 group-hover:translate-x-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
                         </div>
-                    </div>
+                    </a>
 
-                    <!-- Accordion Item 3: SEO -->
-                    <div class="border-b border-surface">
-                        <button class="accordion-header flex justify-between items-center w-full py-6 text-left" aria-expanded="false">
-                            <span class="font-heading text-4xl md:text-5xl text-primary hover:text-accent transition-colors">SEO</span>
-                            <!-- Ikona -->
-                            <div class="accordion-icon relative w-8 h-8 flex items-center justify-center text-accent">
-                                <span class="horizontal-line absolute w-6 h-0.5 bg-accent transition-all duration-300"></span>
-                                <span class="vertical-line absolute w-0.5 h-6 bg-accent transition-all duration-300"></span>
-                            </div>
-                        </button>
-                        <!-- SEO OPTIMIZIRAN OPIS -->
-                        <div class="accordion-content hidden overflow-hidden">
-                            <p class="text-secondary text-lg max-w-3xl pt-2 pb-8 leading-relaxed">
-                                Biti na prvoj stranici Googlea nije slučajnost. Naša usluga <span class="text-primary">SEO optimizacije za tražilice</span> osigurava da vas vaši idealni klijenti mogu pronaći. Radimo sve: od <span class="text-primary">tehničkog SEO-a</span> (optimizacija brzine, struktura stranice) do <span class="text-primary">on-page SEO-a</span> (istraživanje ključnih riječi, optimizacija sadržaja) i <span class="text-primary">lokalnog SEO-a</span> za tvrtke u Zagrebu i Hrvatskoj. Naš cilj nije samo promet, već <span class="text-primary">kvalitetan organski promet</span> koji se pretvara u upite i prodaju.
-                            </p>
+                    <!-- Usluga 3: SEO -->
+                    <a href="usluge-seo-optimizacija.html" class="block border-b border-surface group">
+                        <div class="flex justify-between items-center w-full py-6 text-left">
+                            <span class="font-heading text-4xl md:text-5xl text-primary group-hover:text-accent transition-colors">SEO</span>
+                            <!-- Ikona za link -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-accent transform transition-transform duration-300 group-hover:translate-x-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
                         </div>
-                    </div>
+                    </a>
 
-                    <!-- Accordion Item 4: Copywriting -->
-                    <div class="border-b border-surface">
-                        <button class="accordion-header flex justify-between items-center w-full py-6 text-left" aria-expanded="false">
-                            <span class="font-heading text-4xl md:text-5xl text-primary hover:text-accent transition-colors">COPYWRITING</span>
-                            <!-- Ikona -->
-                            <div class="accordion-icon relative w-8 h-8 flex items-center justify-center text-accent">
-                                <span class="horizontal-line absolute w-6 h-0.5 bg-accent transition-all duration-300"></span>
-                                <span class="vertical-line absolute w-0.5 h-6 bg-accent transition-all duration-300"></span>
-                            </div>
-                        </button>
-                        <!-- SEO OPTIMIZIRAN OPIS -->
-                        <div class="accordion-content hidden overflow-hidden">
-                            <p class="text-secondary text-lg max-w-3xl pt-2 pb-8 leading-relaxed">
-                                Sadržaj je kralj. Naše usluge <span class="text-primary">copywritinga</span> i <span class="text-primary">kreiranja sadržaja (content marketing)</span> daju glas vašem brendu. Pišemo jasan, uvjerljiv i <span class="text-primary">SEO optimiziran sadržaj</span> za vaše web stranice, blog članke i marketinške kampanje. Razumijemo kako pisati za hrvatsko tržište, pogađajući pravi ton i poruku koja rezonira s lokalnom publikom i potiče ih na akciju.
-                            </p>
+                    <!-- Usluga 4: Copywriting -->
+                    <a href="usluge-copywriting.html" class="block border-b border-surface group">
+                        <div class="flex justify-between items-center w-full py-6 text-left">
+                            <span class="font-heading text-4xl md:text-5xl text-primary group-hover:text-accent transition-colors">COPYWRITING</span>
+                            <!-- Ikona za link -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-accent transform transition-transform duration-300 group-hover:translate-x-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
                         </div>
-                    </div>
+                    </a>
 
                 </div>
             </div>
@@ -345,7 +306,7 @@
         <div class="container mx-auto max-w-7xl px-6 py-12">
             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <div>
-                    <a href="#" class="text-2xl font-bold text-accent font-heading">
+                    <a href="index.html" class="text-2xl font-bold text-accent font-heading">
                         abecreations
                     </a>
                     <p class="text-secondary mt-2">
@@ -361,39 +322,8 @@
         </div>
     </footer>
 
-    <!-- JavaScript za Accordion -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const accordionHeaders = document.querySelectorAll('.accordion-header');
-            
-            accordionHeaders.forEach(header => {
-                header.addEventListener('click', function () {
-                    const content = this.nextElementSibling;
-                    const isActive = this.classList.contains('active');
-
-                    // Zatvori sve ostale (opcionalno, ali uredno)
-                    accordionHeaders.forEach(h => {
-                        if (h !== this) {
-                            h.classList.remove('active');
-                            h.nextElementSibling.classList.add('hidden');
-                            h.setAttribute('aria-expanded', 'false');
-                        }
-                    });
-
-                    // Otvori/zatvori trenutni
-                    if (isActive) {
-                        this.classList.remove('active');
-                        content.classList.add('hidden');
-                        this.setAttribute('aria-expanded', 'false');
-                    } else {
-                        this.classList.add('active');
-                        content.classList.remove('hidden');
-                        this.setAttribute('aria-expanded', 'true');
-                    }
-                });
-            });
-        });
-    </script>
+    <!-- Nema više JavaScripta za Accordion -->
 
 </body>
 </html>
+
