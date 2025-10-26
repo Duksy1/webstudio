@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="hr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abecreations - Web Dizajn, SEO & Copywriting Studio Zagreb</title>
+    <meta name="description" content="Abecreations je kreativni studio iz Zagreba specijaliziran za web dizajn, SEO i copywriting. Pomažemo vašem brendu da raste online.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Anton (za naslove) & Inter (za tekst) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Primjena fontova */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Klasa za "maximalist" naslove */
+        .font-heading {
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase; /* Sva velika slova kao u primjeru */
+            letter-spacing: 0.025em; /* Lagani razmak */
+        }
+
+        /* Stilovi za accordion ikonu (animacija + i -) */
+        .accordion-icon span {
+            transition: transform 0.3s ease-in-out;
+        }
+        .accordion-header.active .accordion-icon .vertical-line {
+            transform: rotate(90deg);
+        }
+        .accordion-header.active .accordion-icon .horizontal-line {
+            transform: rotate(180deg);
+            opacity: 0;
+        }
+    </style>
+    
+    <script>
+        // Nova "Dark Mode" paleta boja
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'base': '#111111',      // Crna pozadina
+                        'surface': '#1c1c1c',   // Tamno siva za kartice/sekcije
+                        'primary': '#f9fafb',   // Gotovo bijeli tekst
+                        'secondary': '#a1a1aa', // Sivi tekst
+                        'accent': '#fde047',    // Jarko žuta (Tailwind yellow-300)
+                        'accent-dark': '#facc15', // Tamnija žuta (yellow-400)
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-base text-primary antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 bg-base/90 backdrop-blur-md z-50 border-b border-surface">
+        <div class="container mx-auto max-w-7xl px-6 py-5">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-bold text-accent font-heading">
+                    abecreations
+                </a>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
+                    <a href="#work" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
+                    <a href="#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
+                    <a href="#" class="text-secondary hover:text-primary transition-colors duration-200">Blog</a>
+                </nav>
+                
+                <!-- Contact CTA -->
+                <a href="#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">
+                    Kontakt
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-accent">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="bg-base py-32 md:py-48">
+            <div class="container mx-auto max-w-5xl px-6 text-center">
+                
+                <!-- Hero Text -->
+                <h1 class="font-heading text-6xl md:text-8xl lg:text-9xl text-primary leading-none tracking-tighter">
+                    OTKLJUČAJTE SVOJ<span class="text-accent">.</span> <br>DIGITALNI POTENCIJAL
+                </h1>
+                <!-- SEO OPTIMIZIRAN PODNASLOV -->
+                <p class="mt-8 text-lg md:text-xl text-secondary max-w-2xl mx-auto">
+                    Mi smo <span class="text-accent/80">abecreations</span>, studio iz Zagreba. Specijalizirani smo za <span class="text-primary">izradu web stranica</span>, strateški <span class="text-primary">web dizajn</span> i <span class="text-primary">SEO optimizaciju</span> koja donosi stvarne poslovne rezultate.
+                </p>
+                <a href="#contact" class="mt-12 inline-block bg-accent text-base px-10 py-4 rounded-lg text-lg font-bold hover:bg-accent-dark transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                    Započnimo Suradnju
+                </a>
+                
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="bg-surface py-24 md:py-32 border-y border-surface">
+            <div class="container mx-auto max-w-7xl px-6">
+                <!-- SEO OPTIMIZIRANI NASLOVI SEKCIJE -->
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold text-secondary uppercase tracking-wider">Naše Usluge</h2>
+                    <h2 class="mt-3 text-5xl md:text-6xl font-heading text-primary">
+                        Izrada Web Stranica, Dizajn i SEO Optimizacija
+                    </h2>
+                </div>
+
+                <!-- Services Accordion -->
+                <div class="mt-20 max-w-6xl mx-auto space-y-4">
+                    
+                    <!-- Accordion Item 1: Web Dizajn -->
+                    <div class="border-b border-surface">
+                        <button class="accordion-header flex justify-between items-center w-full py-6 text-left" aria-expanded="false">
+                            <span class="font-heading text-4xl md:text-5xl text-primary hover:text-accent transition-colors">WEB DIZAJN</span>
+                            <!-- Ikona -->
+                            <div class="accordion-icon relative w-8 h-8 flex items-center justify-center text-accent">
+                                <span class="horizontal-line absolute w-6 h-0.5 bg-accent transition-all duration-300"></span>
+                                <span class="vertical-line absolute w-0.5 h-6 bg-accent transition-all duration-300"></span>
+                            </div>
+                        </button>
+                        <!-- SEO OPTIMIZIRAN OPIS -->
+                        <div class="accordion-content hidden overflow-hidden">
+                            <p class="text-secondary text-lg max-w-3xl pt-2 pb-8 leading-relaxed">
+                                Dobar <span class="text-primary">web dizajn</span> nije samo estetika; to je strategija. Naš proces započinje analizom vašeg brenda i ciljane publike. Nudimo kompletne usluge <span class="text-primary">UI/UX dizajna</span> (dizajn korisničkog sučelja i iskustva) koje osiguravaju da je vaša stranica intuitivna i laka za korištenje. Izrađujemo <span class="text-primary">vizualni identitet</span> koji vas izdvaja od konkurencije. Naš cilj je stvoriti dizajn koji ne samo da je lijep, već i <span class="text-primary">povećava konverzije</span> i zadržava korisnike na stranici.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 2: Web Izrada -->
+                    <div class="border-b border-surface">
+                        <button class="accordion-header flex justify-between items-center w-full py-6 text-left" aria-expanded="false">
+                            <span class="font-heading text-4xl md:text-5xl text-primary hover:text-accent transition-colors">WEB IZRADA</span>
+                            <!-- Ikona -->
+                            <div class="accordion-icon relative w-8 h-8 flex items-center justify-center text-accent">
+                                <span class="horizontal-line absolute w-6 h-0.5 bg-accent transition-all duration-300"></span>
+                                <span class="vertical-line absolute w-0.5 h-6 bg-accent transition-all duration-300"></span>
+                            </div>
+                        </button>
+                        <!-- SEO OPTIMIZIRAN OPIS -->
+                        <div class="accordion-content hidden overflow-hidden">
+                            <p class="text-secondary text-lg max-w-3xl pt-2 pb-8 leading-relaxed">
+                                Naša usluga <span class="text-primary">izrade web stranica</span> (web development) u Zagrebu fokusirana je na brzinu, sigurnost i skalabilnost. Specijalizirani smo za <span class="text-primary">izradu responzivnih web stranica</span> koje savršeno rade na svim uređajima, od mobitela do desktopa. Bilo da trebate jednostavnu <span class="text-primary">poslovnu web stranicu</span>, kompleksni korporativni portal ili <span class="text-primary">izradu web shopa (e-commerce)</span>, naš tim koristi moderne tehnologije. Svaka stranica koju izradimo je tehnički optimizirana za <span class="text-primary">brzo učitavanje</span> (Core Web Vitals) i spremna za rast.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 3: SEO -->
+                    <div class="border-b border-surface">
+                        <button class="accordion-header flex justify-between items-center w-full py-6 text-left" aria-expanded="false">
+                            <span class="font-heading text-4xl md:text-5xl text-primary hover:text-accent transition-colors">SEO</span>
+                            <!-- Ikona -->
+                            <div class="accordion-icon relative w-8 h-8 flex items-center justify-center text-accent">
+                                <span class="horizontal-line absolute w-6 h-0.5 bg-accent transition-all duration-300"></span>
+                                <span class="vertical-line absolute w-0.5 h-6 bg-accent transition-all duration-300"></span>
+                            </div>
+                        </button>
+                        <!-- SEO OPTIMIZIRAN OPIS -->
+                        <div class="accordion-content hidden overflow-hidden">
+                            <p class="text-secondary text-lg max-w-3xl pt-2 pb-8 leading-relaxed">
+                                Biti na prvoj stranici Googlea nije slučajnost. Naša usluga <span class="text-primary">SEO optimizacije za tražilice</span> osigurava da vas vaši idealni klijenti mogu pronaći. Radimo sve: od <span class="text-primary">tehničkog SEO-a</span> (optimizacija brzine, struktura stranice) do <span class="text-primary">on-page SEO-a</span> (istraživanje ključnih riječi, optimizacija sadržaja) i <span class="text-primary">lokalnog SEO-a</span> za tvrtke u Zagrebu i Hrvatskoj. Naš cilj nije samo promet, već <span class="text-primary">kvalitetan organski promet</span> koji se pretvara u upite i prodaju.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 4: Copywriting -->
+                    <div class="border-b border-surface">
+                        <button class="accordion-header flex justify-between items-center w-full py-6 text-left" aria-expanded="false">
+                            <span class="font-heading text-4xl md:text-5xl text-primary hover:text-accent transition-colors">COPYWRITING</span>
+                            <!-- Ikona -->
+                            <div class="accordion-icon relative w-8 h-8 flex items-center justify-center text-accent">
+                                <span class="horizontal-line absolute w-6 h-0.5 bg-accent transition-all duration-300"></span>
+                                <span class="vertical-line absolute w-0.5 h-6 bg-accent transition-all duration-300"></span>
+                            </div>
+                        </button>
+                        <!-- SEO OPTIMIZIRAN OPIS -->
+                        <div class="accordion-content hidden overflow-hidden">
+                            <p class="text-secondary text-lg max-w-3xl pt-2 pb-8 leading-relaxed">
+                                Sadržaj je kralj. Naše usluge <span class="text-primary">copywritinga</span> i <span class="text-primary">kreiranja sadržaja (content marketing)</span> daju glas vašem brendu. Pišemo jasan, uvjerljiv i <span class="text-primary">SEO optimiziran sadržaj</span> za vaše web stranice, blog članke i marketinške kampanje. Razumijemo kako pisati za hrvatsko tržište, pogađajući pravi ton i poruku koja rezonira s lokalnom publikom i potiče ih na akciju.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section id="stats" class="bg-base py-24 md:py-32">
+            <div class="container mx-auto max-w-7xl px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    <!-- Stat 1 -->
+                    <div class="border-l-4 border-accent pl-6 text-left">
+                        <span class="text-6xl md:text-7xl font-bold text-primary block font-heading">120+</span>
+                        <span class="text-lg text-secondary mt-2 block">Završenih Projekata</span>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="border-l-4 border-accent pl-6 text-left">
+                        <span class="text-6xl md:text-7xl font-bold text-primary block font-heading">95%</span>
+                        <span class="text-lg text-secondary mt-2 block">Zadržanih Klijenata</span>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="border-l-4 border-accent pl-6 text-left">
+                        <span class="text-6xl md:text-7xl font-bold text-primary block font-heading">100%</span>
+                        <span class="text-lg text-secondary mt-2 block">Isporuka na Vrijeme</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work/Portfolio Section -->
+        <section id="work" class="bg-surface py-24 md:py-32 border-y border-surface">
+            <div class="container mx-auto max-w-7xl px-6">
+                <div class="mb-16 max-w-3xl">
+                    <h2 class="text-base font-semibold text-secondary uppercase tracking-wider">Odabrani Radovi</h2>
+                    <p class="mt-3 text-5xl md:text-6xl font-heading text-primary">
+                        Projekti na koje smo ponosni.
+                    </p>
+                </div>
+
+                <!-- "Artsy" Staggered Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+                    
+                    <!-- Project 1 -->
+                    <div class="space-y-4 rounded-lg group">
+                        <img src="https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+1" 
+                             alt="Primjer projekta 1 - Redizajn E-commerce Brenda"
+                             class="rounded-lg object-cover w-full transition-all duration-300 ease-in-out group-hover:shadow-2xl group-hover:shadow-accent/10"
+                             onerror="this.src='https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+1'">
+                        <div class="pt-2 transition-all duration-300 ease-in-out group-hover:translate-x-1">
+                            <h3 class="text-2xl font-semibold text-primary">Redizajn E-commerce Brenda</h3>
+                            <!-- SEO OPTIMIZIRANA KATEGORIJA -->
+                            <p class="text-secondary">Web Dizajn, Copywriting</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="space-y-4 md:mt-16 rounded-lg group">
+                        <img src="https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+2" 
+                             alt="Primjer projekta 2 - SEO Strategija za Startup"
+                             class="rounded-lg object-cover w-full transition-all duration-300 ease-in-out group-hover:shadow-2xl group-hover:shadow-accent/10"
+                             onerror="this.src='https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+2'">
+                        <div class="pt-2 transition-all duration-300 ease-in-out group-hover:translate-x-1">
+                            <h3 class="text-2xl font-semibold text-primary">SEO Strategija za Startup</h3>
+                            <!-- SEO OPTIMIZIRANA KATEGORIJA -->
+                            <p class="text-secondary">SEO Optimizacija, Strategija Sadržaja</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="space-y-4 rounded-lg group">
+                        <img src="https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+3" 
+                             alt="Primjer projekta 3 - Web Stranica za Udrugu"
+                             class="rounded-lg object-cover w-full transition-all duration-300 ease-in-out group-hover:shadow-2xl group-hover:shadow-accent/10"
+                             onerror="this.src='https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+3'">
+                        <div class="pt-2 transition-all duration-300 ease-in-out group-hover:translate-x-1">
+                            <h3 class="text-2xl font-semibold text-primary">Web Stranica za Udrugu</h3>
+                            <!-- SEO OPTIMIZIRANA KATEGORIJA -->
+                            <p class="text-secondary">Web Izrada, Web Dizajn</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="space-y-4 md:mt-16 rounded-lg group">
+                        <img src="https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+4" 
+                             alt="Primjer projekta 4 - Portfolio Stranica za Umjetnika"
+                             class="rounded-lg object-cover w-full transition-all duration-300 ease-in-out group-hover:shadow-2xl group-hover:shadow-accent/10"
+                             onerror="this.src='https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+4'">
+                        <div class="pt-2 transition-all duration-300 ease-in-out group-hover:translate-x-1">
+                            <h3 class="text-2xl font-semibold text-primary">Portfolio Stranica za Umjetnika</h3>
+                            <!-- SEO OPTIMIZIRANA KATEGORIJA -->
+                            <p class="text-secondary">Web Dizajn, Copywriting</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section id="testimonial" class="bg-base py-24 md:py-32">
+            <div class="container mx-auto max-w-4xl px-6 text-center">
+                <h2 class="text-base font-semibold text-secondary uppercase tracking-wider">Što Klijenti Kažu</h2>
+                <blockquote class="mt-8">
+                    <p class="text-3xl md:text-4xl font-semibold text-primary leading-snug">
+                        "<span class="text-accent/80">Abecreations</span> nije samo izradio web stranicu; izgradili su motor za naše novo poslovanje. Njihov proces je bio jasan, kreativan i usmjeren na rezultate."
+                    </p>
+                    <footer class="mt-8">
+                        <div class="font-semibold text-primary text-lg">Ivana Horvat</div>
+                        <div class="text-secondary">CEO, Primjer d.o.o.</div>
+                    </footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-surface py-24 md:py-32 border-y border-surface">
+            <div class="container mx-auto max-w-3xl px-6 text-center">
+                <h2 class="text-5xl md:text-6xl font-heading text-primary">
+                    Više od studija.
+                </h2>
+                <!-- SEO OPTIMIZIRAN OPIS -->
+                <p class="mt-8 text-xl text-secondary leading-relaxed">
+                    "<span class="text-accent/80">Abecreations</span>" je specijalizirani <span class="text-primary">studio za web dizajn iz Zagreba</span>, utemeljen na uvjerenju da je dobar dizajn dobar posao. Mi smo mali, posvećeni tim kreativaca koji vjeruju da <span class="text-primary">izrada web stranica</span> nije samo tehnički, već i strateški proces. Naša misija je koristiti <span class="text-primary">SEO optimizaciju</span> i vrhunski dizajn kako bismo stvorili digitalna rješenja koja su ne samo lijepa, već i učinkovita.
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="bg-accent text-base">
+            <div class="container mx-auto max-w-4xl px-6 py-24 md:py-32 text-center">
+                <h2 class="text-5xl md:text-6xl font-heading text-base">
+                    Spremni za projekt?
+                </h2>
+                <p class="mt-6 text-xl text-gray-800 max-w-2xl mx-auto">
+                    Voljeli bismo čuti vaše ideje. Dogovorimo poziv i vidimo kako možemo pomoći vašem brendu da raste online.
+                </p>
+                <a href="mailto:hello@abecreations.com" class="mt-10 inline-block bg-base text-primary px-10 py-4 rounded-lg text-lg font-bold hover:bg-surface transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                    hello@abecreations.com
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-base border-t border-surface">
+        <div class="container mx-auto max-w-7xl px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div>
+                    <a href="#" class="text-2xl font-bold text-accent font-heading">
+                        abecreations
+                    </a>
+                    <p class="text-secondary mt-2">
+                        &copy; 2025 Abecreations Studio. Sva prava pridržana. Zagreb, Hrvatska.
+                    </p>
+                </div>
+                <div class="flex justify-center space-x-6 mt-6 md:mt-0">
+                    <a href="#" class="text-secondary hover:text-primary">Twitter</a>
+                    <a href="#" class="text-secondary hover:text-primary">LinkedIn</a>
+                    <a href="#" class="text-secondary hover:text-primary">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript za Accordion -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const content = this.nextElementSibling;
+                    const isActive = this.classList.contains('active');
+
+                    // Zatvori sve ostale (opcionalno, ali uredno)
+                    accordionHeaders.forEach(h => {
+                        if (h !== this) {
+                            h.classList.remove('active');
+                            h.nextElementSibling.classList.add('hidden');
+                            h.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+
+                    // Otvori/zatvori trenutni
+                    if (isActive) {
+                        this.classList.remove('active');
+                        content.classList.add('hidden');
+                        this.setAttribute('aria-expanded', 'false');
+                    } else {
+                        this.classList.add('active');
+                        content.classList.remove('hidden');
+                        this.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
