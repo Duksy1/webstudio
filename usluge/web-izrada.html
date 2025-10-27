@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="hr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimiziran Naslov i Opis za ovu stranicu -->
+    <title>Usluge Izrade Web Stranica Zagreb - Abcweb Studio</title>
+    <meta name="description" content="Profesionalna izrada web stranica i web shopova u Zagrebu. Nudimo brza, responzivna i tehnički optimizirana rješenja (Core Web Vitals).">
+     <!-- DODAN: Favicon (Emoji pristup) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🟡</text></svg>">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Anton (za naslove) & Inter (za tekst) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-heading {
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+        .prose {
+             --tw-prose-body: theme(colors.secondary);
+             --tw-prose-headings: theme(colors.primary);
+             --tw-prose-lead: theme(colors.secondary);
+             --tw-prose-links: theme(colors.primary);
+             --tw-prose-bold: theme(colors.primary);
+             --tw-prose-counters: theme(colors.secondary);
+             --tw-prose-bullets: theme(colors.secondary);
+             --tw-prose-hr: theme(colors.surface);
+             --tw-prose-quotes: theme(colors.primary);
+             --tw-prose-quote-borders: theme(colors.accent);
+             --tw-prose-captions: theme(colors.secondary);
+             --tw-prose-code: theme(colors.primary);
+             --tw-prose-pre-code: theme(colors.primary);
+             --tw-prose-pre-bg: theme(colors.surface);
+             --tw-prose-th-borders: theme(colors.surface);
+             --tw-prose-td-borders: theme(colors.surface);
+        }
+    </style>
+    
+    <script>
+        // Ista paleta boja kao na index.html
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'base': '#111111',
+                        'surface': '#1c1c1c',
+                        'primary': '#f9fafb',
+                        'secondary': '#a1a1aa',
+                        'accent': '#fde047',
+                        'accent-dark': '#facc15',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-base text-primary antialiased">
+
+    <!-- Header & Navigation (Isti kao na index.html) -->
+    <header class="sticky top-0 bg-base/90 backdrop-blur-md z-50 border-b border-surface">
+        <div class="container mx-auto max-w-7xl px-6 py-5">
+            <div class="flex justify-between items-center">
+                <!-- Logo (linka na početnu stranicu) -->
+                <a href="index.html" class="text-2xl font-bold text-accent font-heading">
+                    abcweb
+                </a>
+                
+                <!-- Navigacija (linkovi ažurirani da rade s index.html) -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
+                    <a href="index.html#work" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
+                    <a href="index.html#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
+                    <a href="#" class="text-secondary hover:text-primary transition-colors duration-200">Blog</a>
+                </nav>
+                
+                <!-- Contact CTA (linka na dno index.html) -->
+                <a href="index.html#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">
+                    Kontakt
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-accent">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content za Stranicu Usluge -->
+    <main>
+
+        <!-- Hero Sekcija Usluge -->
+        <section class="bg-surface py-32 md:py-40 border-b border-surface">
+            <div class="container mx-auto max-w-5xl px-6">
+                <a href="index.html#services" class="text-base font-semibold text-accent-yellow hover:text-accent-dark transition-colors">&larr; Sve Usluge</a>
+                <h1 class="font-heading text-6xl md:text-8xl lg:text-9xl text-primary leading-none tracking-tighter mt-4">
+                    Web Izrada<span class="text-accent">.</span>
+                </h1>
+            </div>
+        </section>
+
+        <!-- Detaljan Opis Usluge -->
+        <section class="bg-base py-24 md:py-32">
+            <div class="container mx-auto max-w-5xl px-6">
+                <!-- Koristimo Tailwind Typography 'prose' za lijepo formatiranje teksta -->
+                <div class="prose prose-lg max-w-none text-secondary leading-relaxed space-y-6">
+                    
+                    <p class="text-2xl text-primary leading-relaxed">
+                        Naša usluga <span class="text-primary">izrade web stranica</span> (web development) u Zagrebu fokusirana je na brzinu, sigurnost i skalabilnost. Mi pretvaramo dizajn u funkcionalan, brz i pouzdan digitalni proizvod.
+                    </p>
+                    
+                    <h2 class="text-3xl font-heading text-primary pt-8">Tehnička Izvrsnost i Brzina</h2>
+                    <p>
+                        Specijalizirani smo za <span class="text-primary">izradu responzivnih web stranica</span> koje savršeno rade na svim uređajima, od mobitela do desktopa. Bilo da trebate jednostavnu <span class="text-primary">poslovnu web stranicu</span> (tzv. "landing page"), kompleksni korporativni portal ili <span class="text-primary">izradu web shopa (e-commerce)</span>, naš tim koristi moderne tehnologije. Svaka stranica koju izradimo je tehnički optimizirana za <span class="text-primary">brzo učitavanje</span> (prolazimo Core Web Vitals) i spremna je za rast vašeg poslovanja.
+                    </p>
+                    
+                    <h2 class="text-3xl font-heading text-primary pt-8">Naše Tehnologije</h2>
+                    <ul>
+                        <li><strong>Moderan Frontend:</strong> Koristimo provjerene tehnologije i frameworke za brza i interaktivna sučelja.</li>
+                        <li><strong>CMS Sustavi:</strong> Nudimo izradu u popularnim CMS sustavima (poput WordPress-a) ili headless CMS rješenja za maksimalnu fleksibilnost.</li>
+                        <li><strong>Izrada Web Shopova:</strong> Integriramo sigurne sustave plaćanja i gradimo e-commerce platforme koje prodaju.</li>
+                    </ul>
+
+                    <p>
+                        Od jednostavne "vizitke" do složenog web shopa, naš razvojni tim osigurava da je vaša stranica izgrađena po najvišim standardima.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Sekcija (ista kao na index.html) -->
+        <section id="contact" class="bg-accent text-base">
+            <div class="container mx-auto max-w-4xl px-6 py-24 md:py-32 text-center">
+                <h2 class="text-5xl md:text-6xl font-heading text-base">
+                    Spremni za projekt?
+                </h2>
+                <p class="mt-6 text-xl text-gray-800 max-w-2xl mx-auto">
+                    Voljeli bismo čuti vaše ideje. Dogovorimo poziv i vidimo kako možemo pomoći vašem brendu da raste online.
+                </p>
+                <a href="mailto:hello@abecreations.com" class="mt-10 inline-block bg-base text-primary px-10 py-4 rounded-lg text-lg font-bold hover:bg-surface transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                    hello@abecreations.com
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Isti kao na index.html) -->
+    <footer class="bg-base border-t border-surface">
+        <div class="container mx-auto max-w-7xl px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div>
+                    <a href="index.html" class="text-2xl font-bold text-accent font-heading">
+                        abcweb
+                    </a>
+                    <p class="text-secondary mt-2">
+                        &copy; 2025 Abcweb Studio. Sva prava pridržana. Zagreb, Hrvatska.
+                    </p>
+                </div>
+                <div class="flex justify-center space-x-6 mt-6 md:mt-0">
+                    <a href="#" class="text-secondary hover:text-primary">Twitter</a>
+                    <a href="#" class="text-secondary hover:text-primary">LinkedIn</a>
+                    <a href="#" class="text-secondary hover:text-primary">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
