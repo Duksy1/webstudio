@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="hr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- AŽURIRAN SEO Naslov i Opis -->
+    <title>abcweb.studio - Usluga: Izrada WordPress Pluginova</title>
+    <meta name="description" content="Trebate specifičnu funkcionalnost? Nudimo izradu custom WordPress pluginova koji su brzi, sigurni i 100% prilagođeni vašem poslovanju.">
+    
+    <!-- 1. Moderni SVG Favicon (za Chrome, Firefox, itd.) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23fde047'/></svg>" type="image/svg+xml">
+    
+    <!-- 2. Fallback 16x16 PNG (za Safari / Stack Overflow rješenje) -->
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAB9JREFUOE9jZCAD/GdsD/ofkGIAAn/+/yP+M/4z/jNkygYAAGPjDXxyD/wYAAAAAElFTkSuQmCC" type="image/png" sizes="16x16">
+    
+    <!-- 3. Apple Touch Icon (za iOS početni zaslon) -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23fde047'/></svg>">
+    
+    <!-- Tailwind CSS CDN s 'typography' pluginom -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    
+    <!-- Google Fonts - Anton (za naslove) & Inter (za tekst) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Primjena fontova */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Klasa za "maximalist" naslove */
+        .font-heading {
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+        .card-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(253 224 71 / 0.1), 0 8px 10px -6px rgb(253 224 71 / 0.1);
+        }
+        .cta-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(253 224 71 / 0.2), 0 4px 6px -4px rgb(253 224 71 / 0.2);
+        }
+         /* Postavke za 'prose' (preuzeto iz vašeg primjera i configa) */
+        .prose {
+             --tw-prose-body: theme(colors.secondary);
+             --tw-prose-headings: theme(colors.primary);
+             --tw-prose-lead: theme(colors.secondary);
+             --tw-prose-links: theme(colors.accent); /* Promijenjeno u accent boju */
+             --tw-prose-bold: theme(colors.primary);
+             --tw-prose-counters: theme(colors.secondary);
+             --tw-prose-bullets: theme(colors.accent); /* Promijenjeno u accent boju */
+             --tw-prose-hr: theme(colors.surface);
+             --tw-prose-quotes: theme(colors.primary);
+             --tw-prose-quote-borders: theme(colors.accent);
+             --tw-prose-captions: theme(colors.secondary);
+             --tw-prose-code: theme(colors.primary);
+             --tw-prose-pre-code: theme(colors.primary);
+             --tw-prose-pre-bg: theme(colors.surface);
+             --tw-prose-th-borders: theme(colors.surface);
+             --tw-prose-td-borders: theme(colors.surface);
+        }
+    </style>
+    
+    <script>
+        // Nova "Dark Mode" paleta boja
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'base': '#111111',
+                        'surface': '#1c1c1c',
+                        'primary': '#f9fafb',
+                        'secondary': '#a1a1aa',
+                        'accent': '#fde047',
+                        'accent-dark': '#facc15',
+                    },
+                    // Dodajemo 'typography' konfiguraciju za 'prose'
+                    typography: ({ theme }) => ({
+                        invert: {
+                            css: {
+                                '--tw-prose-body': theme('colors.secondary'),
+                                '--tw-prose-headings': theme('colors.primary'),
+                                '--tw-prose-lead': theme('colors.secondary'),
+                                '--tw-prose-links': theme('colors.accent'),
+                                '--tw-prose-bold': theme('colors.primary'),
+                                '--tw-prose-counters': theme('colors.secondary'),
+                                '--tw-prose-bullets': theme('colors.accent'),
+                                '--tw-prose-hr': theme('colors.surface'),
+                                '--tw-prose-quotes': theme('colors.primary'),
+                                '--tw-prose-quote-borders': theme('colors.accent'),
+                                '--tw-prose-captions': theme('colors.secondary'),
+                                '--tw-prose-code': theme('colors.primary'),
+                                '--tw-prose-pre-code': theme('colors.primary'),
+                                '--tw-prose-pre-bg': theme('colors.surface'),
+                                '--tw-prose-th-borders': theme('colors.surface'),
+                                '--tw-prose-td-borders': theme('colors.surface'),
+                            },
+                        },
+                    }),
+                }
+            },
+            // Plugin je već učitan putem CDN linka gore.
+        }
+    </script>
+</head>
+<body class="bg-base text-primary antialiased">
+
+    <!-- Header & Navigation (Ispravna verzija) -->
+    <header class="sticky top-0 bg-base/90 backdrop-blur-md z-50 border-b border-surface">
+        <div class="container mx-auto max-w-7xl px-6 py-5">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-accent font-heading">
+                    abcweb
+                </a>
+                
+                <!-- Navigacija (Ažurirani linkovi da vode na index.html sidra) -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
+                    <a href="index.html#work" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
+                    <a href="index.html#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
+                    <a href="#" class="text-secondary hover:text-primary transition-colors duration-200">Blog</a>
+                </nav>
+                
+                <a href="index.html#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">
+                    Kontakt
+                </a>
+                
+                <button id="mobile-menu-button" class="md:hidden text-accent z-50 relative w-6 h-6">
+                    <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 transition-opacity duration-200 ease-in-out">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hidden transition-opacity duration-200 ease-in-out">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Popup) -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-surface border-b border-gray-700 z-40 md:hidden">
+            <div class="container mx-auto max-w-7xl px-6 py-8 space-y-6">
+                <a href="index.html#services" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Usluge</a>
+                <a href="index.html#work" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Radovi</a>
+                <a href="index.html#about" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">O nama</a>
+                <a href="#" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Blog</a>
+                <a href="index.html#contact" class="block w-full text-center bg-accent text-base font-semibold px-5 py-3 rounded-lg hover:bg-accent-dark transition-all">
+                    Kontakt
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- AŽURIRAN MAIN CONTENT -->
+    <main>
+
+        <!-- Hero Sekcija Usluge -->
+        <section class="bg-surface py-32 md:py-40 border-b border-surface">
+            <div class="container mx-auto max-w-5xl px-6">
+                <a href="index.html#services" class="text-base font-semibold text-accent hover:text-accent-dark transition-colors">&larr; Sve Usluge</a>
+                <!-- AŽURIRAN NASLOV -->
+                <h1 class="font-heading text-6xl md:text-8xl lg:text-9xl text-primary leading-none tracking-tighter mt-4">
+                    Izrada WordPress Pluginova<span class="text-accent">.</span>
+                </h1>
+            </div>
+        </section>
+
+        <!-- Detaljan Opis Usluge -->
+        <section class="bg-base py-24 md:py-32">
+            <div class="container mx-auto max-w-5xl px-6">
+                <!-- Koristimo Tailwind Typography 'prose' za lijepo formatiranje teksta -->
+                <div class="prose prose-lg max-w-none text-secondary leading-relaxed space-y-6">
+                    
+                    <p class="text-2xl text-primary leading-relaxed">
+                        Ponekad gotova rješenja (off-the-shelf) jednostavno nisu dovoljna. Kada trebate jedinstvenu funkcionalnost koja je savršeno prilagođena vašem poslovnom procesu, mi uskačemo s izradom custom WordPress pluginova.
+                    </p>
+                    
+                    <!-- AŽURIRAN TEKST (uklonjen Shopify) -->
+                    <p>
+                        Bilo da se radi o kompleksnom kalkulatoru cijena, integraciji s vanjskim API-jem ili jedinstvenoj funkcionalnosti za vaš <strong class="text-primary">WordPress</strong> web, naš tim može to izgraditi. Fokusiramo se na pisanje čistog, sigurnog i efikasnog koda koji se besprijekorno integrira s vašom postojećom platformom bez usporavanja stranice.
+                    </p>
+                    
+                    <h2 class="text-3xl font-heading text-primary pt-8">Što je uključeno:</h2>
+                    <!-- AŽURIRANA LISTA (fokus na WP/Woo) -->
+                    <ul>
+                        <li>Detaljna analiza vaših potreba i specifikacija.</li>
+                        <li>Izrada plugina za <strong class="text-primary">WordPress</strong> i <strong class="text-primary">WooCommerce</strong> platforme.</li>
+                        <li>100% fokus na WordPress ekosustav i standarde kodiranja.</li>
+                        <li>Integracija s vanjskim servisima i API-jevima (npr. sustavi za naplatu, CRM, ERP).</li>
+                        <li>Fokus na sigurnost, performanse (brzinu) i skalabilnost.</li>
+                        <li>Čista dokumentacija i podrška nakon lansiranja.</li>
+                    </ul>
+
+                    <p>Automatizirajte procese, ponudite nove mogućnosti svojim korisnicima i steknite konkurentsku prednost s tehnologijom koja je izgrađena isključivo za vas.</p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Sekcija (ista kao na index.html) -->
+        <section id="contact" class="bg-accent text-base">
+            <div class="container mx-auto max-w-4xl px-6 py-24 md:py-32 text-center">
+                <h2 class="text-5xl md:text-6xl font-heading text-base">
+                    Spremni za projekt?
+                </h2>
+                <p class="mt-6 text-xl text-gray-800 max-w-2xl mx-auto">
+                    Voljeli bismo čuti vaše ideje. Dogovorimo poziv i vidimo kako možemo pomoći vašem brendu da raste online.
+                </WELCOME>
+                <!-- ISPRAVLJEN EMAIL -->
+                <a href="mailto:hello@abcweb.studio" class="mt-10 inline-block bg-base text-primary px-10 py-4 rounded-lg text-lg font-bold hover:bg-surface transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                    hello@abcweb.studio
+                </a>
+            </div>
+        </section>
+
+    </main>
+    <!-- KRAJ AŽURIRANOG MAIN CONTENT-a -->
+
+
+    <!-- Footer (Ispravna verzija) -->
+    <footer class="bg-base border-t border-surface">
+        <div class="container mx-auto max-w-7xl px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div>
+                    <a href="index.html" class="text-2xl font-bold text-accent font-heading">
+                        abcweb
+                    </a>
+                    <p class="text-secondary mt-2">
+                        &copy; 2025 abcweb.studio. Sva prava pridržana. Zagreb, Hrvatska.
+                    </p>
+                </div>
+                <div class="flex justify-center space-x-6 mt-6 md:mt-0">
+                    <a href="#" class="text-secondary hover:text-primary">Twitter</a>
+                    <a href="#" class="text-secondary hover:text-primary">LinkedIn</a>
+                    <a href="#" class="text-secondary hover:text-primary">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript za Mobilni Izbornik (Ispravna verzija) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('icon-open');
+            const iconClose = document.getElementById('icon-close');
+
+            if (menuButton && mobileMenu && iconOpen && iconClose) {
+                const toggleMenu = () => {
+                    mobileMenu.classList.toggle('hidden');
+                    iconOpen.classList.toggle('hidden');
+                    iconClose.classList.toggle('hidden');
+                };
+                
+                menuButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleMenu();
+                });
+
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        // Na stranicama usluga, svaki klik na link zatvara izbornik (jer vodi na drugu stranicu)
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            toggleMenu();
+                        }
+                    });
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                        toggleMenu();
+                    }
+                });
+
+            } else {
+                console.error("Elementi mobilnog izbornika nisu pronađeni.");
+            }
+        });
+    </script>
+
+</body>
+</html>
