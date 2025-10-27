@@ -37,6 +37,24 @@
             text-transform: uppercase; /* Sva velika slova kao u primjeru */
             letter-spacing: 0.025em; /* Lagani razmak */
         }
+        
+        /* DODANO: Tranzicija za "lift" efekt (potrebno za novu sekciju) */
+        .card-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(253 224 71 / 0.1), 0 8px 10px -6px rgb(253 224 71 / 0.1);
+        }
+
+        /* DODANO: Tranzicija za CTA gumb */
+        .cta-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(253 224 71 / 0.2), 0 4px 6px -4px rgb(253 224 71 / 0.2);
+        }
     </style>
     
     <script>
@@ -217,74 +235,45 @@
             </div>
         </section>
 
-        <!-- Work/Portfolio Section -->
-        <section id="work" class="bg-surface py-24 md:py-32 border-y border-surface">
+        <!-- AŽURIRANA Sekcija Radovi (Portfolio) -->
+        <section id="work" class="py-24 md:py-32 bg-surface border-y border-surface">
             <div class="container mx-auto max-w-7xl px-6">
-                <div class="mb-16 max-w-3xl">
-                    <h2 class="text-base font-semibold text-secondary uppercase tracking-wider">Odabrani Radovi</h2>
-                    <p class="mt-3 text-5xl md:text-6xl font-heading text-primary">
-                        Projekti na koje smo ponosni.
-                    </p>
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-secondary font-heading text-lg tracking-widest">NAŠI RADOVI</h2>
+                    <h2 class="font-heading text-5xl md:text-6xl text-primary mt-4">
+                        Odabrani Projekti
+                    </h2>
                 </div>
+                
+                <!-- AŽURIRANO: Grid s 2 stupca (umjesto starog staggered grida) -->
+                <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                    
+                    <!-- Projekt 1: Frizerski Studio -->
+                    <a href="https://frizerskistudios.com/" target="_blank" rel="noopener noreferrer" class="block group bg-base p-6 rounded-lg border border-surface card-lift">
+                        <div class="overflow-hidden rounded-md">
+                            <img src="https://placehold.co/600x400/111111/fde047?text=Frizerski+Studio+S" 
+                                 alt="Placeholder slika za Frizerski Studio S" 
+                                 class="w-full h-auto object-cover transform transition-transform duration-300 group-hover:scale-105">
+                        </div>
+                        <h3 class="font-heading text-3xl text-primary mt-6">Frizerski Studio S</h3>
+                        <p class="text-secondary text-lg mt-2">Web Dizajn / Web Izrada</p>
+                    </a>
 
-                <!-- "Artsy" Staggered Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
-                    
-                    <!-- Project 1 -->
-                    <div class="space-y-4 rounded-lg group">
-                        <img src="https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+1" 
-                             alt="Primjer projekta 1 - Redizajn E-commerce Brenda"
-                             class="rounded-lg object-cover w-full transition-all duration-300 ease-in-out group-hover:shadow-2xl group-hover:shadow-accent/10"
-                             onerror="this.src='https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+1'">
-                        <div class="pt-2 transition-all duration-300 ease-in-out group-hover:translate-x-1">
-                            <h3 class="text-2xl font-semibold text-primary">Redizajn E-commerce Brenda</h3>
-                            <!-- SEO OPTIMIZIRANA KATEGORIJA -->
-                            <p class="text-secondary">Web Dizajn, Copywriting</p>
+                    <!-- Projekt 2: Dentalni Centar -->
+                    <a href="https://dentalnicentar.pages.dev/" target="_blank" rel="noopener noreferrer" class="block group bg-base p-6 rounded-lg border border-surface card-lift">
+                        <div class="overflow-hidden rounded-md">
+                            <img src="https://placehold.co/600x400/111111/fde047?text=Dentalni+Centar" 
+                                 alt="Placeholder slika za Dentalni Centar" 
+                                 class="w-full h-auto object-cover transform transition-transform duration-300 group-hover:scale-105">
                         </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="space-y-4 md:mt-16 rounded-lg group">
-                        <img src="https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+2" 
-                             alt="Primjer projekta 2 - SEO Strategija za Startup"
-                             class="rounded-lg object-cover w-full transition-all duration-300 ease-in-out group-hover:shadow-2xl group-hover:shadow-accent/10"
-                             onerror="this.src='https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+2'">
-                        <div class="pt-2 transition-all duration-300 ease-in-out group-hover:translate-x-1">
-                            <h3 class="text-2xl font-semibold text-primary">SEO Strategija za Startup</h3>
-                            <!-- SEO OPTIMIZIRANA KATEGORIJA -->
-                            <p class="text-secondary">SEO Optimizacija, Strategija Sadržaja</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3 -->
-                    <div class="space-y-4 rounded-lg group">
-                        <img src="https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+3" 
-                             alt="Primjer projekta 3 - Web Stranica za Udrugu"
-                             class="rounded-lg object-cover w-full transition-all duration-300 ease-in-out group-hover:shadow-2xl group-hover:shadow-accent/10"
-                             onerror="this.src='https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+3'">
-                        <div class="pt-2 transition-all duration-300 ease-in-out group-hover:translate-x-1">
-                            <h3 class="text-2xl font-semibold text-primary">Web Stranica za Udrugu</h3>
-                            <!-- SEO OPTIMIZIRANA KATEGORIJA -->
-                            <p class="text-secondary">Web Izrada, Web Dizajn</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 4 -->
-                    <div class="space-y-4 md:mt-16 rounded-lg group">
-                        <img src="https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+4" 
-                             alt="Primjer projekta 4 - Portfolio Stranica za Umjetnika"
-                             class="rounded-lg object-cover w-full transition-all duration-300 ease-in-out group-hover:shadow-2xl group-hover:shadow-accent/10"
-                             onerror="this.src='https://placehold.co/600x450/1c1c1c/fde047?text=Projekt+4'">
-                        <div class="pt-2 transition-all duration-300 ease-in-out group-hover:translate-x-1">
-                            <h3 class="text-2xl font-semibold text-primary">Portfolio Stranica za Umjetnika</h3>
-                            <!-- SEO OPTIMIZIRANA KATEGORIJA -->
-                            <p class="text-secondary">Web Dizajn, Copywriting</p>
-                        </div>
-                    </div>
+                        <h3 class="font-heading text-3xl text-primary mt-6">Dentalni Centar</h3>
+                        <p class="text-secondary text-lg mt-2">Web Izrada / Optimizacija</p>
+                    </a>
 
                 </div>
             </div>
         </section>
+        <!-- KRAJ AŽURIRANE SEKCIJE -->
 
         <!-- Testimonial Section -->
         <section id="testimonial" class="bg-base py-24 md:py-32">
@@ -324,7 +313,7 @@
                 </h2>
                 <p class="mt-6 text-xl text-gray-800 max-w-2xl mx-auto">
                     Voljeli bismo čuti vaše ideje. Dogovorimo poziv i vidimo kako možemo pomoći vašem brendu da raste online.
-                </p>
+                </D>
                 <!-- AŽURIRAN EMAIL I MAILTO LINK -->
                 <a href="mailto:hello@abcweb.studio" class="mt-10 inline-block bg-base text-primary px-10 py-4 rounded-lg text-lg font-bold hover:bg-surface transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
                     hello@abcweb.studio
@@ -404,6 +393,7 @@
 
 </body>
 </html>
+
 
 
 
