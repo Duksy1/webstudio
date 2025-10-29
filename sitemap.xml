@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- 1. Naslovnica (Homepage) -->
+    <url>
+        <loc>https://abcweb.studio/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- 2. Usluga: Web Dizajn -->
+    <url>
+        <loc>https://abcweb.studio/usluge/web-dizajn.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- 3. Usluga: Web Izrada -->
+    <url>
+        <loc>https://abcweb.studio/usluge/web-izrada.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- 4. Usluga: SEO Optimizacija -->
+    <url>
+        <loc>https://abcweb.studio/usluge/seo-optimizacija.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- 5. Usluga: Copywriting -->
+    <url>
+        <loc>https://abcweb.studio/usluge/copywriting.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- 6. Usluga: Izrada WordPress Pluginova -->
+    <url>
+        <loc>https://abcweb.studio/usluge/izrada-wordpress-pluginova.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>
