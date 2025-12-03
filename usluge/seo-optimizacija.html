@@ -5,10 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Optimiziran Naslov i Opis za ovu stranicu -->
-    <title>SEO Optimizacija Usluge Zagreb - Abcweb Studio</title>
-    <meta name="description" content="Povećajte vidljivost uz naše usluge SEO optimizacije za tražilice. Nudimo tehnički, on-page i lokalni SEO za tvrtke u Zagrebu i Hrvatskoj.">
-     <!-- DODAN: Favicon (Emoji pristup) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🟡</text></svg>">
+    <title>SEO Optimizacija Zagreb – abcweb.studio</title>
+    <meta name="description" content="Profesionalna SEO optimizacija za tvrtke u Zagrebu i Hrvatskoj. Tehnički SEO, on-page SEO i lokalni SEO za bolji ranking na Googleu i više kvalitetnih upita.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://abcweb.studio/usluge/seo-optimizacija.html">
+
+    <!-- Faviconi (isti kao na početnoj) -->
+    <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml" sizes="32x32">
+    <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/images/favicon-180x180.svg" sizes="180x180">
+
+    <!-- FAQ Schema (JSON-LD) za SEO Optimizaciju -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Što je SEO optimizacija?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO optimizacija (Search Engine Optimization) je skup strategija i tehnika kojima se poboljšava vidljivost web stranice na tražilicama poput Googlea. Cilj je privući kvalitetan organski promet koji se pretvara u konkretne upite i prodaju."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Koliko traje SEO optimizacija prije prvih rezultata?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO je dugoročna strategija. Prvi pomaci mogu se vidjeti unutar nekoliko tjedana, ali za stabilne rezultate na prvoj stranici obično je potrebno 3 do 6 mjeseci kontinuiranog rada, ovisno o konkurenciji i početnom stanju stranice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Možete li garantirati prvu poziciju na Googleu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nitko ne može pošteno garantirati točan položaj na Googleu jer algoritmi nisu pod našom kontrolom. Ono što možemo garantirati je stručan rad, transparentnost, poboljšanje tehničkog stanja, sadržaja i pozicija kroz vrijeme."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Koja je razlika između SEO-a i plaćenih oglasa (Google Ads)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plaćeni oglasi donose brze rezultate dok god plaćate klikove, dok SEO gradi organsku vidljivost koja donosi promet i nakon što kampanja završi. Najbolji pristup često je kombinacija SEO-a i oglašavanja, ovisno o ciljevima i budžetu."
+          }
+        }
+      ]
+    }
+    </script>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -76,14 +124,14 @@
                 
                 <!-- Navigacija (linkovi ažurirani da rade s index.html) -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
-                    <a href="index.html#work" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
-                    <a href="index.html#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
+                    <a href="/index.html#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
+                    <a href="/index.html#work" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
+                    <a href="/index.html#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
                     <a href="#" class="text-secondary hover:text-primary transition-colors duration-200">Blog</a>
                 </nav>
                 
                 <!-- Contact CTA (linka na dno index.html) -->
-                <a href="index.html#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">
+                <a href="/index.html#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">
                     Kontakt
                 </a>
                 
@@ -105,7 +153,7 @@
             <div class="container mx-auto max-w-5xl px-6">
                 <a href="/index.html#services" class="text-base font-semibold text-primary hover:text-accent transition-colors inline-block py-2 mb-4">&larr; Sve Usluge</a>
                 <h1 class="font-heading text-6xl md:text-8xl lg:text-9xl text-primary leading-none tracking-tighter mt-4">
-                    SEO<span class="text-accent">.</span>
+                    SEO Optimizacija<span class="text-accent">.</span>
                 </h1>
             </div>
         </section>
@@ -117,23 +165,95 @@
                 <div class="prose prose-lg max-w-none text-secondary leading-relaxed space-y-6">
                     
                     <p class="text-2xl text-primary leading-relaxed">
-                        Biti na prvoj stranici Googlea nije slučajnost. To je rezultat strateškog i kontinuiranog rada. Naša usluga <span class="text-primary">SEO optimizacije za tražilice</span> osigurava da vas vaši idealni klijenti mogu pronaći u trenutku kada vas najviše trebaju.
+                        Biti na prvoj stranici Googlea nije slučajnost. To je rezultat strateškog i kontinuiranog rada. 
+                        Naša usluga <span class="text-primary">SEO optimizacije</span> pomaže tvrtkama u Zagrebu i cijeloj Hrvatskoj da budu vidljive kada potencijalni klijenti traže njihove proizvode ili usluge.
                     </p>
                     
-                    <h2 class="text-3xl font-heading text-primary pt-8">Kompletan Pristup Optimizaciji</h2>
+                    <h2 class="text-3xl font-heading text-primary pt-8">Kompletan pristup SEO optimizaciji</h2>
                     <p>
-                        Mi ne ciljamo samo na promet; ciljamo na <span class="text-primary">kvalitetan organski promet</span> koji se pretvara u stvarne upite i prodaju. Naš proces pokriva sva tri stupa SEO-a:
+                        Ne ciljamo samo na promet; ciljamo na <span class="text-primary">kvalitetan organski promet</span> koji se pretvara u stvarne upite i prodaju. 
+                        Naš proces pokriva sva tri glavna stupa <span class="text-primary">SEO optimizacije</span>:
                     </p>
                     
                     <ul>
-                        <li><strong>Tehnički SEO:</strong> Analiziramo i optimiziramo brzinu vaše stranice (Core Web Vitals), mobilnu responzivnost, strukturu linkova i ispravnost indeksiranja.</li>
-                        <li><strong>On-Page SEO:</strong> Provodimo dubinsko <span class="text-primary">istraživanje ključnih riječi</span> za hrvatsko tržište i optimiziramo vaš sadržaj, naslove i meta opise.</li>
-                        <li><strong>Lokalni SEO:</strong> Posebno smo fokusirani na <span class="text-primary">lokalni SEO</span>, pomažući tvrtkama u Zagrebu i Hrvatskoj da dominiraju u lokalnim pretragama (uključujući optimizaciju Google Business Profila).</li>
+                        <li>
+                            <strong>Tehnički SEO:</strong> Analiziramo i optimiziramo brzinu vaše stranice (Core Web Vitals), mobilnu responzivnost, strukturu linkova, sitemap i ispravnost indeksiranja.
+                        </li>
+                        <li>
+                            <strong>On-page SEO:</strong> Provodimo dubinsko <span class="text-primary">istraživanje ključnih riječi</span> za hrvatsko tržište i optimiziramo sadržaj, naslove (H1–H3), meta opise i interne linkove.
+                        </li>
+                        <li>
+                            <strong>Lokalni SEO:</strong> Posebno smo fokusirani na <span class="text-primary">lokalni SEO</span> za Zagreb i druge gradove – optimizacija Google Business Profila, lokalnih citata i lokalnih odredišnih stranica.
+                        </li>
                     </ul>
 
                     <p>
-                        Kroz transparentno izvještavanje i stalno praćenje, osiguravamo da vaša investicija u SEO donosi mjerljive rezultate i dugoročan rast.
+                        Kroz transparentno izvještavanje i stalno praćenje pozicija, osiguravamo da vaša investicija u SEO donosi mjerljive rezultate i dugoročan rast.
+                        Ako uz SEO trebate i <a href="/usluge/web-izrada.html" class="text-primary underline underline-offset-4 decoration-accent">izladu nove web stranice</a>, možemo povezati oba projekta u jedinstvenu strategiju.
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Sekcija: SEO Optimizacija -->
+        <section id="faq" class="bg-surface py-24 md:py-32 border-y border-surface">
+            <div class="container mx-auto max-w-5xl px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold text-secondary uppercase tracking-wider">
+                        Česta pitanja
+                    </h2>
+                    <h2 class="mt-3 text-4xl md:text-5xl font-heading text-primary">
+                        FAQ – SEO optimizacija
+                    </h2>
+                    <p class="mt-6 text-secondary text-lg">
+                        Odgovori na ključna pitanja o SEO optimizaciji, vremenskim okvirima i očekivanim rezultatima.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Pitanje 1 -->
+                    <div class="bg-base border border-surface rounded-lg p-6">
+                        <h3 class="text-xl font-heading text-primary">
+                            Što je točno SEO optimizacija?
+                        </h3>
+                        <p class="mt-3 text-secondary">
+                            SEO optimizacija je proces prilagodbe vaše web stranice kako bi ju tražilice poput Googlea bolje razumjele i rangirale.
+                            To uključuje tehničke prilagodbe, optimizaciju sadržaja i izgradnju povjerenja kroz kvalitetne signale.
+                        </p>
+                    </div>
+
+                    <!-- Pitanje 2 -->
+                    <div class="bg-base border border-surface rounded-lg p-6">
+                        <h3 class="text-xl font-heading text-primary">
+                            Koliko traje dok se ne vide rezultati?
+                        </h3>
+                        <p class="mt-3 text-secondary">
+                            Prvi pomaci mogu se vidjeti unutar nekoliko tjedana, no za ozbiljnije pomake na konkurentnim pojmovima 
+                            potrebno je 3–6 mjeseci kontinuiranog rada. SEO je maraton, a ne sprint.
+                        </p>
+                    </div>
+
+                    <!-- Pitanje 3 -->
+                    <div class="bg-base border border-surface rounded-lg p-6">
+                        <h3 class="text-xl font-heading text-primary">
+                            Garantirate li prvu poziciju na Googleu?
+                        </h3>
+                        <p class="mt-3 text-secondary">
+                            Ne nudimo nerealna obećanja i ne garantiramo točne pozicije, jer algoritmi nisu pod našom kontrolom.
+                            Umjesto toga, fokusirani smo na kvalitetan rad, transparentnost i konkretne pomake u vidljivosti i upitima.
+                        </p>
+                    </div>
+
+                    <!-- Pitanje 4 -->
+                    <div class="bg-base border border-surface rounded-lg p-6">
+                        <h3 class="text-xl font-heading text-primary">
+                            Koja je razlika između SEO-a i Google oglasa?
+                        </h3>
+                        <p class="mt-3 text-secondary">
+                            Google oglasi vam donose promet dok plaćate kampanju, dok SEO gradi organsku vidljivost koja ostaje i nakon što kampanja završi.
+                            Često kombiniramo oba pristupa za maksimalan efekt – brzi rezultati kroz oglase i dugoročni rast kroz SEO.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -178,3 +298,4 @@
 
 </body>
 </html>
+
