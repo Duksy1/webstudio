@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="hr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog – abcweb.studio</title>
+  <meta name="description" content="Blog o izradi web stranica, web dizajnu, SEO optimizaciji i digitalnoj strategiji. Praktični savjeti za vlasnike biznisa u Hrvatskoj.">
+
+  <link rel="canonical" href="https://abcweb.studio/blog/">
+
+  <!-- Faviconi -->
+  <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml" sizes="32x32">
+  <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/favicon-180x180.svg" sizes="180x180">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'base': '#111111',
+            'surface': '#1c1c1c',
+            'primary': '#f9fafb',
+            'secondary': '#a1a1aa',
+            'accent': '#fde047',
+            'accent-dark': '#facc15',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-heading {
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+    }
+    .card-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 22px -6px rgb(253 224 71 / 0.15);
+    }
+  </style>
+</head>
+<body class="bg-base text-primary antialiased">
+
+  <!-- HEADER (isti kao na indexu) -->
+  <header class="sticky top-0 bg-base/90 backdrop-blur-md z-50 border-b border-surface">
+    <div class="container mx-auto max-w-7xl px-6 py-5">
+      <div class="flex justify-between items-center">
+        <a href="/index.html" class="text-2xl font-bold text-accent font-heading">
+          abcweb
+        </a>
+
+        <nav class="hidden md:flex space-x-8">
+          <a href="/index.html#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
+          <a href="/index.html#work" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
+          <a href="/index.html#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
+          <a href="/blog/" class="text-primary font-semibold transition-colors duration-200">Blog</a>
+        </nav>
+
+        <a href="/index.html#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">
+          Kontakt
+        </a>
+
+        <button class="md:hidden text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="bg-surface py-24 md:py-32 border-b border-surface">
+      <div class="container mx-auto max-w-5xl px-6">
+        <h1 class="font-heading text-5xl md:text-7xl text-primary leading-none tracking-tighter">
+          Blog<span class="text-accent">.</span>
+        </h1>
+        <p class="mt-6 text-lg text-secondary max-w-2xl">
+          Praktični tekstovi o izradi web stranica, web dizajnu, SEO optimizaciji i digitalnim strategijama
+          za male i srednje biznise u Hrvatskoj.
+        </p>
+      </div>
+    </section>
+
+    <!-- Lista postova -->
+    <section class="bg-base py-24 md:py-32">
+      <div class="container mx-auto max-w-6xl px-6 grid gap-10 md:grid-cols-2">
+        
+        <!-- Post 1 -->
+        <article class="bg-surface border border-surface rounded-xl p-6 card-lift">
+          <p class="text-xs uppercase tracking-widest text-secondary mb-2">SEO · Izrada web stranica</p>
+          <h2 class="text-2xl md:text-3xl font-heading text-primary">
+            <a href="/blog/koliko-kosta-izrada-web-stranice.html" class="hover:text-accent transition-colors">
+              Koliko košta izrada web stranice u Hrvatskoj?
+            </a>
+          </h2>
+          <p class="mt-4 text-secondary text-sm">
+            Objašnjenje glavnih faktora koji utječu na cijenu izrade web stranica – od jednostavne vizitke do kompleksnog web shopa.
+          </p>
+          <a href="/blog/koliko-kosta-izrada-web-stranice.html" class="mt-4 inline-block text-sm font-semibold text-accent">
+            Pročitaj više →
+          </a>
+        </article>
+
+        <!-- Post 2 (placeholder) -->
+        <article class="bg-surface border border-surface rounded-xl p-6 card-lift">
+          <p class="text-xs uppercase tracking-widest text-secondary mb-2">SEO</p>
+          <h2 class="text-2xl md:text-3xl font-heading text-primary">
+            <a href="/blog/sto-je-seo-optimizacija.html" class="hover:text-accent transition-colors">
+              Što je SEO optimizacija i zašto je važna?
+            </a>
+          </h2>
+          <p class="mt-4 text-secondary text-sm">
+            Kratak vodič kroz osnove SEO-a na hrvatskom – tehnički, on-page i lokalni SEO za tvrtke.
+          </p>
+          <a href="/blog/sto-je-seo-optimizacija.html" class="mt-4 inline-block text-sm font-semibold text-accent">
+            Pročitaj više →
+          </a>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (isti kao na ostalim) -->
+  <footer class="bg-base border-t border-surface">
+    <div class="container mx-auto max-w-7xl px-6 py-12">
+      <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <div>
+          <a href="/index.html" class="text-2xl font-bold text-accent font-heading">
+            abcweb
+          </a>
+          <p class="text-secondary mt-2">
+            &copy; 2025 abcweb.studio. Sva prava pridržana. Zagreb, Hrvatska.
+          </p>
+        </div>
+        <div class="flex justify-center space-x-6 mt-6 md:mt-0">
+          <a href="#" class="text-secondary hover:text-primary">Twitter</a>
+          <a href="#" class="text-secondary hover:text-primary">LinkedIn</a>
+          <a href="#" class="text-secondary hover:text-primary">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
