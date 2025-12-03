@@ -4,20 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Blog – abcweb.studio</title>
-  <meta name="description" content="Blog o izradi web stranica, web dizajnu, SEO optimizaciji i sadržaju. Praktični savjeti za vlasnike biznisa u Hrvatskoj.">
+  <title>Koliko košta izrada web stranice u Hrvatskoj? – abcweb.studio</title>
+  <meta name="description" content="Detaljno objašnjenje koliko košta izrada web stranice u Hrvatskoj. Pregled cijena za jednostavne stranice, napredne webove i web shopove.">
 
-  <link rel="canonical" href="https://abcweb.studio/blog/">
+  <link rel="canonical" href="https://abcweb.studio/blog/koliko-kosta-izrada-web-stranice.html">
 
   <!-- Faviconi -->
   <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml" sizes="32x32">
   <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/images/favicon-180x180.svg" sizes="180x180">
 
-  <!-- Tailwind -->
+  <!-- Schema Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Koliko košta izrada web stranice u Hrvatskoj?",
+    "author": {
+      "@type": "Organization",
+      "name": "abcweb.studio"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "abcweb.studio"
+    },
+    "inLanguage": "hr-HR",
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://abcweb.studio/blog/koliko-kosta-izrada-web-stranice.html"
+    }
+  }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -46,111 +68,187 @@
       text-transform: uppercase;
       letter-spacing: 0.025em;
     }
-    .card-lift {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .prose-custom p {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+      color: #a1a1aa;
     }
-    .card-lift:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 22px -6px rgb(253 224 71 / 0.15);
+    .prose-custom h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f9fafb;
+    }
+    .prose-custom h3 {
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      color: #f9fafb;
+    }
+    .prose-custom ul {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+      list-style-type: disc;
+      color: #a1a1aa;
+    }
+    .prose-custom li {
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+    .prose-custom a {
+      color: #fde047;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
     }
   </style>
 </head>
 <body class="bg-base text-primary antialiased">
 
-  <!-- HEADER (isti kao na indexu) -->
+  <!-- HEADER -->
   <header class="sticky top-0 bg-base/90 backdrop-blur-md z-50 border-b border-surface">
     <div class="container mx-auto max-w-7xl px-6 py-5">
       <div class="flex justify-between items-center">
         <a href="/index.html" class="text-2xl font-bold text-accent font-heading">
           abcweb
         </a>
-
         <nav class="hidden md:flex space-x-8">
           <a href="/index.html#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
           <a href="/index.html#work" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
           <a href="/index.html#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
           <a href="/blog/" class="text-primary font-semibold transition-colors duration-200">Blog</a>
         </nav>
-
         <a href="/index.html#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">
           Kontakt
         </a>
-
-        <button class="md:hidden text-accent">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-        </button>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="bg-surface py-24 md:py-32 border-b border-surface">
-      <div class="container mx-auto max-w-5xl px-6">
-        <h1 class="font-heading text-5xl md:text-7xl text-primary leading-none tracking-tighter">
-          Blog<span class="text-accent">.</span>
+    <!-- Hero / naslov članka -->
+    <section class="bg-surface py-20 border-b border-surface">
+      <div class="container mx-auto max-w-3xl px-6">
+        <a href="/blog/" class="text-xs uppercase tracking-widest text-secondary hover:text-accent transition-colors">
+          ← Povratak na blog
+        </a>
+        <p class="mt-4 text-xs uppercase tracking-widest text-secondary">
+          Blog · Izrada web stranica
+        </p>
+        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl text-primary leading-tight tracking-tighter mt-4">
+          Koliko košta izrada web stranice u Hrvatskoj?
         </h1>
-        <p class="mt-6 text-lg text-secondary max-w-2xl">
-          Praktični tekstovi o izradi web stranica, web dizajnu, SEO optimizaciji i sadržaju – pisano
-          za vlasnike biznisa i marketing timove u Hrvatskoj.
+        <p class="mt-4 text-sm text-secondary">
+          Objavljeno: 01.01.2025. · abcweb.studio
         </p>
       </div>
     </section>
 
-    <!-- Lista postova -->
-    <section class="bg-base py-24 md:py-32">
-      <div class="container mx-auto max-w-6xl px-6 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-        
-        <!-- Post 1 -->
-        <article class="bg-surface border border-surface rounded-xl p-6 card-lift flex flex-col h-full">
-          <p class="text-xs uppercase tracking-widest text-secondary mb-2">Izrada web stranica</p>
-          <h2 class="text-2xl font-heading text-primary">
-            <a href="/blog/koliko-kosta-izrada-web-stranice.html" class="hover:text-accent transition-colors">
-              Koliko košta izrada web stranice u Hrvatskoj?
-            </a>
-          </h2>
-          <p class="mt-4 text-secondary text-sm flex-1">
-            Objašnjavamo što sve ulazi u cijenu – od jednostavne “vizitke” do naprednog web shopa – i zašto su ponude često tako različite.
+    <!-- Sadržaj članka -->
+    <section class="bg-base py-16 md:py-24">
+      <div class="container mx-auto max-w-3xl px-6">
+        <article class="prose-custom">
+          <p>
+            Jedno od prvih pitanja koje dobijemo od klijenata je: <strong>“Koliko košta izrada web stranice?”</strong>.
+            Kratak odgovor je – ovisi. Duži odgovor je ovaj članak.
           </p>
-          <a href="/blog/koliko-kosta-izrada-web-stranice.html" class="mt-4 inline-block text-sm font-semibold text-accent">
-            Pročitaj više →
-          </a>
-        </article>
 
-        <!-- Post 2 -->
-        <article class="bg-surface border border-surface rounded-xl p-6 card-lift flex flex-col h-full">
-          <p class="text-xs uppercase tracking-widest text-secondary mb-2">SEO</p>
-          <h2 class="text-2xl font-heading text-primary">
-            <a href="/blog/sto-je-seo-optimizacija.html" class="hover:text-accent transition-colors">
-              Što je SEO optimizacija i kako funkcionira?
-            </a>
-          </h2>
-          <p class="mt-4 text-secondary text-sm flex-1">
-            Jednostavan pregled tehničkog, on-page i lokalnog SEO-a – bez žargona, uz primjere za hrvatsko tržište.
+          <p>
+            U nastavku prolazimo kroz glavne faktore koji utječu na cijenu i dajemo okvirne raspon cijena
+            za različite tipove webova na hrvatskom tržištu.
           </p>
-          <a href="/blog/sto-je-seo-optimizacija.html" class="mt-4 inline-block text-sm font-semibold text-accent">
-            Pročitaj više →
-          </a>
-        </article>
 
-        <!-- Post 3 -->
-        <article class="bg-surface border border-surface rounded-xl p-6 card-lift flex flex-col h-full">
-          <p class="text-xs uppercase tracking-widest text-secondary mb-2">Web dizajn</p>
-          <h2 class="text-2xl font-heading text-primary">
-            <a href="/blog/web-dizajn-vs-izrada-web-stranice.html" class="hover:text-accent transition-colors">
-              Web dizajn vs. izrada web stranice – u čemu je razlika?
-            </a>
-          </h2>
-          <p class="mt-4 text-secondary text-sm flex-1">
-            Razdvajamo estetiku od tehnike i objašnjavamo zašto trebaš i dizajnera i developera da bi web stvarno radio za biznis.
+          <h2>Glavni faktori koji utječu na cijenu</h2>
+          <p>Cijena izrade web stranice najčešće ovisi o ovim elementima:</p>
+          <ul>
+            <li><strong>Opseg sadržaja</strong> – broj podstranica, jezične verzije, blog, FAQ, portfolio…</li>
+            <li><strong>Dizajn</strong> – custom dizajn vs. prilagodba postojećeg layouta ili teme.</li>
+            <li><strong>Funkcionalnosti</strong> – kontakt forme, blog, web shop, integracije, članstva…</li>
+            <li><strong>Tehnička razina</strong> – brzina (Core Web Vitals), sigurnost, SEO, skalabilnost.</li>
+          </ul>
+
+          <p>
+            Zato dvije ponude koje na papiru izgledaju slično, mogu imati potpuno drugačiju cijenu
+            – jednostavno zato što se ne radi o istom proizvodu.
           </p>
-          <a href="/blog/web-dizajn-vs-izrada-web-stranice.html" class="mt-4 inline-block text-sm font-semibold text-accent">
-            Pročitaj više →
-          </a>
-        </article>
 
+          <h2>Jednostavna “vizitka” / landing stranica</h2>
+          <p>
+            Ako ti treba jednostavna prezentacijska stranica s nekoliko sekcija
+            (hero, usluge, o nama, kontakt), bez bloga, bez posebnih integracija – govorimo o
+            <strong>landing stranici</strong>.
+          </p>
+          <p>
+            Za takve projekte, realan raspon cijene na tržištu je najčešće negdje od
+            <strong>400 do 800 €</strong>, ovisno o:
+          </p>
+          <ul>
+            <li>je li dizajn potpuno custom ili se prilagođava postojeći layout,</li>
+            <li>koliko iteracija revizija je uključeno,</li>
+            <li>je li uključena osnovna <a href="/usluge/seo-optimizacija.html">SEO optimizacija</a>.</li>
+          </ul>
+
+          <h2>Naprednija web stranica ili manji portal</h2>
+          <p>
+            Kada web treba više podstranica, blog, možda više jezika i kompleksniju strukturu,
+            pričamo o <strong>naprednijoj web stranici</strong>.
+          </p>
+          <p>
+            U tom slučaju raspon je najčešće <strong>800 – 1.800 €</strong>, ovisno o:
+          </p>
+          <ul>
+            <li>broju i kompleksnosti podstranica,</li>
+            <li>je li potrebno pripremiti ili prepisati veće količine sadržaja,</li>
+            <li>specifičnim modulima (npr. katalog, portfolio, filtriranje sadržaja).</li>
+          </ul>
+
+          <h2>Web shop (e-commerce)</h2>
+          <p>
+            Kod web shopova igra ulogu puno više faktora: broj proizvoda, varijacije, kuponi,
+            metode plaćanja, dostava, integracije s računovodstvom i sl.
+          </p>
+          <p>
+            Za ozbiljniji <strong>WooCommerce web shop</strong>, cijene najčešće kreću od
+            <strong>1.500 € naviše</strong>. Granica gore praktički ne postoji, ali za većinu
+            malih i srednjih trgovina realno je govoriti o rasponu <strong>1.500 – 4.000 €</strong>.
+          </p>
+
+          <h2>Što je uključeno u našu izradu web stranica</h2>
+          <p>
+            U <a href="/usluge/web-izrada.html">usluzi izrade web stranica</a> u abcweb.studio
+            fokusirani smo na to da web nije samo “lijep”, nego da stvarno radi posao.
+          </p>
+          <p>Tipično uključujemo:</p>
+          <ul>
+            <li>analizu biznisa i ciljeva (što web mora postići),</li>
+            <li>strukturu stranice i UX prijedlog,</li>
+            <li>moderni, tamni dizajn usklađen s brendom,</li>
+            <li>tehnički ispravnu implementaciju (brzina, sigurnost, mobile-first),</li>
+            <li>osnovnu <a href="/usluge/seo-optimizacija.html">SEO tehničku optimizaciju</a>,</li>
+            <li>osnovnu edukaciju za samostalno upravljanje sadržajem.</li>
+          </ul>
+
+          <h2>Kako do konkretne ponude?</h2>
+          <p>
+            Najbolji način da dobiješ konkretnu cijenu je da nam pošalješ:
+          </p>
+          <ul>
+            <li>kratak opis biznisa,</li>
+            <li>što želiš da web radi (leadovi, prodaja, prezentacija…),</li>
+            <li>par primjera webova koji ti se sviđaju.</li>
+          </ul>
+          <p>
+            Na temelju toga možemo predložiti realan opseg i okvirnu cijenu.
+          </p>
+
+          <p>
+            Javi nam se na <a href="mailto:ab@abcreations.site">ab@abcreations.site</a> ili
+            preko <a href="/index.html#contact">kontakt sekcije</a> na početnoj stranici.
+          </p>
+        </article>
       </div>
     </section>
   </main>
@@ -178,4 +276,5 @@
 
 </body>
 </html>
+
 
