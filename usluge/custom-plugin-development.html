@@ -5,17 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- AŽURIRAN SEO Naslov i Opis -->
-    <title>abcweb.studio - Usluga: Izrada WordPress Pluginova</title>
-    <meta name="description" content="Trebate specifičnu funkcionalnost? Nudimo izradu custom WordPress pluginova koji su brzi, sigurni i 100% prilagođeni vašem poslovanju.">
+    <title>Izrada WordPress Pluginova – abcweb.studio</title>
+    <meta name="description" content="Custom WordPress pluginovi prilagođeni vašem poslovanju. Izrada sigurnih, brzih i skalabilnih WordPress i WooCommerce pluginova u Zagrebu i cijeloj Hrvatskoj.">
     
-    <!-- 1. Moderni SVG Favicon (za Chrome, Firefox, itd.) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23fde047'/></svg>" type="image/svg+xml">
-    
-    <!-- 2. Fallback 16x16 PNG (za Safari / Stack Overflow rješenje) -->
-    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAB9JREFUOE9jZCAD/GdsD/ofkGIAAn/+/yP+M/4z/jNkygYAAGPjDXxyD/wYAAAAAElFTkSuQmCC" type="image/png" sizes="16x16">
-    
-    <!-- 3. Apple Touch Icon (za iOS početni zaslon) -->
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23fde047'/></svg>">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://abcweb.studio/usluge/custom-plugin-development.html">
+
+    <!-- Faviconi (isti kao na ostatku stranice) -->
+    <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml" sizes="32x32">
+    <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/images/favicon-180x180.svg" sizes="180x180">
+
+    <!-- FAQ Schema (JSON-LD) za Izradu WordPress pluginova -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Zašto mi je potreban custom WordPress plugin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom WordPress plugin je idealan kada gotova rješenja ne pokrivaju vaše specifične procese. Vlastiti plugin omogućuje funkcionalnost koja je potpuno prilagođena vašem poslovanju, bez nepotrebnog bloat-a i dodatnih pluginova."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Koliko traje izrada WordPress plugina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trajanje razvoja ovisi o kompleksnosti. Manji pluginovi mogu biti gotovi u roku od 1 do 2 tjedna, dok kompleksniji projekti s integracijama i naprednom logikom zahtijevaju više vremena. Nakon početnih konzultacija možemo dati konkretniju procjenu roka."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoće li plugin biti siguran i kompatibilan s budućim ažuriranjima WordPressa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plugin gradimo u skladu s WordPress coding standardima, s naglaskom na sigurnost, performanse i održivost. Prilikom razvoja pazimo na kompatibilnost s trenutnim i budućim verzijama WordPressa i WooCommercea te nudimo podršku i nadogradnje po dogovoru."
+          }
+        }
+      ]
+    }
+    </script>
     
     <!-- Tailwind CSS CDN s 'typography' pluginom -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
@@ -50,15 +83,15 @@
             transform: translateY(-4px);
             box-shadow: 0 10px 15px -3px rgb(253 224 71 / 0.2), 0 4px 6px -4px rgb(253 224 71 / 0.2);
         }
-         /* Postavke za 'prose' (preuzeto iz vašeg primjera i configa) */
+        /* Postavke za 'prose' */
         .prose {
              --tw-prose-body: theme(colors.secondary);
              --tw-prose-headings: theme(colors.primary);
              --tw-prose-lead: theme(colors.secondary);
-             --tw-prose-links: theme(colors.accent); /* Promijenjeno u accent boju */
+             --tw-prose-links: theme(colors.accent);
              --tw-prose-bold: theme(colors.primary);
              --tw-prose-counters: theme(colors.secondary);
-             --tw-prose-bullets: theme(colors.accent); /* Promijenjeno u accent boju */
+             --tw-prose-bullets: theme(colors.accent);
              --tw-prose-hr: theme(colors.surface);
              --tw-prose-quotes: theme(colors.primary);
              --tw-prose-quote-borders: theme(colors.accent);
@@ -84,7 +117,6 @@
                         'accent': '#fde047',
                         'accent-dark': '#facc15',
                     },
-                    // Dodajemo 'typography' konfiguraciju za 'prose'
                     typography: ({ theme }) => ({
                         invert: {
                             css: {
@@ -108,8 +140,7 @@
                         },
                     }),
                 }
-            },
-            // Plugin je već učitan putem CDN linka gore.
+            }
         }
     </script>
 </head>
@@ -125,13 +156,13 @@
                 
                 <!-- Navigacija (Ažurirani linkovi da vode na index.html sidra) -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
-                    <a href="index.html#work" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
-                    <a href="index.html#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
+                    <a href="/index.html#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
+                    <a href="/index.html#work" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
+                    <a href="/index.html#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
                     <a href="#" class="text-secondary hover:text-primary transition-colors duration-200">Blog</a>
                 </nav>
                 
-                <a href="index.html#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">
+                <a href="/index.html#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">
                     Kontakt
                 </a>
                 
@@ -149,25 +180,24 @@
         <!-- Mobile Menu (Popup) -->
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-surface border-b border-gray-700 z-40 md:hidden">
             <div class="container mx-auto max-w-7xl px-6 py-8 space-y-6">
-                <a href="index.html#services" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Usluge</a>
-                <a href="index.html#work" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Radovi</a>
-                <a href="index.html#about" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">O nama</a>
+                <a href="/index.html#services" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Usluge</a>
+                <a href="/index.html#work" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Radovi</a>
+                <a href="/index.html#about" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">O nama</a>
                 <a href="#" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Blog</a>
-                <a href="index.html#contact" class="block w-full text-center bg-accent text-base font-semibold px-5 py-3 rounded-lg hover:bg-accent-dark transition-all">
+                <a href="/index.html#contact" class="block w-full text-center bg-accent text-base font-semibold px-5 py-3 rounded-lg hover:bg-accent-dark transition-all">
                     Kontakt
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- AŽURIRAN MAIN CONTENT -->
+    <!-- MAIN CONTENT -->
     <main>
 
         <!-- Hero Sekcija Usluge -->
         <section class="bg-surface py-32 md:py-40 border-b border-surface">
             <div class="container mx-auto max-w-5xl px-6">
                 <a href="/index.html#services" class="text-base font-semibold text-primary hover:text-accent transition-colors inline-block py-2 mb-4">&larr; Sve Usluge</a>
-                <!-- AŽURIRAN NASLOV -->
                 <h1 class="font-heading text-6xl md:text-8xl lg:text-9xl text-primary leading-none tracking-tighter mt-4">
                     Izrada WordPress Pluginova<span class="text-accent">.</span>
                 </h1>
@@ -177,45 +207,101 @@
         <!-- Detaljan Opis Usluge -->
         <section class="bg-base py-24 md:py-32">
             <div class="container mx-auto max-w-5xl px-6">
-                <!-- Koristimo Tailwind Typography 'prose' za lijepo formatiranje teksta -->
                 <div class="prose prose-lg max-w-none text-secondary leading-relaxed space-y-6">
                     
                     <p class="text-2xl text-primary leading-relaxed">
-                        Ponekad gotova rješenja (off-the-shelf) jednostavno nisu dovoljna. Kada trebate jedinstvenu funkcionalnost koja je savršeno prilagođena vašem poslovnom procesu, mi uskačemo s izradom custom WordPress pluginova.
+                        Ponekad gotova rješenja (off-the-shelf) jednostavno nisu dovoljna. Kada trebate jedinstvenu funkcionalnost
+                        koja je savršeno prilagođena vašem poslovnom procesu, tu uskače <span class="text-primary">custom WordPress plugin</span>
+                        prilagođen upravo vašem webu.
                     </p>
                     
-                    <!-- AŽURIRAN TEKST (uklonjen Shopify) -->
                     <p>
-                        Bilo da se radi o kompleksnom kalkulatoru cijena, integraciji s vanjskim API-jem ili jedinstvenoj funkcionalnosti za vaš <strong class="text-primary">WordPress</strong> web, naš tim može to izgraditi. Fokusiramo se na pisanje čistog, sigurnog i efikasnog koda koji se besprijekorno integrira s vašom postojećom platformom bez usporavanja stranice.
+                        Bilo da se radi o <span class="text-primary">kompleksnom kalkulatoru cijena</span>, integraciji s vanjskim API-jem
+                        ili jedinstvenoj logici za vaš <strong class="text-primary">WordPress</strong> ili <strong class="text-primary">WooCommerce</strong> sustav,
+                        naš tim može to izgraditi. Fokusiramo se na pisanje čistog, sigurnog i efikasnog koda koji se besprijekorno
+                        integrira s vašom postojećom stranicom – bez nepotrebnog bloat-a i usporavanja.
                     </p>
                     
-                    <h2 class="text-3xl font-heading text-primary pt-8">Što je uključeno:</h2>
-                    <!-- AŽURIRANA LISTA (fokus na WP/Woo) -->
+                    <h2 class="text-3xl font-heading text-primary pt-8">Što je uključeno u izradu WordPress plugina</h2>
                     <ul>
-                        <li>Detaljna analiza vaših potreba i specifikacija.</li>
-                        <li>Izrada plugina za <strong class="text-primary">WordPress</strong> i <strong class="text-primary">WooCommerce</strong> platforme.</li>
-                        <li>100% fokus na WordPress ekosustav i standarde kodiranja.</li>
-                        <li>Integracija s vanjskim servisima i API-jevima (npr. sustavi za naplatu, CRM, ERP).</li>
-                        <li>Fokus na sigurnost, performanse (brzinu) i skalabilnost.</li>
-                        <li>Čista dokumentacija i podrška nakon lansiranja.</li>
+                        <li>Detaljna analiza vaših potreba i definiranje specifikacija.</li>
+                        <li>Razvoj plugina za <strong class="text-primary">WordPress</strong> i <strong class="text-primary">WooCommerce</strong>.</li>
+                        <li>Integracija s vanjskim servisima i API-jevima (npr. sustavi za naplatu, CRM, ERP, marketing alati).</li>
+                        <li>Fokus na sigurnost, performanse i kompatibilnost s WordPress standardima.</li>
+                        <li>Testiranje u staging okruženju i sigurno puštanje u produkciju.</li>
+                        <li>Dokumentacija i podrška nakon lansiranja, uz mogućnost daljnjeg razvoja.</li>
                     </ul>
 
-                    <p>Automatizirajte procese, ponudite nove mogućnosti svojim korisnicima i steknite konkurentsku prednost s tehnologijom koja je izgrađena isključivo za vas.</p>
-
+                    <p>
+                        Ako već koristite više pluginova koji djelomično rješavaju problem, često je isplativije imati
+                        jedno <span class="text-primary">custom rješenje</span> koje je precizno složeno za vaš način rada.
+                        Tako smanjujete rizik od konflikata, ubrzavate web i dobivate potpunu kontrolu nad funkcionalnostima.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Sekcija (ista kao na index.html) -->
+        <!-- MINI FAQ Sekcija: Custom WordPress pluginovi -->
+        <section id="faq" class="bg-surface py-24 md:py-32 border-y border-surface">
+            <div class="container mx-auto max-w-5xl px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold text-secondary uppercase tracking-wider">
+                        Česta pitanja
+                    </h2>
+                    <h2 class="mt-3 text-4xl md:text-5xl font-heading text-primary">
+                        FAQ – Izrada WordPress pluginova
+                    </h2>
+                    <p class="mt-6 text-secondary text-lg">
+                        Kratki odgovori na najčešća pitanja vezana uz razvoj custom WordPress i WooCommerce pluginova.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Pitanje 1 -->
+                    <div class="bg-base border border-surface rounded-lg p-6">
+                        <h3 class="text-lg font-heading text-primary">
+                            Zašto custom plugin umjesto gotovog?
+                        </h3>
+                        <p class="mt-3 text-secondary text-sm">
+                            Gotovi pluginovi često imaju višak funkcionalnosti i mogu usporavati stranicu. Custom plugin je građen
+                            isključivo za vaše potrebe, što znači manje bloat-a, bolju kontrolu i veću stabilnost.
+                        </p>
+                    </div>
+
+                    <!-- Pitanje 2 -->
+                    <div class="bg-base border border-surface rounded-lg p-6">
+                        <h3 class="text-lg font-heading text-primary">
+                            Koliko traje izrada plugina?
+                        </h3>
+                        <p class="mt-3 text-secondary text-sm">
+                            Jednostavniji pluginovi mogu biti gotovi za 1–2 tjedna, dok kompleksniji projekti traju duže.
+                            Nakon inicijalnog razgovora i specifikacije dajemo realnu procjenu roka i faza isporuke.
+                        </p>
+                    </div>
+
+                    <!-- Pitanje 3 -->
+                    <div class="bg-base border border-surface rounded-lg p-6">
+                        <h3 class="text-lg font-heading text-primary">
+                            Što je s održavanjem i updateovima?
+                        </h3>
+                        <p class="mt-3 text-secondary text-sm">
+                            Po potrebi nudimo i kontinuirano održavanje, nadogradnje i prilagodbe plugina u skladu s novim verzijama
+                            WordPressa, WooCommercea i drugih servisa s kojima je integriran.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Sekcija -->
         <section id="contact" class="bg-accent text-base">
             <div class="container mx-auto max-w-4xl px-6 py-24 md:py-32 text-center">
                 <h2 class="text-5xl md:text-6xl font-heading">
-                    Spremni za projekt?
+                    Spremni za custom rješenje?
                 </h2>
                 <p class="mt-6 text-xl text-gray-800 max-w-2xl mx-auto">
-                    Voljeli bismo čuti vaše ideje. Dogovorimo poziv i vidimo kako možemo pomoći vašem brendu da raste online.
+                    Opišite nam problem koji želite riješiti. Predložit ćemo najbolji pristup i okvirnu procjenu vremena i budžeta.
                 </p>
-                <!-- ISPRAVLJEN EMAIL -->
                 <a href="mailto:ab@abcreations.site" class="mt-10 inline-block bg-base text-primary px-10 py-4 rounded-lg text-lg font-bold hover:bg-surface transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
                     ab@abcreations.site
                 </a>
@@ -223,10 +309,8 @@
         </section>
 
     </main>
-    <!-- KRAJ AŽURIRANOG MAIN CONTENT-a -->
 
-
-    <!-- Footer (Ispravna verzija) -->
+    <!-- Footer -->
     <footer class="bg-base border-t border-surface">
         <div class="container mx-auto max-w-7xl px-6 py-12">
             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
@@ -247,7 +331,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript za Mobilni Izbornik (Ispravna verzija) -->
+    <!-- JavaScript za Mobilni Izbornik -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const menuButton = document.getElementById('mobile-menu-button');
@@ -270,7 +354,6 @@
                 const mobileMenuLinks = mobileMenu.querySelectorAll('a');
                 mobileMenuLinks.forEach(link => {
                     link.addEventListener('click', () => {
-                        // Na stranicama usluga, svaki klik na link zatvara izbornik (jer vodi na drugu stranicu)
                         if (!mobileMenu.classList.contains('hidden')) {
                             toggleMenu();
                         }
