@@ -5,10 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Optimiziran Naslov i Opis za ovu stranicu -->
-    <title>Usluge Web Dizajna Zagreb - Abcweb Studio</title>
-    <meta name="description" content="Nudimo profesionalne usluge web dizajna (UI/UX) u Zagrebu. Kreiramo strateški i vizualno privlačan dizajn koji povećava konverzije.">
-    <!-- DODAN: Favicon (Emoji pristup) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🟡</text></svg>">
+    <title>Web Dizajn Zagreb – abcweb.studio</title>
+    <meta name="description" content="Profesionalne usluge web dizajna (UI/UX) u Zagrebu. Strateški i vizualno privlačan web dizajn koji povećava konverzije i gradi prepoznatljiv brend.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://abcweb.studio/usluge/web-dizajn.html">
+
+    <!-- Faviconi (isti kao na početnoj) -->
+    <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml" sizes="32x32">
+    <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/images/favicon-180x180.svg" sizes="180x180">
+
+    <!-- FAQ Schema (JSON-LD) za Web Dizajn -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Što je uključeno u vašu uslugu web dizajna?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Naša usluga web dizajna uključuje istraživanje brenda i publike, wireframeove, UI/UX dizajn, izradu vizualnog identiteta za web te pripremu dizajna za razvoj, bilo da se radi o novoj web stranici ili redizajnu postojeće."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Koja je razlika između web dizajna i izrade web stranica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Web dizajn se fokusira na vizualni izgled i korisničko iskustvo (UI/UX), dok je izrada web stranica tehnička implementacija dizajna u funkcionalnu stranicu. U abcweb.studio povezujemo oba područja i po potrebi odrađujemo i dizajn i razvoj."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Koliko traje proces web dizajna?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Za manju poslovnu web stranicu proces web dizajna obično traje 1 do 2 tjedna, ovisno o kompleksnosti i brzini povratnih informacija. Za veće projekte rok definiramo individualno nakon početnih konzultacija."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Radite li redizajn postojećih web stranica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da, često radimo redizajn postojećih web stranica koje vizualno stare ili ne postižu željene rezultate. Analiziramo trenutnu situaciju, definiramo ciljeve i predlažemo novi UI/UX dizajn koji bolje podržava vaše poslovanje."
+          }
+        }
+      ]
+    }
+    </script>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -77,14 +125,14 @@
                 
                 <!-- Navigacija (linkovi ažurirani da rade s index.html) -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
-                    <a href="index.html#work" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
-                    <a href="index.html#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
+                    <a href="/index.html#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
+                    <a href="/index.html#work" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
+                    <a href="/index.html#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
                     <a href="#" class="text-secondary hover:text-primary transition-colors duration-200">Blog</a>
                 </nav>
                 
                 <!-- Contact CTA (linka na dno index.html) -->
-                <a href="index.html#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">
+                <a href="/index.html#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">
                     Kontakt
                 </a>
                 
@@ -118,25 +166,92 @@
                 <div class="prose prose-lg max-w-none text-secondary leading-relaxed space-y-6">
                     
                     <p class="text-2xl text-primary leading-relaxed">
-                        Dobar <span class="text-primary">web dizajn</span> nije samo estetika; to je strategija. Naš proces započinje dubinskom analizom vašeg brenda i ciljane publike. Mi ne stvaramo samo "lijepe" stranice; stvaramo digitalna iskustva koja vode korisnike prema cilju.
+                        Dobar <span class="text-primary">web dizajn</span> nije samo estetika; to je strategija. Naš proces započinje dubinskom analizom vašeg brenda, tržišta i ciljane publike u Hrvatskoj. 
+                        Ne stvaramo samo “lijepe” stranice; stvaramo <span class="text-primary">digitalna iskustva</span> koja vode korisnike prema cilju i podržavaju vaš poslovni rast.
                     </p>
                     
-                    <h2 class="text-3xl font-heading text-primary pt-8">UI/UX Dizajn koji Povećava Konverzije</h2>
+                    <h2 class="text-3xl font-heading text-primary pt-8">UI/UX web dizajn koji povećava konverzije</h2>
                     <p>
-                        Nudimo kompletne usluge <span class="text-primary">UI/UX dizajna</span> (dizajn korisničkog sučelja i korisničkog iskustva) koje osiguravaju da je vaša stranica intuitivna i laka za korištenje. Svaki element, od gumba do navigacije, pažljivo je planiran kako bi smanjio trenje i potaknuo korisnika na akciju. Izrađujemo <span class="text-primary">vizualni identitet</span> koji vas izdvaja od konkurencije. Naš cilj je stvoriti dizajn koji ne samo da je lijep, već i <span class="text-primary">povećava konverzije</span> i zadržava korisnike na stranici.
+                        Nudimo kompletne usluge <span class="text-primary">UI/UX web dizajna</span> (dizajn korisničkog sučelja i korisničkog iskustva) koje osiguravaju da je vaša stranica intuitivna i laka za korištenje. 
+                        Svaki element, od gumba do navigacije, pažljivo je planiran kako bi smanjio trenje i potaknuo korisnika na akciju. 
+                        Izrađujemo <span class="text-primary">vizualni identitet za web</span> koji vas izdvaja od konkurencije i gradi povjerenje.
                     </p>
                     
-                    <h2 class="text-3xl font-heading text-primary pt-8">Naš Proces Dizajna</h2>
+                    <h2 class="text-3xl font-heading text-primary pt-8">Naš proces web dizajna</h2>
                     <ul>
-                        <li><strong>Istraživanje i Strategija:</strong> Analiziramo vaše poslovanje, konkurenciju i ciljanu publike u Hrvatskoj.</li>
-                        <li><strong>Wireframing (Žičani modeli):</strong> Kreiramo osnovnu strukturu stranice (blueprint) fokusiranu na korisničko putovanje.</li>
-                        <li><strong>Dizajn Sučelja (UI):</strong> Primjenjujemo boje, tipografiju i vizuale kako bismo stvorili moderan i brendiran izgled.</li>
+                        <li><strong>Istraživanje i Strategija:</strong> Analiziramo vaše poslovanje, konkurenciju i ciljanu publiku (lokalno i šire).</li>
+                        <li><strong>Wireframing (žičani modeli):</strong> Kreiramo osnovnu strukturu stranice fokusiranu na korisničko putovanje.</li>
+                        <li><strong>Dizajn sučelja (UI):</strong> Primjenjujemo boje, tipografiju i vizuale koji su u skladu s vašim brendom.</li>
                         <li><strong>Prototip i Testiranje:</strong> Izrađujemo interaktivni prototip kako bismo testirali tokove prije same izrade.</li>
                     </ul>
 
                     <p>
-                        Bilo da trebate redizajn postojeće stranice ili potpuno novi vizualni identitet, naš tim dizajnera u Zagrebu spreman je pretvoriti vašu viziju u stvarnost.
+                        Bilo da trebate redizajn postojeće stranice ili potpuno novi vizualni identitet, naš <span class="text-primary">web dizajn studio iz Zagreba</span> spreman je pretvoriti vašu viziju u stvarnost.
+                        Ako uz dizajn trebate i kompletnu <a href="/usluge/web-izrada.html" class="text-primary underline underline-offset-4 decoration-accent">izradu web stranica</a>, možemo preuzeti cijeli projekt – od prvog skica do lansiranja.
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Sekcija: Web Dizajn -->
+        <section id="faq" class="bg-surface py-24 md:py-32 border-y border-surface">
+            <div class="container mx-auto max-w-5xl px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold text-secondary uppercase tracking-wider">
+                        Česta pitanja
+                    </h2>
+                    <h2 class="mt-3 text-4xl md:text-5xl font-heading text-primary">
+                        FAQ – Web dizajn
+                    </h2>
+                    <p class="mt-6 text-secondary text-lg">
+                        Odgovori na najčešća pitanja o našim uslugama web dizajna, procesu rada i suradnji.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Pitanje 1 -->
+                    <div class="bg-base border border-surface rounded-lg p-6">
+                        <h3 class="text-xl font-heading text-primary">
+                            Što je uključeno u vašu uslugu web dizajna?
+                        </h3>
+                        <p class="mt-3 text-secondary">
+                            Usluga web dizajna uključuje istraživanje, wireframeove, UI/UX dizajn, vizualni identitet za web te pripremu dizajna za razvoj. 
+                            Po potrebi možemo preuzeti i kompletnu izradu web stranice, zajedno s tehničkom implementacijom.
+                        </p>
+                    </div>
+
+                    <!-- Pitanje 2 -->
+                    <div class="bg-base border border-surface rounded-lg p-6">
+                        <h3 class="text-xl font-heading text-primary">
+                            Koja je razlika između web dizajna i izrade web stranica?
+                        </h3>
+                        <p class="mt-3 text-secondary">
+                            Web dizajn se fokusira na izgled, UX i strukturu sadržaja, dok je izrada web stranica tehnička implementacija dizajna (kodiranje, CMS, integracije).
+                            U abcweb.studio možemo odraditi obje faze, ili surađivati s vašim postojećim developerom.
+                        </p>
+                    </div>
+
+                    <!-- Pitanje 3 -->
+                    <div class="bg-base border border-surface rounded-lg p-6">
+                        <h3 class="text-xl font-heading text-primary">
+                            Koliko traje proces web dizajna?
+                        </h3>
+                        <p class="mt-3 text-secondary">
+                            Za manju poslovnu web stranicu proces dizajna obično traje 1–2 tjedna, ovisno o kompleksnosti i količini sadržaja.
+                            Kod većih projekata rok definiramo nakon početnih konzultacija i pregleda materijala.
+                        </p>
+                    </div>
+
+                    <!-- Pitanje 4 -->
+                    <div class="bg-base border border-surface rounded-lg p-6">
+                        <h3 class="text-xl font-heading text-primary">
+                            Radite li redizajn postojećih web stranica?
+                        </h3>
+                        <p class="mt-3 text-secondary">
+                            Da. Ako imate web stranicu koja vizualno ne prati vaš brend ili ne daje rezultate, možemo napraviti potpuni ili parcijalni redizajn.
+                            Fokusiramo se na UX, moderni izgled i jasno komunicirane poruke koje vode prema konverzijama.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -181,3 +296,4 @@
 
 </body>
 </html>
+
