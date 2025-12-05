@@ -3,24 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- AŽURIRAN NASLOV -->
     <title>abcweb.studio - Izrada Web Stranica, Web Dizajn & SEO | Zagreb</title>
-    <!-- AŽURIRAN OPIS -->
     <meta name="description" content="Mi smo abcweb.studio, studio iz Zagreba. Specijalizirani smo za izradu web stranica, strateški web dizajn i SEO optimizaciju koja donosi stvarne poslovne rezultate.">
-    <!-- Canonical -->
     <link rel="canonical" href="https://abcweb.studio/">
     
-    <!-- Glavni favicon (SVG) -->
     <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml" sizes="32x32">
     <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml">
     
-    <!-- Apple Touch Icon (za iOS početni zaslon) -->
     <link rel="apple-touch-icon" href="/images/favicon-180x180.svg" sizes="180x180">
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts - Anton (za naslove) & Inter (za tekst) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -71,16 +64,13 @@
 </head>
 <body class="bg-base text-primary antialiased">
 
-    <!-- Header & Navigation -->
     <header class="sticky top-0 bg-base/90 backdrop-blur-md z-50 border-b border-surface">
         <div class="container mx-auto max-w-7xl px-6 py-5">
             <div class="flex justify-between items-center">
-                <!-- LOGO -->
                 <a href="index.html" class="text-2xl font-bold text-accent font-heading">
                     abcweb
                 </a>
                 
-                <!-- Navigation -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
                     <a href="#work" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
@@ -88,18 +78,14 @@
                     <a href="/blog/" class="text-secondary hover:text-primary transition-colors duration-200">Blog</a>
                 </nav>
                 
-                <!-- Contact CTA -->
                 <a href="#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">
                     Kontakt
                 </a>
                 
-                <!-- Mobile Menu Button -->
                 <button id="mobile-menu-button" class="md:hidden text-accent z-50 relative w-6 h-6">
-                    <!-- Hamburger Icon (Open) -->
                     <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 transition-opacity duration-200 ease-in-out">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
-                    <!-- Close Icon (X) -->
                     <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hidden transition-opacity duration-200 ease-in-out">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                     </svg>
@@ -107,7 +93,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (Popup) -->
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-surface border-b border-gray-700 z-40 md:hidden">
             <div class="container mx-auto max-w-7xl px-6 py-8 space-y-6">
                 <a href="#services" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Usluge</a>
@@ -121,10 +106,8 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main>
 
-        <!-- Hero Section -->
         <section class="bg-base py-32 md:py-48">
             <div class="container mx-auto max-w-5xl px-6 text-center">
                 <h1 class="font-heading text-6xl md:text-8xl lg:text-9xl text-primary leading-none tracking-tighter">
@@ -139,7 +122,6 @@
             </div>
         </section>
 
-        <!-- Services Section -->
         <section id="services" class="bg-surface py-24 md:py-32 border-y border-surface">
             <div class="container mx-auto max-w-7xl px-6">
                 <div class="text-center max-w-3xl mx-auto">
@@ -162,6 +144,15 @@
                     <a href="/usluge/web-izrada.html" class="block border-b border-surface group">
                         <div class="flex justify-between items-center w-full py-6 text-left">
                             <span class="font-heading text-4xl md:text-5xl text-primary group-hover:text-accent transition-colors">WEB IZRADA</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-accent transform transition-transform duration-300 group-hover:translate-x-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </div>
+                    </a>
+
+                    <a href="/usluge/izrada-mobilnih-aplikacija.html" class="block border-b border-surface group">
+                        <div class="flex justify-between items-center w-full py-6 text-left">
+                            <span class="font-heading text-4xl md:text-5xl text-primary group-hover:text-accent transition-colors">IZRADA MOBILNIH APLIKACIJA</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-accent transform transition-transform duration-300 group-hover:translate-x-2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                             </svg>
@@ -198,7 +189,6 @@
             </div>
         </section>
         
-        <!-- Stats Section -->
         <section id="stats" class="bg-base py-24 md:py-32">
             <div class="container mx-auto max-w-7xl px-6">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
@@ -218,7 +208,6 @@
             </div>
         </section>
 
-        <!-- Portfolio Section -->
         <section id="work" class="py-24 md:py-32 bg-surface border-y border-surface">
             <div class="container mx-auto max-w-7xl px-6">
                 <div class="text-center max-w-3xl mx-auto">
@@ -252,7 +241,6 @@
             </div>
         </section>
 
-        <!-- BLOG TEASER SEKCIJA -->
         <section class="bg-base py-24 md:py-32 border-b border-surface">
             <div class="container mx-auto max-w-7xl px-6">
                 <div class="text-center max-w-3xl mx-auto">
@@ -266,7 +254,6 @@
                 </div>
 
                 <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                    <!-- Post 1 -->
                     <article class="bg-surface border border-surface rounded-xl p-6 card-lift">
                         <p class="text-xs uppercase tracking-widest text-secondary mb-2">
                             Izrada web stranica
@@ -282,9 +269,8 @@
                         <a href="/blog/koliko-kosta-izrada-web-stranice.html" class="mt-4 inline-block text-sm font-semibold text-accent">
                             Pročitaj više →
                         </a>
-</article>
+                    </article>
 
-                    <!-- Post 2 -->
                     <article class="bg-surface border border-surface rounded-xl p-6 card-lift">
                         <p class="text-xs uppercase tracking-widest text-secondary mb-2">
                             SEO
@@ -311,7 +297,6 @@
             </div>
         </section>
 
-        <!-- Testimonial Section -->
         <section id="testimonial" class="bg-base py-24 md:py-32">
             <div class="container mx-auto max-w-4xl px-6 text-center">
                 <h2 class="text-base font-semibold text-secondary uppercase tracking-wider">Što Klijenti Kažu</h2>
@@ -327,7 +312,6 @@
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="bg-surface py-24 md:py-32 border-y border-surface">
             <div class="container mx-auto max-w-3xl px-6 text-center">
                 <h2 class="text-5xl md:text-6xl font-heading text-primary">
@@ -339,7 +323,6 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
         <section id="contact" class="bg-accent text-base">
             <div class="container mx-auto max-w-4xl px-6 py-24 md:py-32 text-center">
                 <h2 class="text-5xl md:text-6xl font-heading">
@@ -356,7 +339,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-base border-t border-surface">
         <div class="container mx-auto max-w-7xl px-6 py-12">
             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
@@ -372,7 +354,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript za Mobilni Izbornik -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const menuButton = document.getElementById('mobile-menu-button');
@@ -415,18 +396,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
