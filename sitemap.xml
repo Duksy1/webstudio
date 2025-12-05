@@ -1,58 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <!-- 1. Naslovnica (Homepage) -->
     <url>
         <loc>https://abcweb.studio/</loc>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
 
-    <!-- 2. Usluge -->
-
-    <!-- Web Dizajn -->
     <url>
         <loc>https://abcweb.studio/usluge/web-dizajn.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Web Izrada -->
     <url>
         <loc>https://abcweb.studio/usluge/web-izrada.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- SEO Optimizacija -->
     <url>
         <loc>https://abcweb.studio/usluge/seo-optimizacija.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Copywriting -->
     <url>
         <loc>https://abcweb.studio/usluge/copywriting.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Izrada WordPress Pluginova -->
     <url>
         <loc>https://abcweb.studio/usluge/custom-plugin-development.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    
+    <url>
+        <loc>https://abcweb.studio/usluge/izrada-mobilnih-aplikacija.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
-    <!-- 3. Blog Listing -->
     <url>
         <loc>https://abcweb.studio/blog/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
-
-    <!-- 4. Pojedinačni blog postovi -->
 
     <url>
         <loc>https://abcweb.studio/blog/koliko-kosta-izrada-web-stranice.html</loc>
