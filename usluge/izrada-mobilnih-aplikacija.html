@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="hr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Izrada Mobilnih Aplikacija (iOS i Android) – abcweb.studio</title>
+    <meta name="description" content="Profesionalni razvoj mobilnih aplikacija za iOS i Android. Izrada modernih, brzih i skalabilnih aplikacija uz objavu na App Store i Google Play.">
+    
+    <link rel="canonical" href="https://abcweb.studio/usluge/mobile-app-development.html">
+
+    <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml" sizes="32x32">
+    <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/images/favicon-180x180.svg" sizes="180x180">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Razvijate li aplikacije za iOS i Android?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Koristimo moderne cross-platform tehnologije (poput React Native-a ili Fluttera) koje nam omogućuju da istovremeno razvijemo vrhunsku aplikaciju za obje platforme, čime štedimo vaše vrijeme i budžet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Možete li objaviti moju aplikaciju na App Store i Google Play?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Apsolutno. Vodimo vas kroz cijeli proces verifikacije i objave. Brinemo o svim tehničkim zahtjevima i smjernicama koje Apple i Google postavljaju kako bi vaša aplikacija bila uspješno odobrena."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Koliko košta izrada mobilne aplikacije?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cijena ovisi o kompleksnosti funkcija (npr. treba li aplikacija GPS, kameru, sustav naplate, chat). Nakon inicijalnog razgovora o vašoj ideji, možemo vam dati preciznu ponudu i plan razvoja."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-heading {
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+        .prose {
+             --tw-prose-body: theme(colors.secondary);
+             --tw-prose-headings: theme(colors.primary);
+             --tw-prose-lead: theme(colors.secondary);
+             --tw-prose-links: theme(colors.accent);
+             --tw-prose-bold: theme(colors.primary);
+             --tw-prose-counters: theme(colors.secondary);
+             --tw-prose-bullets: theme(colors.accent);
+             --tw-prose-hr: theme(colors.surface);
+             --tw-prose-quotes: theme(colors.primary);
+             --tw-prose-quote-borders: theme(colors.accent);
+             --tw-prose-captions: theme(colors.secondary);
+             --tw-prose-code: theme(colors.primary);
+             --tw-prose-pre-code: theme(colors.primary);
+             --tw-prose-pre-bg: theme(colors.surface);
+             --tw-prose-th-borders: theme(colors.surface);
+             --tw-prose-td-borders: theme(colors.surface);
+        }
+    </style>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'base': '#111111',
+                        'surface': '#1c1c1c',
+                        'primary': '#f9fafb',
+                        'secondary': '#a1a1aa',
+                        'accent': '#fde047',
+                        'accent-dark': '#facc15',
+                    },
+                    typography: ({ theme }) => ({
+                        invert: {
+                            css: {
+                                '--tw-prose-body': theme('colors.secondary'),
+                                '--tw-prose-headings': theme('colors.primary'),
+                            },
+                        },
+                    }),
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-base text-primary antialiased">
+
+    <header class="sticky top-0 bg-base/90 backdrop-blur-md z-50 border-b border-surface">
+        <div class="container mx-auto max-w-7xl px-6 py-5">
+            <div class="flex justify-between items-center">
+                <a href="/index.html" class="text-2xl font-bold text-accent font-heading">
+                    abcweb
+                </a>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="/index.html#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
+                    <a href="/index.html#work" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
+                    <a href="/index.html#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
+                    <a href="#" class="text-secondary hover:text-primary transition-colors duration-200">Blog</a>
+                </nav>
+                
+                <a href="/index.html#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">
+                    Kontakt
+                </a>
+                
+                <button id="mobile-menu-button" class="md:hidden text-accent z-50 relative w-6 h-6">
+                    <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 transition-opacity duration-200 ease-in-out">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hidden transition-opacity duration-200 ease-in-out">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-surface border-b border-gray-700 z-40 md:hidden">
+            <div class="container mx-auto max-w-7xl px-6 py-8 space-y-6">
+                <a href="/index.html#services" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Usluge</a>
+                <a href="/index.html#work" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Radovi</a>
+                <a href="/index.html#about" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">O nama</a>
+                <a href="#" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Blog</a>
+                <a href="/index.html#contact" class="block w-full text-center bg-accent text-base font-semibold px-5 py-3 rounded-lg hover:bg-accent-dark transition-all">
+                    Kontakt
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="bg-surface py-32 md:py-40 border-b border-surface">
+            <div class="container mx-auto max-w-5xl px-6">
+                <a href="/index.html#services" class="text-base font-semibold text-primary hover:text-accent transition-colors inline-block py-2 mb-4">&larr; Sve Usluge</a>
+                <h1 class="font-heading text-6xl md:text-8xl lg:text-9xl text-primary leading-none tracking-tighter mt-4">
+                    Izrada Mobilnih Aplikacija<span class="text-accent">.</span>
+                </h1>
+            </div>
+        </section>
+
+        <section class="bg-base py-24 md:py-32">
+            <div class="container mx-auto max-w-5xl px-6">
+                <div class="prose prose-lg max-w-none text-secondary leading-relaxed space-y-6">
+                    
+                    <p class="text-2xl text-primary leading-relaxed">
+                        Web stranica je nužna, ali <span class="text-primary">mobilna aplikacija</span> stvara lojalnost. 
+                        Kada se vaša ikona nalazi na ekranu korisnika, vi ste im uvijek na dohvat ruke. To je direktan kanal 
+                        komunikacije koji web preglednik ne može zamijeniti.
+                    </p>
+                    
+                    <p>
+                        Specijalizirani smo za razvoj modernih mobilnih aplikacija za <strong class="text-primary">iOS</strong> i <strong class="text-primary">Android</strong> sustave. 
+                        Neovisno o tome trebate li aplikaciju za interno poslovanje, startup ideju ili proširenje postojećeg web shopa, 
+                        gradimo rješenja koja su brza, intuitivna i sigurna. Naš fokus nije samo napisati kod, već osigurati da vaša aplikacija 
+                        uspješno prođe proces objave na <span class="text-primary">App Store</span> i <span class="text-primary">Google Play</span>.
+                    </p>
+                    
+                    <h2 class="text-3xl font-heading text-primary pt-8">Što uključuje naš razvoj aplikacija?</h2>
+                    <ul>
+                        <li><strong class="text-primary">iOS i Android razvoj:</strong> Gradimo aplikacije koje rade savršeno na oba sustava, koristeći moderne tehnologije (React Native / Flutter) za optimalan budžet.</li>
+                        <li><strong class="text-primary">UI/UX Dizajn za aplikacije:</strong> Specifičan dizajn prilagođen dodiru (touch interface), gestama i smjernicama Applea i Googlea.</li>
+                        <li><strong class="text-primary">Push Notifikacije:</strong> Implementacija sustava za slanje obavijesti korisnicima kako bi se vratili u aplikaciju.</li>
+                        <li><strong class="text-primary">Integracija hardvera:</strong> Korištenje kamere, GPS lokacije, Bluetootha ili biometrije (FaceID/TouchID).</li>
+                        <li><strong class="text-primary">Objava na Storeove:</strong> Vodimo vas kroz birokraciju i tehničke zahtjeve za objavu na Apple App Store i Google Play Store.</li>
+                        <li><strong class="text-primary">Održavanje i analitika:</strong> Praćenje rada aplikacije, ispravljanje bugova i nadogradnje s novim verzijama sustava.</li>
+                    </ul>
+
+                    <p>
+                        Mobilna aplikacija nije samo "još jedan ekran". To je alat za <span class="text-primary">zadržavanje korisnika</span>. 
+                        Omogućite svojim klijentima bržu kupovinu, pristup podacima bez interneta i personalizirano iskustvo koje web ne može pružiti.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="bg-surface py-24 md:py-32 border-y border-surface">
+            <div class="container mx-auto max-w-5xl px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold text-secondary uppercase tracking-wider">
+                        Česta pitanja
+                    </h2>
+                    <h2 class="mt-3 text-4xl md:text-5xl font-heading text-primary">
+                        FAQ – Mobilne Aplikacije
+                    </h2>
+                    <p class="mt-6 text-secondary text-lg">
+                        Ključne informacije o procesu razvoja iOS i Android aplikacija.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-base border border-surface rounded-lg p-6">
+                        <h3 class="text-lg font-heading text-primary">
+                            iOS ili Android?
+                        </h3>
+                        <p class="mt-3 text-secondary text-sm">
+                            Zašto birati? Koristimo "cross-platform" tehnologije koje nam omogućuju da razvijemo aplikaciju jednom, 
+                            a ona radi izvrsno i na iPhoneu i na Android uređajima. To drastično smanjuje cijenu i vrijeme izrade.
+                        </p>
+                    </div>
+
+                    <div class="bg-base border border-surface rounded-lg p-6">
+                        <h3 class="text-lg font-heading text-primary">
+                            Objavljujete li na Store?
+                        </h3>
+                        <p class="mt-3 text-secondary text-sm">
+                            Da. To je najkompliciraniji dio za većinu klijenata. Mi preuzimamo proces postavljanja na App Store i Google Play, 
+                            uključujući pripremu grafika, opisa i rješavanje tehničkih uvjeta.
+                        </p>
+                    </div>
+
+                    <div class="bg-base border border-surface rounded-lg p-6">
+                        <h3 class="text-lg font-heading text-primary">
+                            Mogu li slati obavijesti?
+                        </h3>
+                        <p class="mt-3 text-secondary text-sm">
+                            Apsolutno. Push notifikacije su glavna prednost aplikacija. Možemo integrirati sustav pomoću kojeg 
+                            ćete korisnicima slati novosti, akcije ili podsjetnike direktno na njihov zaslon.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-accent text-base">
+            <div class="container mx-auto max-w-4xl px-6 py-24 md:py-32 text-center">
+                <h2 class="text-5xl md:text-6xl font-heading">
+                    Imate ideju za aplikaciju?
+                </h2>
+                <p class="mt-6 text-xl text-gray-800 max-w-2xl mx-auto">
+                    Pretvorimo vašu ideju u funkcionalnu aplikaciju na App Storeu. Javite nam se za besplatnu procjenu projekta.
+                </p>
+                <a href="mailto:ab@abcreations.site" class="mt-10 inline-block bg-base text-primary px-10 py-4 rounded-lg text-lg font-bold hover:bg-surface transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                    ab@abcreations.site
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-base border-t border-surface">
+        <div class="container mx-auto max-w-7xl px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div>
+                    <a href="/index.html" class="text-2xl font-bold text-accent font-heading">
+                        abcweb
+                    </a>
+                    <p class="text-secondary mt-2">
+                        &copy; 2025 abcweb.studio. Sva prava pridržana. Zagreb, Hrvatska.
+                    </p>
+                </div>
+                <div class="flex justify-center space-x-6 mt-6 md:mt-0">
+                    <a href="#" class="text-secondary hover:text-primary">Twitter</a>
+                    <a href="#" class="text-secondary hover:text-primary">LinkedIn</a>
+                    <a href="#" class="text-secondary hover:text-primary">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('icon-open');
+            const iconClose = document.getElementById('icon-close');
+
+            if (menuButton && mobileMenu && iconOpen && iconClose) {
+                const toggleMenu = () => {
+                    mobileMenu.classList.toggle('hidden');
+                    iconOpen.classList.toggle('hidden');
+                    iconClose.classList.toggle('hidden');
+                };
+                
+                menuButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleMenu();
+                });
+
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            toggleMenu();
+                        }
+                    });
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                        toggleMenu();
+                    }
+                });
+
+            } else {
+                console.error("Elementi mobilnog izbornika nisu pronađeni.");
+            }
+        });
+    </script>
+
+</body>
+</html>
