@@ -5,13 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>abcweb.studio - Izrada Web Stranica, Web Dizajn & SEO | Zagreb</title>
     <meta name="description" content="Mi smo abcweb.studio, studio iz Zagreba. Specijalizirani smo za izradu web stranica, strateški web dizajn i SEO optimizaciju koja donosi stvarne poslovne rezultate.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="abcweb.studio">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="canonical" href="https://abcweb.studio/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="abcweb.studio - Izrada Web Stranica, Web Dizajn & SEO | Zagreb">
+    <meta property="og:description" content="Studio iz Zagreba specijaliziran za izradu web stranica, strateški web dizajn i SEO optimizaciju koja donosi stvarne poslovne rezultate.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://abcweb.studio/">
+    <meta property="og:locale" content="hr_HR">
+    <meta property="og:site_name" content="abcweb.studio">
     
     <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml" sizes="32x32">
     <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml">
     
     <link rel="apple-touch-icon" href="/images/favicon-180x180.svg" sizes="180x180">
     
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,6 +76,28 @@
                 }
             }
         }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "abcweb.studio",
+      "url": "https://abcweb.studio",
+      "email": "ab@abcreations.site",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zagreb",
+        "addressCountry": "HR"
+      },
+      "description": "Studio iz Zagreba specijaliziran za izradu web stranica, web dizajn i SEO optimizaciju.",
+      "knowsAbout": ["Web dizajn", "Izrada web stranica", "SEO optimizacija", "Copywriting", "WordPress", "Mobilne aplikacije"],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Hrvatska"
+      }
+    }
     </script>
 </head>
 <body class="bg-base text-primary antialiased">
@@ -129,7 +163,7 @@
         <section id="services" class="bg-surface py-24 md:py-32 border-y border-surface">
             <div class="container mx-auto max-w-7xl px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-base font-semibold text-secondary uppercase tracking-wider">Naše Usluge</h2>
+                    <p class="text-base font-semibold text-secondary uppercase tracking-wider">Naše Usluge</p>
                     <h2 class="mt-3 text-5xl md:text-6xl font-heading text-primary">
                         Izrada Web Stranica, Dizajn i SEO Optimizacija
                     </h2>
@@ -215,7 +249,7 @@
         <section id="work" class="py-24 md:py-32 bg-surface border-y border-surface">
             <div class="container mx-auto max-w-7xl px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-secondary font-heading text-lg tracking-widest">NAŠI RADOVI</h2>
+                    <p class="text-secondary font-heading text-lg tracking-widest">NAŠI RADOVI</p>
                     <h2 class="font-heading text-5xl md:text-6xl text-primary mt-4">
                         Odabrani Projekti
                     </h2>
@@ -248,7 +282,7 @@
         <section class="bg-base py-24 md:py-32 border-b border-surface">
             <div class="container mx-auto max-w-7xl px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-secondary font-heading text-lg tracking-widest">BLOG</h2>
+                    <p class="text-secondary font-heading text-lg tracking-widest">BLOG</p>
                     <h2 class="font-heading text-5xl md:text-6xl text-primary mt-4">
                         Iz bloga abcweb.studio
                     </h2>
@@ -303,7 +337,7 @@
 
         <section id="testimonial" class="bg-base py-24 md:py-32">
             <div class="container mx-auto max-w-4xl px-6 text-center">
-                <h2 class="text-base font-semibold text-secondary uppercase tracking-wider">Što Klijenti Kažu</h2>
+                <p class="text-base font-semibold text-secondary uppercase tracking-wider">Što Klijenti Kažu</p>
                 <blockquote class="mt-8">
                     <p class="text-3xl md:text-4xl font-semibold text-primary leading-snug">
                         "<span class="text-accent/80">abcweb</span> nije samo izradio web stranicu; izgradili su motor za naše novo poslovanje. Njihov proces je bio jasan, kreativan i usmjeren na rezultate."
@@ -351,7 +385,7 @@
                         abcweb
                     </a>
                     <p class="text-secondary mt-2">
-                        &copy; 2025 abcweb.studio. Sva prava pridržana. Zagreb, Hrvatska.
+                        &copy; 2026 abcweb.studio. Sva prava pridržana. Zagreb, Hrvatska.
                     </p>
                 </div>
             </div>
