@@ -21,6 +21,9 @@
     <meta property="og:url" content="https://abcweb.studio/usluge/web-dizajn.html">
     <meta property="og:locale" content="hr_HR">
     <meta property="og:site_name" content="abcweb.studio">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Web Dizajn Zagreb – abcweb.studio">
+    <meta name="twitter:description" content="Profesionalne usluge web dizajna (UI/UX) u Zagrebu. Strateški i vizualno privlačan web dizajn koji povećava konverzije.">
 
     <!-- Faviconi (isti kao na početnoj) -->
     <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml" sizes="32x32">
@@ -65,6 +68,19 @@
             "text": "Da, često radimo redizajn postojećih web stranica koje vizualno stare ili ne postižu željene rezultate. Analiziramo trenutnu situaciju, definiramo ciljeve i predlažemo novi UI/UX dizajn koji bolje podržava vaše poslovanje."
           }
         }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Početna", "item": "https://abcweb.studio/"},
+        {"@type": "ListItem", "position": 2, "name": "Usluge", "item": "https://abcweb.studio/#services"},
+        {"@type": "ListItem", "position": 3, "name": "Web Dizajn", "item": "https://abcweb.studio/usluge/web-dizajn.html"}
       ]
     }
     </script>
@@ -148,7 +164,7 @@
                 </a>
                 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden text-accent">
+                <button class="md:hidden text-accent" aria-label="Otvori izbornik" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>

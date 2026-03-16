@@ -21,6 +21,9 @@
     <meta property="og:url" content="https://abcweb.studio/usluge/copywriting.html">
     <meta property="og:locale" content="hr_HR">
     <meta property="og:site_name" content="abcweb.studio">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Copywriting i Content Marketing – abcweb.studio">
+    <meta name="twitter:description" content="Profesionalne copywriting i content marketing usluge za hrvatsko tržište. Jasan, uvjerljiv i SEO optimiziran sadržaj.">
 
     <!-- Faviconi (kao na ostalim stranicama) -->
     <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml" sizes="32x32">
@@ -57,6 +60,19 @@
             "text": "Naravno. Često radimo reviziju i optimizaciju postojećeg sadržaja – pojednostavljujemo poruke, pojašnjavamo benefite, dodajemo SEO elemente i prilagođavamo ton glasa vašem brendu."
           }
         }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Početna", "item": "https://abcweb.studio/"},
+        {"@type": "ListItem", "position": 2, "name": "Usluge", "item": "https://abcweb.studio/#services"},
+        {"@type": "ListItem", "position": 3, "name": "Copywriting", "item": "https://abcweb.studio/usluge/copywriting.html"}
       ]
     }
     </script>
@@ -139,7 +155,7 @@
                 </a>
                 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden text-accent">
+                <button class="md:hidden text-accent" aria-label="Otvori izbornik" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>

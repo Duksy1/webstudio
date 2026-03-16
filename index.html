@@ -17,6 +17,9 @@
     <meta property="og:url" content="https://abcweb.studio/">
     <meta property="og:locale" content="hr_HR">
     <meta property="og:site_name" content="abcweb.studio">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="abcweb.studio - Izrada Web Stranica, Web Dizajn & SEO | Zagreb">
+    <meta name="twitter:description" content="Studio iz Zagreba specijaliziran za izradu web stranica, strateški web dizajn i SEO optimizaciju koja donosi stvarne poslovne rezultate.">
     
     <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml" sizes="32x32">
     <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml">
@@ -56,9 +59,8 @@
             box-shadow: 0 10px 15px -3px rgb(253 224 71 / 0.2), 0 4px 6px -4px rgb(253 224 71 / 0.2);
         }
 
-        #work {
-            display:none;
-        }
+        /* #work section is hidden until portfolio is ready.
+           Uncomment the section in HTML when ready to show. */
     </style>
     
     <script>
@@ -111,7 +113,6 @@
                 
                 <nav class="hidden md:flex space-x-8">
                     <a href="#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
-                    <a href="#work" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
                     <a href="#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
                     <a href="/blog/" class="text-secondary hover:text-primary transition-colors duration-200">Blog</a>
                 </nav>
@@ -120,7 +121,7 @@
                     Kontakt
                 </a>
                 
-                <button id="mobile-menu-button" class="md:hidden text-accent z-50 relative w-6 h-6">
+                <button id="mobile-menu-button" class="md:hidden text-accent z-50 relative w-6 h-6" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="mobile-menu">
                     <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 transition-opacity duration-200 ease-in-out">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
@@ -134,7 +135,6 @@
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-surface border-b border-gray-700 z-40 md:hidden">
             <div class="container mx-auto max-w-7xl px-6 py-8 space-y-6">
                 <a href="#services" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Usluge</a>
-                <a href="#work" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Radovi</a>
                 <a href="#about" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">O nama</a>
                 <a href="/blog/" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Blog</a>
                 <a href="#contact" class="block w-full text-center bg-accent text-base font-semibold px-5 py-3 rounded-lg hover:bg-accent-dark transition-all">
@@ -246,6 +246,7 @@
             </div>
         </section>
 
+        <!-- Portfolio section — uncomment when ready to display
         <section id="work" class="py-24 md:py-32 bg-surface border-y border-surface">
             <div class="container mx-auto max-w-7xl px-6">
                 <div class="text-center max-w-3xl mx-auto">
@@ -260,6 +261,7 @@
                         <div class="overflow-hidden rounded-md">
                             <img src="https://placehold.co/600x400/111111/fde047?text=Frizerski+Studio+S" 
                                  alt="Frizerski Studio S web stranica" 
+                                 width="600" height="400" loading="lazy"
                                  class="w-full h-auto object-cover transform transition-transform duration-300 group-hover:scale-105">
                         </div>
                         <h3 class="font-heading text-3xl text-primary mt-6">Frizerski Studio S</h3>
@@ -270,6 +272,7 @@
                         <div class="overflow-hidden rounded-md">
                             <img src="https://placehold.co/600x400/111111/fde047?text=Dentalni+Centar" 
                                  alt="Dentalni Centar web stranica" 
+                                 width="600" height="400" loading="lazy"
                                  class="w-full h-auto object-cover transform transition-transform duration-300 group-hover:scale-105">
                         </div>
                         <h3 class="font-heading text-3xl text-primary mt-6">Dentalni Centar</h3>
@@ -278,6 +281,7 @@
                 </div>
             </div>
         </section>
+        End of portfolio section -->
 
         <section class="bg-base py-24 md:py-32 border-b border-surface">
             <div class="container mx-auto max-w-7xl px-6">
