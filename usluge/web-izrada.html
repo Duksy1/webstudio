@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Cijena Izrade Web Stranica Zagreb | Cjenik & Usluge – abcweb.studio</title>
-    <meta name="description" content="Provjerite cijene izrade web stranica i web shopova. Jednostavni webovi od 1.500 €, napredna rješenja od 2.000 €, web shopovi od 2.800 €. Zatražite ponudu.">
+    <meta name="description" content="Cijena izrade web stranica u Zagrebu: jednokratno od 1.500 € ili mjesečna pretplata od 149 €/mj s uključenim održavanjem. Web shopovi, landing page, napredne stranice. Zatražite ponudu.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="abcweb.studio">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -14,14 +14,14 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Cijena Izrade Web Stranica Zagreb | Cjenik & Usluge – abcweb.studio">
-    <meta property="og:description" content="Provjerite cijene izrade web stranica i web shopova. Jednostavni webovi od 1.500 €, napredna rješenja od 2.000 €, web shopovi od 2.800 €.">
+    <meta property="og:description" content="Cijena izrade web stranica u Zagrebu: jednokratno od 1.500 € ili mjesečna pretplata od 149 €/mj s uključenim održavanjem. Web shopovi, landing page, napredne stranice.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://abcweb.studio/usluge/web-izrada.html">
     <meta property="og:locale" content="hr_HR">
     <meta property="og:site_name" content="abcweb.studio">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Cijena Izrade Web Stranica Zagreb – abcweb.studio">
-    <meta name="twitter:description" content="Provjerite cijene izrade web stranica i web shopova. Jednostavni webovi od 1.500 €, napredna rješenja od 2.000 €.">
+    <meta name="twitter:description" content="Cijena izrade web stranica u Zagrebu: jednokratno od 1.500 € ili mjesečna pretplata od 149 €/mj s uključenim održavanjem.">
 
     <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml" sizes="32x32">
     <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml">
@@ -37,7 +37,7 @@
           "name": "Koliko košta izrada web stranice?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Cijene za jednostavne 'one-page' ili prezentacijske web stranice kreću od 1.500 €. Za naprednije web stranice (više podstranica, CMS, specifični dizajn) cijene se kreću između 2.000 € i 4.500 €. Izrada Web shopova počinje od 2.800 €. Konačna cijena ovisi o kompleksnosti dizajna i funkcionalnostima."
+            "text": "Nudimo dva modela: jednokratnu cijenu (od 1.500 € za landing page, 2.000–4.500 € za napredne stranice, od 2.800 € za web shop) s opcionalnim mjesečnim održavanjem, ili mjesečnu pretplatu (od 149 €/mj za Starter, 249 €/mj za Professional, 399 €/mj za Business) koja uključuje izradu, hosting i kompletno održavanje bez početnog troška. Konačna cijena ovisi o kompleksnosti projekta."
           }
         },
         {
@@ -77,7 +77,7 @@
           "name": "Što se događa nakon što je web stranica gotova?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nakon završetka projekta isporučujemo gotovu web stranicu i osnovne upute za rad, a po potrebi nudimo i održavanje, daljnju optimizaciju i razvoj novih funkcionalnosti."
+            "text": "Kod jednokratnog modela isporučujemo gotovu stranicu s uputama, a održavanje možete ugovoriti zasebno (od 50 €/mj). Kod pretplatničkog modela održavanje je već uključeno – brinemo o hostingu, sigurnosti, backup-u i tekućim izmjenama."
           }
         }
       ]
@@ -204,11 +204,22 @@
                     <p class="text-base font-semibold text-accent uppercase tracking-wider">Investicija</p>
                     <h2 class="mt-3 text-4xl md:text-5xl font-heading text-primary">Okvirni Cjenik Izrade</h2>
                     <p class="mt-6 text-secondary text-lg">
-                        Svaki projekt je jedinstven. Ovi paketi služe kao polazišna točka za procjenu budžeta, no konačna cijena ovisi o složenosti dizajna, broju podstranica i specifičnim funkcionalnostima.
+                        Svaki projekt je jedinstven. Odaberite model koji vam najbolje odgovara – jednokratna cijena ili mjesečna pretplata s uključenim održavanjem.
                     </p>
+
+                    <!-- Toggle -->
+                    <div class="mt-10 inline-flex items-center bg-base rounded-lg p-1 border border-surface">
+                        <button id="btn-onetime" onclick="switchPricing('onetime')" class="px-6 py-2.5 rounded-md text-sm font-semibold transition-all duration-200 bg-accent text-base">
+                            Jednokratna cijena
+                        </button>
+                        <button id="btn-monthly" onclick="switchPricing('monthly')" class="px-6 py-2.5 rounded-md text-sm font-semibold transition-all duration-200 text-secondary hover:text-primary">
+                            Mjesečna pretplata
+                        </button>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- ONE-TIME PRICING -->
+                <div id="pricing-onetime" class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     
                     <div class="bg-base border border-surface rounded-xl p-8 hover:border-accent/50 transition-colors duration-300 flex flex-col">
                         <h3 class="text-xl font-bold text-primary mb-2">Start / Landing Page</h3>
@@ -216,13 +227,18 @@
                         <div class="my-6">
                             <span class="text-secondary text-sm">već od</span>
                             <div class="text-4xl font-heading text-accent">1.500 €</div>
+                            <span class="text-secondary text-xs">jednokratno</span>
                         </div>
-                        <ul class="space-y-3 text-secondary mb-8 flex-1">
+                        <ul class="space-y-3 text-secondary mb-6 flex-1">
                             <li class="flex items-start"><span class="text-accent mr-2">✓</span> One-page struktura</li>
                             <li class="flex items-start"><span class="text-accent mr-2">✓</span> Responzivan dizajn</li>
                             <li class="flex items-start"><span class="text-accent mr-2">✓</span> Kontakt forma i karta</li>
                             <li class="flex items-start"><span class="text-accent mr-2">✓</span> Osnovni SEO</li>
                         </ul>
+                        <div class="border-t border-surface pt-4 mb-6">
+                            <p class="text-secondary text-sm">Održavanje: <span class="text-primary font-semibold">50 €/mj</span></p>
+                            <p class="text-secondary text-xs mt-1">Hosting, sigurnosne zakrpe, backup, manje izmjene</p>
+                        </div>
                         <a href="#contact" class="block w-full text-center bg-surface border border-surface text-primary font-semibold py-3 rounded-lg hover:bg-accent hover:text-base transition-colors">Zatraži ponudu</a>
                     </div>
 
@@ -233,13 +249,18 @@
                         <div class="my-6">
                             <span class="text-secondary text-sm">raspon cijena</span>
                             <div class="text-4xl font-heading text-accent">2.000 - 4.500 €</div>
+                            <span class="text-secondary text-xs">jednokratno</span>
                         </div>
-                        <ul class="space-y-3 text-secondary mb-8 flex-1">
+                        <ul class="space-y-3 text-secondary mb-6 flex-1">
                             <li class="flex items-start"><span class="text-accent mr-2">✓</span> Više podstranica (Home, O nama, Usluge...)</li>
                             <li class="flex items-start"><span class="text-accent mr-2">✓</span> CMS (npr. WordPress) za uređivanje</li>
                             <li class="flex items-start"><span class="text-accent mr-2">✓</span> Blog / Novosti sekcija</li>
                             <li class="flex items-start"><span class="text-accent mr-2">✓</span> Napredna SEO optimizacija</li>
                         </ul>
+                        <div class="border-t border-surface pt-4 mb-6">
+                            <p class="text-secondary text-sm">Održavanje: <span class="text-primary font-semibold">80 €/mj</span></p>
+                            <p class="text-secondary text-xs mt-1">Hosting, redoviti update-ovi, backup, SEO praćenje, sadržajne izmjene</p>
+                        </div>
                         <a href="#contact" class="block w-full text-center bg-accent text-base font-semibold py-3 rounded-lg hover:bg-accent-dark transition-colors">Zatraži ponudu</a>
                     </div>
 
@@ -249,13 +270,89 @@
                         <div class="my-6">
                             <span class="text-secondary text-sm">već od</span>
                             <div class="text-4xl font-heading text-accent">2.800 €</div>
+                            <span class="text-secondary text-xs">jednokratno</span>
                         </div>
-                        <ul class="space-y-3 text-secondary mb-8 flex-1">
+                        <ul class="space-y-3 text-secondary mb-6 flex-1">
                             <li class="flex items-start"><span class="text-accent mr-2">✓</span> Sustav za upravljanje proizvodima</li>
                             <li class="flex items-start"><span class="text-accent mr-2">✓</span> Integracija kartičnog plaćanja</li>
                             <li class="flex items-start"><span class="text-accent mr-2">✓</span> Košarica i Checkout proces</li>
                             <li class="flex items-start"><span class="text-accent mr-2">✓</span> Sigurnost i brzina</li>
                         </ul>
+                        <div class="border-t border-surface pt-4 mb-6">
+                            <p class="text-secondary text-sm">Održavanje: <span class="text-primary font-semibold">120 €/mj</span></p>
+                            <p class="text-secondary text-xs mt-1">Hosting, plugin update-ovi, backup, monitoring, tehniča podrška</p>
+                        </div>
+                        <a href="#contact" class="block w-full text-center bg-surface border border-surface text-primary font-semibold py-3 rounded-lg hover:bg-accent hover:text-base transition-colors">Zatraži ponudu</a>
+                    </div>
+
+                </div>
+
+                <!-- MONTHLY SUBSCRIPTION PRICING -->
+                <div id="pricing-monthly" class="grid grid-cols-1 md:grid-cols-3 gap-8 hidden">
+                    
+                    <div class="bg-base border border-surface rounded-xl p-8 hover:border-accent/50 transition-colors duration-300 flex flex-col">
+                        <h3 class="text-xl font-bold text-primary mb-2">Starter</h3>
+                        <p class="text-secondary text-sm h-12">Landing page s uključenim hostingom i održavanjem.</p>
+                        <div class="my-6">
+                            <div class="text-4xl font-heading text-accent">149 €<span class="text-lg text-secondary font-sans normal-case">/mj</span></div>
+                            <span class="text-secondary text-xs">min. ugovor 12 mjeseci</span>
+                        </div>
+                        <ul class="space-y-3 text-secondary mb-6 flex-1">
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> One-page responzivna stranica</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Kontakt forma i karta</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Osnovni SEO</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Hosting & SSL uključen</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Mjesečni backup</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Do 1h manjih izmjena/mj</li>
+                        </ul>
+                        <div class="border-t border-surface pt-4 mb-6">
+                            <p class="text-secondary text-xs">Bez početnog troška – sve uključeno u pretplatu</p>
+                        </div>
+                        <a href="#contact" class="block w-full text-center bg-surface border border-surface text-primary font-semibold py-3 rounded-lg hover:bg-accent hover:text-base transition-colors">Zatraži ponudu</a>
+                    </div>
+
+                    <div class="bg-base border-2 border-accent/20 rounded-xl p-8 relative transform md:-translate-y-4 shadow-xl flex flex-col">
+                        <div class="absolute top-0 right-0 bg-accent text-base text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">NAJPOPULARNIJE</div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Professional</h3>
+                        <p class="text-secondary text-sm h-12">Kompletna web stranica s CMS-om, blogom i naprednim SEO-om.</p>
+                        <div class="my-6">
+                            <div class="text-4xl font-heading text-accent">249 €<span class="text-lg text-secondary font-sans normal-case">/mj</span></div>
+                            <span class="text-secondary text-xs">min. ugovor 12 mjeseci</span>
+                        </div>
+                        <ul class="space-y-3 text-secondary mb-6 flex-1">
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Više podstranica (do 10)</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> CMS za uređivanje sadržaja</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Blog / Novosti sekcija</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Napredna SEO optimizacija</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Hosting, SSL & e-mail</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Tjedni backup & monitoring</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Do 3h izmjena i podrške/mj</li>
+                        </ul>
+                        <div class="border-t border-surface pt-4 mb-6">
+                            <p class="text-secondary text-xs">Bez početnog troška – sve uključeno u pretplatu</p>
+                        </div>
+                        <a href="#contact" class="block w-full text-center bg-accent text-base font-semibold py-3 rounded-lg hover:bg-accent-dark transition-colors">Zatraži ponudu</a>
+                    </div>
+
+                    <div class="bg-base border border-surface rounded-xl p-8 hover:border-accent/50 transition-colors duration-300 flex flex-col">
+                        <h3 class="text-xl font-bold text-primary mb-2">Business</h3>
+                        <p class="text-secondary text-sm h-12">Web shop ili kompleksna stranica s potpunom podrškom.</p>
+                        <div class="my-6">
+                            <div class="text-4xl font-heading text-accent">399 €<span class="text-lg text-secondary font-sans normal-case">/mj</span></div>
+                            <span class="text-secondary text-xs">min. ugovor 12 mjeseci</span>
+                        </div>
+                        <ul class="space-y-3 text-secondary mb-6 flex-1">
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Web shop ili neograničene podstranice</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Integracija plaćanja i dostave</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Napredni CMS & analytics</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Prioritetna SEO optimizacija</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Premium hosting & dnevni backup</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Prioritetna podrška (24h odziv)</li>
+                            <li class="flex items-start"><span class="text-accent mr-2">✓</span> Do 5h izmjena i razvoja/mj</li>
+                        </ul>
+                        <div class="border-t border-surface pt-4 mb-6">
+                            <p class="text-secondary text-xs">Bez početnog troška – sve uključeno u pretplatu</p>
+                        </div>
                         <a href="#contact" class="block w-full text-center bg-surface border border-surface text-primary font-semibold py-3 rounded-lg hover:bg-accent hover:text-base transition-colors">Zatraži ponudu</a>
                     </div>
 
@@ -266,6 +363,27 @@
                 </div>
             </div>
         </section>
+
+        <script>
+        function switchPricing(model) {
+            var onetime = document.getElementById('pricing-onetime');
+            var monthly = document.getElementById('pricing-monthly');
+            var btnOnetime = document.getElementById('btn-onetime');
+            var btnMonthly = document.getElementById('btn-monthly');
+
+            if (model === 'monthly') {
+                onetime.classList.add('hidden');
+                monthly.classList.remove('hidden');
+                btnMonthly.className = 'px-6 py-2.5 rounded-md text-sm font-semibold transition-all duration-200 bg-accent text-base';
+                btnOnetime.className = 'px-6 py-2.5 rounded-md text-sm font-semibold transition-all duration-200 text-secondary hover:text-primary';
+            } else {
+                monthly.classList.add('hidden');
+                onetime.classList.remove('hidden');
+                btnOnetime.className = 'px-6 py-2.5 rounded-md text-sm font-semibold transition-all duration-200 bg-accent text-base';
+                btnMonthly.className = 'px-6 py-2.5 rounded-md text-sm font-semibold transition-all duration-200 text-secondary hover:text-primary';
+            }
+        }
+        </script>
 
         <section id="faq" class="bg-base py-24 md:py-32">
             <div class="container mx-auto max-w-5xl px-6">
@@ -284,10 +402,7 @@
                             Koliko košta izrada web stranice?
                         </h3>
                         <p class="mt-3 text-secondary">
-                            Cijene kreću od <strong>1.500 €</strong> za jednostavne prezentacijske stranice. 
-                            Napredniji projekti i korporativni webovi kreću se između <strong>2.000 € i 4.500 €</strong>, 
-                            dok profesionalna izrada web shopova počinje od <strong>2.800 €</strong>. 
-                            Konačna ponuda ovisi o vašim specifičnim zahtjevima.
+                            Nudimo dva modela: <strong>jednokratnu cijenu</strong> (od 1.500 € za landing page, 2.000–4.500 € za napredne stranice, od 2.800 € za web shop) s opcionalnim mjesečnim održavanjem, ili <strong>mjesečnu pretplatu</strong> (od 149 €/mj za Starter, 249 €/mj za Professional, 399 €/mj za Business) koja uključuje izradu, hosting i kompletno održavanje bez početnog troška.
                         </p>
                     </div>
 
@@ -336,8 +451,7 @@
                             Što se događa nakon što je web stranica gotova?
                         </h3>
                         <p class="mt-3 text-secondary">
-                            Nakon završetka projekta, isporučujemo vam gotovu web stranicu i osnovne upute za rad.
-                            Po potrebi nudimo i dodatne usluge održavanja.
+                            Kod jednokratnog modela isporučujemo gotovu stranicu s uputama, a održavanje možete ugovoriti zasebno (od 50 €/mj). Kod pretplatničkog modela održavanje je već uključeno – mi brinemo o hostingu, sigurnosti, backup-u i izmjenama.
                         </p>
                     </div>
                 </div>
