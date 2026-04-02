@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BurgerBox | Brza Hrana s Karakterom</title>
+    <meta name="description" content="Sočni burgeri, hrskavi pomfrit i shake-ovi koji oduševljavaju. Naruči online ili posjeti nas!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e63946;
+            --secondary: #f4a261;
+            --dark: #1d3557;
+            --light: #f1faee;
+            --text: #333333;
+            --text-light: #666666;
+            --bg: #ffffff;
+            --font-heading: 'Fredoka One', cursive;
+            --font-body: 'Nunito', sans-serif;
+            --radius: 16px;
+            --shadow: 0 8px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--text); line-height: 1.7; background: var(--bg); overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--dark); }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* NAV */
+        header { position: fixed; top: 0; width: 100%; padding: 1.2rem 5%; z-index: 1000; transition: var(--transition); }
+        header.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); box-shadow: var(--shadow); padding: 0.8rem 5%; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .logo { font-family: var(--font-heading); font-size: 1.8rem; color: #fff; }
+        .logo span { color: var(--secondary); }
+        header.scrolled .logo { color: var(--dark); }
+        nav ul { display: flex; gap: 2rem; }
+        nav ul li a { font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #fff; }
+        header.scrolled nav ul li a { color: var(--dark); }
+        nav ul li a:hover { color: var(--primary); }
+        .nav-cta { background: var(--primary); color: #fff !important; padding: 0.6rem 1.5rem; border-radius: 50px; }
+        .nav-cta:hover { background: #c62828; transform: scale(1.05); }
+
+        /* HERO */
+        .hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, var(--dark) 0%, #264573 100%); position: relative; overflow: hidden; }
+        .hero::after { content: '🍔'; position: absolute; right: -5%; top: 10%; font-size: 20rem; opacity: 0.08; animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .hero-content { max-width: 1200px; margin: 0 auto; padding: 0 5%; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; width: 100%; }
+        .hero-text { color: #fff; }
+        .hero-badge { display: inline-block; background: var(--primary); color: #fff; padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 700; margin-bottom: 1.5rem; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); color: #fff; line-height: 1.15; margin-bottom: 1.5rem; }
+        .hero h1 span { color: var(--secondary); }
+        .hero p { font-size: 1.15rem; opacity: 0.85; margin-bottom: 2.5rem; }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 1rem 2.2rem; font-size: 0.95rem; font-weight: 700; border-radius: 50px; cursor: pointer; transition: var(--transition); border: 2px solid transparent; font-family: var(--font-body); }
+        .btn-primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+        .btn-primary:hover { background: transparent; color: var(--primary); }
+        .btn-outline { background: transparent; color: #fff; border-color: #fff; }
+        .btn-outline:hover { background: #fff; color: var(--dark); }
+        .hero-image { position: relative; text-align: center; }
+        .hero-image img { border-radius: 50%; width: 420px; height: 420px; object-fit: cover; box-shadow: 0 20px 60px rgba(0,0,0,0.3); margin: 0 auto; }
+
+        /* SEKCIJE */
+        section { padding: 6rem 5%; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .section-header h2 span { color: var(--primary); }
+        .section-header p { color: var(--text-light); font-size: 1.1rem; }
+
+        /* POPULARNO */
+        #popular { background: var(--light); }
+        .food-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .food-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); }
+        .food-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+        .food-card-img { height: 220px; overflow: hidden; position: relative; }
+        .food-card-img img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .food-card:hover .food-card-img img { transform: scale(1.08); }
+        .food-badge { position: absolute; top: 1rem; left: 1rem; background: var(--primary); color: #fff; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700; }
+        .food-card-body { padding: 1.5rem; }
+        .food-card-body h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .food-card-body p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem; }
+        .food-card-footer { display: flex; justify-content: space-between; align-items: center; }
+        .food-price { font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); }
+        .add-btn { background: var(--dark); color: #fff; border: none; padding: 0.6rem 1.2rem; border-radius: 50px; font-weight: 700; cursor: pointer; transition: var(--transition); font-family: var(--font-body); }
+        .add-btn:hover { background: var(--primary); }
+
+        /* O NAMA */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+        .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+        .stat { text-align: center; background: var(--light); padding: 1.5rem; border-radius: var(--radius); }
+        .stat h3 { font-size: 2rem; color: var(--primary); }
+        .stat p { font-size: 0.85rem; color: var(--text-light); margin-top: 0.3rem; }
+        .about-text h3 { font-size: 2rem; margin-bottom: 1rem; }
+        .about-text p { color: var(--text-light); margin-bottom: 1rem; font-size: 1.05rem; }
+        .about-image img { border-radius: var(--radius); box-shadow: var(--shadow); }
+
+        /* KAKO NARUČITI */
+        #how-it-works { background: var(--dark); color: #fff; }
+        #how-it-works .section-header h2 { color: #fff; }
+        #how-it-works .section-header p { color: rgba(255,255,255,0.6); }
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+        .step { text-align: center; padding: 2.5rem 2rem; background: rgba(255,255,255,0.05); border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.1); }
+        .step-icon { font-size: 3rem; margin-bottom: 1.5rem; }
+        .step h3 { font-size: 1.3rem; color: #fff; margin-bottom: 0.8rem; }
+        .step p { color: rgba(255,255,255,0.6); font-size: 0.95rem; }
+
+        /* RECENZIJE */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .review-card { background: var(--light); padding: 2rem; border-radius: var(--radius); position: relative; }
+        .review-stars { color: var(--secondary); font-size: 1.2rem; margin-bottom: 1rem; }
+        .review-card p { font-style: italic; color: var(--text); margin-bottom: 1.5rem; font-size: 1.05rem; }
+        .review-author { font-weight: 700; color: var(--dark); }
+
+        /* KONTAKT */
+        #contact { background: var(--light); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .contact-form { background: #fff; padding: 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow); }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 1rem; border: 2px solid #eee; border-radius: 12px; font-family: var(--font-body); font-size: 1rem; margin-bottom: 1rem; outline: none; transition: var(--transition); background: #fff; color: var(--text); }
+        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary); }
+        .contact-form textarea { height: 120px; resize: vertical; }
+        .contact-info { padding: 1rem 0; }
+        .contact-info-item { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: flex-start; }
+        .contact-info-icon { font-size: 2rem; }
+        .contact-info-item h4 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .contact-info-item p { color: var(--text-light); }
+
+        /* FOOTER */
+        footer { background: var(--dark); color: rgba(255,255,255,0.5); text-align: center; padding: 3rem 5%; }
+        footer .logo { font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem; display: inline-block; }
+
+        /* REVEAL */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* HAMBURGER */
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+        .hamburger span { width: 28px; height: 3px; background: #fff; border-radius: 2px; transition: var(--transition); }
+        header.scrolled .hamburger span { background: var(--dark); }
+
+        @media (max-width: 900px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-buttons { justify-content: center; }
+            .hero-image { display: none; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: 1fr; }
+            nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: #fff; padding: 1.5rem 5%; box-shadow: 0 8px 30px rgba(0,0,0,0.1); gap: 0; }
+            nav ul.show { display: flex; }
+            nav ul li a { color: var(--dark) !important; padding: 0.8rem 0; display: block; }
+            .hamburger { display: flex; }
+            section { padding: 4rem 5%; }
+            .section-header h2 { font-size: 2rem; }
+            .about-stats { grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+            .stat { padding: 1rem; }
+            .stat h3 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Burger<span>Box</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#popular">Ponuda</a></li>
+                    <li><a href="#about">O Nama</a></li>
+                    <li><a href="#how-it-works">Naruči</a></li>
+                    <li><a href="#reviews">Recenzije</a></li>
+                    <li><a href="#contact" class="nav-cta">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('show')">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text reveal">
+                <span class="hero-badge">🔥 Novo u ponudi!</span>
+                <h1>Sočni burgeri koji <span>osvajaju</span> na prvi zalogaj</h1>
+                <p>Svježe mljevena govedina, domaće pecivo i umaci koji se ne zaboravljaju. Dođi, naruči, uživaj.</p>
+                <div class="hero-buttons">
+                    <a href="#popular" class="btn btn-primary">Pogledaj Ponudu</a>
+                    <a href="#contact" class="btn btn-outline">Gdje Smo</a>
+                </div>
+            </div>
+            <div class="hero-image reveal">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="Sočni burger">
+            </div>
+        </div>
+    </section>
+
+    <section id="popular">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Naša <span>Hit</span> Ponuda</h2>
+                <p>Najomiljeniji izbor naših gostiju — provjereno dobar.</p>
+            </div>
+            <div class="food-grid">
+                <div class="food-card reveal">
+                    <div class="food-card-img">
+                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=600&q=80" alt="Classic Smash">
+                        <span class="food-badge">Bestseller</span>
+                    </div>
+                    <div class="food-card-body">
+                        <h3>Classic Smash</h3>
+                        <p>Dvostruki smash patty, cheddar, kiseli krastavci, BurgerBox umak.</p>
+                        <div class="food-card-footer">
+                            <span class="food-price">8,90 €</span>
+                            <button class="add-btn">+ Dodaj</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-card reveal">
+                    <div class="food-card-img">
+                        <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=600&q=80" alt="BBQ Bacon">
+                    </div>
+                    <div class="food-card-body">
+                        <h3>BBQ Bacon King</h3>
+                        <p>200g patty, hrskava slanina, karamalizirani luk, BBQ umak.</p>
+                        <div class="food-card-footer">
+                            <span class="food-price">11,50 €</span>
+                            <button class="add-btn">+ Dodaj</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-card reveal">
+                    <div class="food-card-img">
+                        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80" alt="Truffle Deluxe">
+                        <span class="food-badge">Premium</span>
+                    </div>
+                    <div class="food-card-body">
+                        <h3>Truffle Deluxe</h3>
+                        <p>Angus govedina, brie sir, tartufov aioli, rukola, brioche pecivo.</p>
+                        <div class="food-card-footer">
+                            <span class="food-price">14,90 €</span>
+                            <button class="add-btn">+ Dodaj</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-card reveal">
+                    <div class="food-card-img">
+                        <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=600&q=80" alt="Crispy Chicken">
+                    </div>
+                    <div class="food-card-body">
+                        <h3>Crispy Chicken</h3>
+                        <p>Pohano pileće prsa, coleslaw, jalapeño mayo, hrskava salata.</p>
+                        <div class="food-card-footer">
+                            <span class="food-price">9,90 €</span>
+                            <button class="add-btn">+ Dodaj</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container about-grid">
+            <div class="about-image reveal">
+                <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=800&q=80" alt="Naš tim">
+            </div>
+            <div class="about-text reveal">
+                <h3>Više od fast fooda</h3>
+                <p>BurgerBox je nastao iz ljubavi prema dobroj hrani i jednostavnosti. Vjerujemo da brza hrana ne mora značiti lošu hranu.</p>
+                <p>Koristimo 100% domaću govedinu, svježe pečemo peciva svaki dan, a naše umake pravimo od nule — bez konzervansa, bez kompromisa.</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>50K+</h3>
+                        <p>Burgera prodano</p>
+                    </div>
+                    <div class="stat">
+                        <h3>4.9</h3>
+                        <p>Google ocjena</p>
+                    </div>
+                    <div class="stat">
+                        <h3>3</h3>
+                        <p>Lokacije</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Kako Naručiti?</h2>
+                <p>Tri jednostavna koraka do savršenog obroka.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step reveal">
+                    <div class="step-icon">📱</div>
+                    <h3>1. Odaberi</h3>
+                    <p>Pregledaj naš meni i odaberi svoje favorite. Prilagodi burger po vlastitom ukusu.</p>
+                </div>
+                <div class="step reveal">
+                    <div class="step-icon">🍳</div>
+                    <h3>2. Pripremamo</h3>
+                    <p>Naš tim priprema tvoju narudžbu od svježih namirnica — svakog puta iznova.</p>
+                </div>
+                <div class="step reveal">
+                    <div class="step-icon">🚀</div>
+                    <h3>3. Uživaj</h3>
+                    <p>Preuzmi svoju narudžbu na lokaciji ili ti je dostavljamo na vrata u rekordnom roku.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Što kažu naši <span>gosti</span></h2>
+                <p>Tisuće zadovoljnih ljubitelja burgera.</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card reveal">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Najbolji burgeri u gradu, bez konkurencije. Smash patty je čista perfekcija, a pomfrit je uvijek hrskav."</p>
+                    <span class="review-author">— Marko T.</span>
+                </div>
+                <div class="review-card reveal">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Konačno fast food gdje se osjeti kvaliteta. Domaće pecivo i svježi sastojci rade razliku!"</p>
+                    <span class="review-author">— Ana K.</span>
+                </div>
+                <div class="review-card reveal">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Truffle Deluxe mi je promijenio život. Ozbiljno. Dolazimo svaki tjedan kao obitelj."</p>
+                    <span class="review-author">— Ivan P.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Gdje nas <span>naći</span></h2>
+                <p>Dođi osobno ili nas kontaktiraj za narudžbu.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form reveal">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1.5rem;">Pošalji upit</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Ime i prezime" required>
+                        <input type="email" placeholder="Email adresa" required>
+                        <input type="tel" placeholder="Broj telefona">
+                        <textarea placeholder="Tvoja poruka..."></textarea>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; border: none;">Pošalji</button>
+                        <div id="formStatus" style="text-align:center; margin-top:1rem; font-size:0.9rem;"></div>
+                    </form>
+                </div>
+                <div class="contact-info reveal">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📍</div>
+                        <div>
+                            <h4>Lokacija</h4>
+                            <p>Ilica 45, 10000 Zagreb</p>
+                            <p>Radnička cesta 12, 10000 Zagreb</p>
+                            <p>Vukovarska 88, 21000 Split</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">🕐</div>
+                        <div>
+                            <h4>Radno Vrijeme</h4>
+                            <p>Pon - Čet: 10:00 - 22:00</p>
+                            <p>Pet - Sub: 10:00 - 00:00</p>
+                            <p>Nedjelja: 11:00 - 21:00</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📞</div>
+                        <div>
+                            <h4>Kontakt</h4>
+                            <p>+385 1 987 6543</p>
+                            <p>info@burgerbox.hr</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo">Burger<span style="color: var(--secondary)">Box</span></div>
+        <p>&copy; 2026 BurgerBox. Sva prava pridržana.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealElements.forEach(el => observer.observe(el));
+
+            document.getElementById('contactForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = e.target.querySelector('button');
+                const status = document.getElementById('formStatus');
+                btn.textContent = 'Šaljem...';
+                setTimeout(() => {
+                    e.target.reset();
+                    btn.textContent = 'Pošalji';
+                    status.textContent = '✅ Poruka poslana! Javimo se uskoro.';
+                    status.style.color = '#2d6a4f';
+                    setTimeout(() => status.textContent = '', 4000);
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

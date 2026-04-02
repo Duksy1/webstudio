@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DentaVita | Moderna Stomatologija</title>
+    <meta name="description" content="DentaVita — stomatološka ordinacija u Zagrebu. Estetska stomatologija, implantati, ortodoncija i preventivna njega.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mint: #00b894;
+            --mint-light: #e8f8f5;
+            --mint-glow: rgba(0,184,148,0.12);
+            --navy: #0d1f3c;
+            --dark: #1a1a2e;
+            --white: #ffffff;
+            --bg: #fafcfb;
+            --text: #2d3436;
+            --text-muted: #8395a7;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 30px rgba(0,0,0,0.05);
+            --font: 'Plus Jakarta Sans', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font); color: var(--text); background: var(--bg); overflow-x: hidden; line-height: 1.7; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* NAV */
+        header { position: fixed; top: 0; width: 100%; z-index: 100; padding: 0; transition: all 0.4s; }
+        header.scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); box-shadow: 0 1px 20px rgba(0,0,0,0.04); }
+        .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3%; }
+        .logo { display: flex; align-items: center; gap: 0.6rem; }
+        .logo-mark { width: 36px; height: 36px; background: var(--mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; font-size: 0.85rem; }
+        .logo-text { font-size: 1.15rem; font-weight: 700; color: var(--navy); }
+        .logo-text span { color: var(--mint); }
+        nav ul { display: flex; gap: 2rem; }
+        nav ul li a { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; transition: color 0.3s; }
+        nav ul li a:hover { color: var(--mint); }
+        .nav-btn { padding: 0.6rem 1.5rem; background: var(--mint); color: #fff; font-size: 0.75rem; font-weight: 700; border-radius: 50px; transition: all 0.3s; }
+        .nav-btn:hover { background: var(--navy); }
+
+        /* HERO — asymmetric blob style */
+        .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; background: var(--white); }
+        .hero-grid { max-width: 1200px; margin: 0 auto; padding: 8rem 3% 5rem; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; width: 100%; }
+        .hero h1 { font-size: clamp(2.8rem, 4.5vw, 4rem); font-weight: 800; color: var(--navy); line-height: 1.1; letter-spacing: -1px; margin-bottom: 1.5rem; }
+        .hero h1 span { color: var(--mint); }
+        .hero-p { font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem; max-width: 440px; }
+        .hero-actions { display: flex; gap: 1rem; align-items: center; margin-bottom: 3rem; }
+        .btn-main { padding: 0.9rem 2rem; background: var(--mint); color: #fff; font-family: var(--font); font-size: 0.85rem; font-weight: 700; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s; box-shadow: 0 8px 25px rgba(0,184,148,0.3); }
+        .btn-main:hover { background: var(--navy); box-shadow: 0 8px 25px rgba(13,31,60,0.3); }
+        .btn-outline { padding: 0.9rem 2rem; background: transparent; color: var(--navy); font-family: var(--font); font-size: 0.85rem; font-weight: 600; border: 2px solid rgba(0,0,0,0.08); border-radius: 50px; cursor: pointer; transition: all 0.3s; }
+        .btn-outline:hover { border-color: var(--mint); color: var(--mint); }
+        .hero-trust { display: flex; gap: 2rem; }
+        .trust-item { display: flex; flex-direction: column; }
+        .trust-item strong { font-size: 1.6rem; font-weight: 800; color: var(--navy); }
+        .trust-item span { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .hero-visual { position: relative; }
+        .hero-img-main { width: 100%; border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%; overflow: hidden; aspect-ratio: 1; box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+        .hero-img-main img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-float-card { position: absolute; background: var(--white); border-radius: 16px; padding: 1rem 1.2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08); display: flex; align-items: center; gap: 0.8rem; }
+        .float-card-1 { top: 10%; right: -20px; animation: float 4s ease-in-out infinite; }
+        .float-card-2 { bottom: 15%; left: -20px; animation: float 4s ease-in-out infinite 1.5s; }
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        .float-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .float-icon.mint { background: var(--mint-light); }
+        .float-icon.gold { background: #fff8e7; }
+        .float-card-text strong { font-size: 0.85rem; display: block; color: var(--navy); }
+        .float-card-text span { font-size: 0.7rem; color: var(--text-muted); }
+
+        /* SECTIONS */
+        section { padding: 6rem 3%; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; background: var(--mint-glow); border-radius: 50px; font-size: 0.7rem; font-weight: 700; color: var(--mint); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+        .section-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--mint); }
+        .section-title { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; color: var(--navy); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 0.8rem; }
+        .section-subtitle { font-size: 1rem; color: var(--text-muted); max-width: 500px; }
+
+        /* USLUGE — icon cards with hover reveal */
+        #services { background: var(--bg); }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+        .service-card { background: var(--card-bg); border-radius: 20px; padding: 2.5rem 2rem; box-shadow: var(--shadow); transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); position: relative; overflow: hidden; border: 1px solid transparent; }
+        .service-card:hover { transform: translateY(-8px); border-color: var(--mint); box-shadow: 0 15px 40px rgba(0,184,148,0.12); }
+        .service-card::after { content: ''; position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: var(--mint-glow); border-radius: 50%; transform: translate(30%, -30%); transition: all 0.5s; }
+        .service-card:hover::after { transform: translate(20%, -20%) scale(1.5); }
+        .service-icon { width: 56px; height: 56px; background: var(--mint-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem; position: relative; z-index: 1; }
+        .service-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 0.8rem; position: relative; z-index: 1; }
+        .service-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; position: relative; z-index: 1; }
+
+        /* PROCES — stepper */
+        #process { background: var(--navy); color: #fff; border-radius: 30px; margin: 0 3%; padding: 5rem 4%; }
+        .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; position: relative; }
+        .process-steps::before { content: ''; position: absolute; top: 35px; left: 35px; right: 35px; height: 2px; background: rgba(255,255,255,0.1); }
+        .process-step { text-align: center; position: relative; }
+        .step-num { width: 70px; height: 70px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 2px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 800; color: var(--mint); margin: 0 auto 1.5rem; position: relative; z-index: 1; transition: all 0.3s; }
+        .process-step:hover .step-num { background: var(--mint); color: #fff; border-color: var(--mint); }
+        .process-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .process-step p { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.6; }
+
+        /* BEFORE/AFTER — visual showcase */
+        #results { background: var(--bg); }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+        .result-card { background: var(--card-bg); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); }
+        .result-imgs { display: grid; grid-template-columns: 1fr 1fr; position: relative; }
+        .result-imgs img { width: 100%; height: 200px; object-fit: cover; }
+        .result-imgs .vs-badge { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--mint); color: #fff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 800; z-index: 1; box-shadow: 0 4px 12px rgba(0,184,148,0.4); }
+        .result-label { position: absolute; bottom: 6px; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #fff; padding: 0.2rem 0.6rem; border-radius: 4px; }
+        .result-label.before { left: 6px; background: rgba(0,0,0,0.5); }
+        .result-label.after { right: 6px; background: var(--mint); }
+        .result-body { padding: 1.5rem; }
+        .result-body h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+        .result-body p { font-size: 0.82rem; color: var(--text-muted); }
+
+        /* RECENZIJE — testimonial carousel */
+        #reviews { background: var(--white); }
+        .reviews-track { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 1rem; margin-top: 3rem; }
+        .reviews-track::-webkit-scrollbar { display: none; }
+        .review-card { min-width: 380px; flex-shrink: 0; scroll-snap-align: start; background: var(--bg); border-radius: 20px; padding: 2rem; position: relative; }
+        .review-stars { color: #f9ca24; font-size: 0.85rem; margin-bottom: 1rem; letter-spacing: 2px; }
+        .review-card p { font-size: 0.92rem; color: var(--text); font-style: italic; line-height: 1.8; margin-bottom: 1.5rem; }
+        .review-author { display: flex; align-items: center; gap: 0.8rem; }
+        .review-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--mint-light); display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--mint); font-size: 0.85rem; }
+        .review-author-info strong { font-size: 0.85rem; color: var(--navy); display: block; }
+        .review-author-info span { font-size: 0.72rem; color: var(--text-muted); }
+
+        /* TIM */
+        #team { background: var(--bg); }
+        .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
+        .team-member { text-align: center; }
+        .team-photo-wrap { width: 100%; aspect-ratio: 1; border-radius: 20px; overflow: hidden; margin-bottom: 1rem; position: relative; }
+        .team-photo-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .team-member:hover .team-photo-wrap img { transform: scale(1.05); }
+        .team-member h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.2rem; }
+        .team-member span { font-size: 0.72rem; color: var(--mint); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* KONTAKT */
+        #contact { background: var(--white); }
+        .contact-wrapper { background: var(--bg); border-radius: 24px; padding: 4rem; display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; }
+        .contact-info h2 { font-size: 2.2rem; font-weight: 800; color: var(--navy); margin-bottom: 1rem; line-height: 1.2; }
+        .contact-info h2 span { color: var(--mint); }
+        .contact-info > p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 2rem; }
+        .contact-detail { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .contact-detail-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--mint-light); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+        .contact-detail-text strong { font-size: 0.85rem; display: block; color: var(--navy); }
+        .contact-detail-text span { font-size: 0.8rem; color: var(--text-muted); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; font-size: 0.72rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem 1rem; border: 1.5px solid rgba(0,0,0,0.06); border-radius: 12px; font-family: var(--font); font-size: 0.88rem; outline: none; transition: border-color 0.3s; background: var(--white); color: var(--text); }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--mint); }
+        .form-group textarea { height: 100px; resize: none; }
+        .btn-submit { width: 100%; padding: 0.9rem; background: var(--mint); color: #fff; border: none; border-radius: 50px; font-family: var(--font); font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 8px 25px rgba(0,184,148,0.25); }
+        .btn-submit:hover { background: var(--navy); box-shadow: 0 8px 25px rgba(13,31,60,0.25); }
+
+        /* FOOTER */
+        footer { background: var(--navy); color: rgba(255,255,255,0.4); padding: 4rem 3% 2rem; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .footer-brand .f-logo { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 0.8rem; display: block; }
+        .footer-brand .f-logo span { color: var(--mint); }
+        .footer-brand p { font-size: 0.82rem; line-height: 1.7; }
+        .footer-col h4 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--mint); margin-bottom: 1rem; font-weight: 700; }
+        .footer-col a { display: block; font-size: 0.82rem; margin-bottom: 0.5rem; transition: color 0.3s; }
+        .footer-col a:hover { color: #fff; }
+        .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; text-align: center; font-size: 0.75rem; }
+
+        /* REVEAL */
+        .reveal { opacity: 0; transform: translateY(25px); transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .rd1 { transition-delay: 0.08s; } .rd2 { transition-delay: 0.16s; } .rd3 { transition-delay: 0.24s; } .rd4 { transition-delay: 0.32s; } .rd5 { transition-delay: 0.4s; }
+
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-p { margin-left: auto; margin-right: auto; }
+            .hero-actions { justify-content: center; }
+            .hero-trust { justify-content: center; }
+            .hero-visual { max-width: 400px; margin: 0 auto; }
+            .float-card-1, .float-card-2 { display: none; }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .process-steps { grid-template-columns: 1fr 1fr; }
+            .process-steps::before { display: none; }
+            .results-grid { grid-template-columns: 1fr 1fr; }
+            .team-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            section { padding: 4rem 4%; }
+            .services-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr 1fr; max-width: 100%; gap: 1rem; }
+            .contact-wrapper { grid-template-columns: 1fr; padding: 1.5rem; gap: 2rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .review-card { min-width: 280px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            nav ul { display: none; }
+            .nav-btn { display: none; }
+            #process { margin: 0; border-radius: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="siteHeader">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <div class="logo-mark">DV</div>
+                <span class="logo-text">Denta<span>Vita</span></span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#services">Usluge</a></li>
+                    <li><a href="#process">Proces</a></li>
+                    <li><a href="#results">Rezultati</a></li>
+                    <li><a href="#team">Tim</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="nav-btn">Naruči se</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-grid">
+            <div>
+                <h1 class="reveal">Osmijeh koji<br>ostavlja <span>dojam</span></h1>
+                <p class="hero-p reveal">Moderna stomatologija u ugodnom okruženju. Bezbolni tretmani, najnovija tehnologija i tim koji brine o svakom detalju vašeg osmijeha.</p>
+                <div class="hero-actions reveal">
+                    <button class="btn-main" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Naruči se online</button>
+                    <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Vidi usluge</button>
+                </div>
+                <div class="hero-trust reveal">
+                    <div class="trust-item">
+                        <strong>15.000+</strong>
+                        <span>Pacijenata</span>
+                    </div>
+                    <div class="trust-item">
+                        <strong>18</strong>
+                        <span>Godina iskustva</span>
+                    </div>
+                    <div class="trust-item">
+                        <strong>4.9 &#9733;</strong>
+                        <span>Google ocjena</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual reveal">
+                <div class="hero-img-main">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80" alt="Osmijeh pacijenta">
+                </div>
+                <div class="hero-float-card float-card-1">
+                    <div class="float-icon mint">&#128171;</div>
+                    <div class="float-card-text">
+                        <strong>Bezbolni tretmani</strong>
+                        <span>Laserska tehnologija</span>
+                    </div>
+                </div>
+                <div class="hero-float-card float-card-2">
+                    <div class="float-icon gold">&#11088;</div>
+                    <div class="float-card-text">
+                        <strong>98% zadovoljstvo</strong>
+                        <span>Pacijenata</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div style="text-align:center;" class="reveal">
+                <span class="section-badge">Naše usluge</span>
+                <h2 class="section-title">Sve za vaš savršen osmijeh</h2>
+                <p class="section-subtitle" style="margin:0 auto;">Od prevencije do kompletne estetske transformacije &mdash; koristimo najnovije tehnologije i materijale.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">&#129463;</div>
+                    <h3>Estetska Stomatologija</h3>
+                    <p>Izbjeljivanje, ljuskice, kompozitne fasete i kompletni smile makeover za blistav osmijeh.</p>
+                </div>
+                <div class="service-card reveal rd1">
+                    <div class="service-icon">&#129657;</div>
+                    <h3>Dentalni Implantati</h3>
+                    <p>Trajno rješenje za nedostajuće zube. Koristimo Straumann i Nobel Biocare sustave.</p>
+                </div>
+                <div class="service-card reveal rd2">
+                    <div class="service-icon">&#128516;</div>
+                    <h3>Ortodoncija</h3>
+                    <p>Nevidljivi aparatići, Invisalign i klasična ortodoncija za savršen zagrižaj u svakoj dobi.</p>
+                </div>
+                <div class="service-card reveal rd3">
+                    <div class="service-icon">&#128300;</div>
+                    <h3>Prevencija &amp; Higijena</h3>
+                    <p>Redoviti pregledi, profesionalno čišćenje, Air-Flow tretman i savjeti za svakodnevnu njegu.</p>
+                </div>
+                <div class="service-card reveal rd4">
+                    <div class="service-icon">&#127973;</div>
+                    <h3>Protetika</h3>
+                    <p>Krunice, mostovi i proteze od najkvalitetnijih materijala. Povrat funkcije i estetike.</p>
+                </div>
+                <div class="service-card reveal rd5">
+                    <div class="service-icon">&#128118;</div>
+                    <h3>Dječja Stomatologija</h3>
+                    <p>Nježan pristup najmlađima. Preventivna zaštita, fluoridacija i brtvljenje fisura.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="process">
+        <div class="container">
+            <div style="text-align:center;" class="reveal">
+                <span class="section-badge" style="background:rgba(255,255,255,0.06);color:var(--mint);">Kako radimo</span>
+                <h2 class="section-title" style="color:#fff;">Vaš put do savršenog osmijeha</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step reveal">
+                    <div class="step-num">01</div>
+                    <h3>Online prijava</h3>
+                    <p>Ispunite obrazac ili nazovite. Dogovaramo termin u roku 24h.</p>
+                </div>
+                <div class="process-step reveal rd1">
+                    <div class="step-num">02</div>
+                    <h3>Dijagnostika</h3>
+                    <p>3D skeniranje, RTG i detaljni pregled s planom terapije.</p>
+                </div>
+                <div class="process-step reveal rd2">
+                    <div class="step-num">03</div>
+                    <h3>Tretman</h3>
+                    <p>Bezbolni zahvat s najnovijom tehnologijom i vrhunskim materijalima.</p>
+                </div>
+                <div class="process-step reveal rd3">
+                    <div class="step-num">04</div>
+                    <h3>Praćenje</h3>
+                    <p>Redovite kontrole i program održavanja za trajne rezultate.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="results">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <span class="section-badge">Rezultati</span>
+                <h2 class="section-title">Transformacije naših pacijenata</h2>
+            </div>
+            <div class="results-grid">
+                <div class="result-card reveal">
+                    <div class="result-imgs">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=400&q=80" alt="Prije">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=400&q=80" alt="Poslije">
+                        <span class="vs-badge">VS</span>
+                        <span class="result-label before">Prije</span>
+                        <span class="result-label after">Poslije</span>
+                    </div>
+                    <div class="result-body">
+                        <h3>Smile Makeover</h3>
+                        <p>Ljuskice + izbjeljivanje &bull; Trajanje: 3 tjedna</p>
+                    </div>
+                </div>
+                <div class="result-card reveal rd1">
+                    <div class="result-imgs">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=400&q=80" alt="Prije">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=400&q=80" alt="Poslije">
+                        <span class="vs-badge">VS</span>
+                        <span class="result-label before">Prije</span>
+                        <span class="result-label after">Poslije</span>
+                    </div>
+                    <div class="result-body">
+                        <h3>Implantati + Krunice</h3>
+                        <p>4 implantata + keramičke krunice &bull; 6 mjeseci</p>
+                    </div>
+                </div>
+                <div class="result-card reveal rd2">
+                    <div class="result-imgs">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=400&q=80" alt="Prije">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=400&q=80" alt="Poslije">
+                        <span class="vs-badge">VS</span>
+                        <span class="result-label before">Prije</span>
+                        <span class="result-label after">Poslije</span>
+                    </div>
+                    <div class="result-body">
+                        <h3>Invisalign Terapija</h3>
+                        <p>Nevidljivi aparatić &bull; 14 mjeseci tretmana</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-badge">Iskustva</span>
+                <h2 class="section-title">Što kažu naši pacijenti</h2>
+            </div>
+            <div class="reviews-track">
+                <div class="review-card reveal">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>&ldquo;Godinama sam se bojala zubara. U DentaViti mi je prvi put bilo ugodno. Dr. Katarina je nevjerojatno strpljiva i nježna. Preporučujem svima!&rdquo;</p>
+                    <div class="review-author">
+                        <div class="review-avatar">MK</div>
+                        <div class="review-author-info">
+                            <strong>Marina Knežević</strong>
+                            <span>Estetska stomatologija</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card reveal rd1">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>&ldquo;Napravio sam kompletni smile makeover &mdash; ljuskice na svih 10 zubi. Rezultat je nevjerojatan. Tim je profesionalan i ugodan za rad.&rdquo;</p>
+                    <div class="review-author">
+                        <div class="review-avatar">IB</div>
+                        <div class="review-author-info">
+                            <strong>Ivan Boban</strong>
+                            <span>Ljuskice &amp; Izbjeljivanje</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card reveal rd2">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>&ldquo;Djeca obožavaju ići u DentaVitu. Prostor je namijenjen malima, a doktorica ima poseban pristup. Naša obitelj tu dolazi već 5 godina.&rdquo;</p>
+                    <div class="review-author">
+                        <div class="review-avatar">AP</div>
+                        <div class="review-author-info">
+                            <strong>Ana Perić</strong>
+                            <span>Dječja stomatologija</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <span class="section-badge">Naš tim</span>
+                <h2 class="section-title">Stručnjaci za vaš osmijeh</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-member reveal">
+                    <div class="team-photo-wrap">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80" alt="Dr. Katarina">
+                    </div>
+                    <h3>Dr. Katarina Horvat</h3>
+                    <span>Osnivačica &amp; Voditeljica</span>
+                </div>
+                <div class="team-member reveal rd1">
+                    <div class="team-photo-wrap">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80" alt="Dr. Matej">
+                    </div>
+                    <h3>Dr. Matej Radić</h3>
+                    <span>Implantolog</span>
+                </div>
+                <div class="team-member reveal rd2">
+                    <div class="team-photo-wrap">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964ac31?auto=format&fit=crop&w=400&q=80" alt="Dr. Lucia">
+                    </div>
+                    <h3>Dr. Lucia Jurić</h3>
+                    <span>Ortodont</span>
+                </div>
+                <div class="team-member reveal rd3">
+                    <div class="team-photo-wrap">
+                        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80" alt="Dr. Fran">
+                    </div>
+                    <h3>Dr. Fran Kovačević</h3>
+                    <span>Estetska stomatologija</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-wrapper reveal">
+                <div class="contact-info">
+                    <span class="section-badge">Kontakt</span>
+                    <h2>Naručite se već <span>danas</span></h2>
+                    <p>Ispunite obrazac ili nas kontaktirajte direktno. Odgovaramo u roku od 2 sata tijekom radnog vremena.</p>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">&#128205;</div>
+                        <div class="contact-detail-text">
+                            <strong>Adresa</strong>
+                            <span>Ilica 42, 10000 Zagreb</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">&#128222;</div>
+                        <div class="contact-detail-text">
+                            <strong>Telefon</strong>
+                            <span>+385 1 456 7890</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">&#128231;</div>
+                        <div class="contact-detail-text">
+                            <strong>Email</strong>
+                            <span>info@dentavita.hr</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">&#128336;</div>
+                        <div class="contact-detail-text">
+                            <strong>Radno vrijeme</strong>
+                            <span>Pon&ndash;Pet: 08&ndash;20h | Sub: 08&ndash;14h</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:1.5rem;">Online narudžba</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Ime</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Prezime</label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Telefon</label>
+                                <input type="tel">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Usluga</label>
+                            <select>
+                                <option value="" disabled selected>Odaberite uslugu</option>
+                                <option>Pregled &amp; Konzultacija</option>
+                                <option>Estetska stomatologija</option>
+                                <option>Implantati</option>
+                                <option>Ortodoncija</option>
+                                <option>Higijena &amp; Čišćenje</option>
+                                <option>Dječja stomatologija</option>
+                                <option>Ostalo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Poruka</label>
+                            <textarea></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Pošalji narudžbu</button>
+                        <div id="formStatus" style="margin-top:1rem;font-size:0.85rem;text-align:center;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="f-logo">Denta<span>Vita</span></span>
+                    <p>Moderna stomatološka ordinacija u srcu Zagreba. Vaš osmijeh je naš prioritet.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigacija</h4>
+                    <a href="#services">Usluge</a>
+                    <a href="#process">Kako radimo</a>
+                    <a href="#results">Rezultati</a>
+                    <a href="#team">Tim</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Usluge</h4>
+                    <a href="#services">Estetska</a>
+                    <a href="#services">Implantati</a>
+                    <a href="#services">Ortodoncija</a>
+                    <a href="#services">Preventiva</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <a href="#contact">+385 1 456 7890</a>
+                    <a href="#contact">info@dentavita.hr</a>
+                    <a href="#contact">Ilica 42, Zagreb</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DentaVita d.o.o. Sva prava pridržana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Reveal
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('active'); obs.unobserve(entry.target); }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Form
+        document.getElementById('contactForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const status = document.getElementById('formStatus');
+            btn.textContent = 'Šaljem...';
+            setTimeout(() => {
+                e.target.reset();
+                btn.textContent = 'Pošalji narudžbu';
+                status.textContent = '\u2713 Narudžba zaprimljena! Javimo se u roku 2 sata.';
+                status.style.color = 'var(--mint)';
+                setTimeout(() => status.textContent = '', 5000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

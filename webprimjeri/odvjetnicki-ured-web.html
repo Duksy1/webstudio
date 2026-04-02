@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pravo &amp; Pravda | Odvjetnički Ured</title>
+    <meta name="description" content="Odvjetnički ured Pravo &amp; Pravda — stručna pravna pomoć u Zagrebu. Gospodarsko, kazneno, obiteljsko i imovinsko pravo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f8f6f1;
+            --dark: #141414;
+            --navy: #1b2541;
+            --gold: #b8963e;
+            --gold-light: #d4b96a;
+            --text: #2c2c2c;
+            --text-muted: #8a8a80;
+            --line: rgba(0,0,0,0.08);
+            --serif: 'EB Garamond', serif;
+            --sans: 'Inter', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); color: var(--text); background: var(--bg); overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* NAV — classic minimal */
+        header { position: fixed; top: 0; width: 100%; z-index: 100; transition: all 0.4s; padding: 0; }
+        .header-inner { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1.8rem 3%; }
+        header.scrolled { background: rgba(248,246,241,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+        .logo { display: flex; align-items: center; gap: 0.8rem; }
+        .logo-icon { width: 36px; height: 36px; background: var(--navy); display: flex; align-items: center; justify-content: center; }
+        .logo-icon span { color: var(--gold); font-family: var(--serif); font-weight: 800; font-size: 1.1rem; }
+        .logo-text { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--navy); letter-spacing: 0.5px; }
+        nav ul { display: flex; gap: 2.5rem; }
+        nav ul li a { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2.5px; color: var(--text-muted); font-weight: 500; transition: color 0.3s; }
+        nav ul li a:hover { color: var(--gold); }
+
+        /* HERO — Full bleed with overlay text */
+        .hero { height: 100vh; position: relative; display: flex; align-items: flex-end; background: var(--navy); }
+        .hero-bg { position: absolute; inset: 0; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.2; filter: grayscale(100%); }
+        .hero-content { position: relative; z-index: 2; width: 100%; padding: 5rem 4%; }
+        .hero-container { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: end; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero h1 { font-family: var(--serif); font-size: clamp(3rem, 5.5vw, 5.5rem); color: #fff; font-weight: 400; line-height: 1.08; letter-spacing: -1px; }
+        .hero h1 em { color: var(--gold); font-style: italic; }
+        .hero-right p { color: rgba(255,255,255,0.45); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.9rem 2rem; background: var(--gold); color: var(--navy); font-family: var(--sans); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--gold-light); }
+        .hero-badge { position: absolute; top: 50%; right: 6%; transform: translateY(-50%); z-index: 2; }
+        .hero-badge-inner { width: 130px; height: 130px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; animation: rotateBadge 20s linear infinite; }
+        .hero-badge-inner span { font-family: var(--serif); font-size: 2.2rem; color: var(--gold); font-weight: 700; line-height: 1; }
+        .hero-badge-inner small { color: rgba(255,255,255,0.4); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 0.3rem; }
+        @keyframes rotateBadge { from { transform: translateY(-50%) rotate(0); } to { transform: translateY(-50%) rotate(360deg); } }
+
+        /* GOLD STRIP */
+        .gold-strip { background: var(--gold); padding: 1.2rem 4%; }
+        .gold-strip-inner { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+        .gold-strip-item { display: flex; align-items: center; gap: 0.8rem; color: var(--navy); }
+        .gold-strip-item strong { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; }
+        .gold-strip-item span { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+
+        /* SECTIONS */
+        section { padding: 7rem 4%; }
+        .container { max-width: 1300px; margin: 0 auto; }
+        .section-eyebrow { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 4px; color: var(--gold); font-weight: 600; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 1rem; }
+        .section-eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+        .section-heading { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 400; line-height: 1.15; margin-bottom: 1.5rem; letter-spacing: -0.5px; }
+
+        /* PODRUČJA — editorial grid */
+        #areas { background: var(--bg); }
+        .areas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
+        .area-card { padding: 3rem 2.5rem; border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); cursor: pointer; transition: all 0.5s; position: relative; }
+        .area-card:nth-child(3n) { border-right: none; }
+        .area-card::before { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1); }
+        .area-card:hover::before { width: 100%; }
+        .area-card:hover { background: #fff; }
+        .area-num { font-family: var(--serif); font-size: 3rem; font-weight: 700; color: rgba(0,0,0,0.04); position: absolute; top: 1.5rem; right: 1.5rem; line-height: 1; }
+        .area-card h3 { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; transition: color 0.3s; }
+        .area-card:hover h3 { color: var(--gold); }
+        .area-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
+        .area-icon { font-size: 1.5rem; margin-bottom: 1.5rem; opacity: 0.6; }
+
+        /* O NAMA — editorial layout */
+        #about { background: #fff; }
+        .about-layout { display: grid; grid-template-columns: 0.4fr 1fr; gap: 5rem; }
+        .about-img-col { position: relative; }
+        .about-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; filter: grayscale(30%); }
+        .about-img-accent { position: absolute; top: -1.5rem; left: -1.5rem; width: 100%; height: 100%; border: 1px solid var(--gold); z-index: -1; }
+        .about-text h2 { font-family: var(--serif); font-size: 2.5rem; font-weight: 400; margin-bottom: 2rem; line-height: 1.2; }
+        .about-text h2 em { color: var(--gold); font-style: italic; }
+        .about-body { font-size: 0.95rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 2rem; }
+        .about-body + .about-body { border-top: 1px solid var(--line); padding-top: 2rem; }
+        .about-signature { display: flex; align-items: center; gap: 1.2rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+        .about-signature-line { font-family: var(--serif); font-size: 1.6rem; font-style: italic; color: var(--gold); }
+        .about-signature-name { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; }
+        .about-signature-title { font-size: 0.75rem; color: var(--text-muted); }
+
+        /* TIMELINE */
+        #history { background: var(--navy); color: #fff; }
+        .timeline { position: relative; padding: 2rem 0; }
+        .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,0.1); transform: translateX(-50%); }
+        .timeline-item { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 4rem; position: relative; align-items: center; }
+        .timeline-item::before { content: ''; position: absolute; left: 50%; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); transform: translateX(-50%); top: 50%; z-index: 1; }
+        .timeline-year { font-family: var(--serif); font-size: 4rem; font-weight: 700; color: rgba(255,255,255,0.08); text-align: right; padding-right: 3rem; }
+        .timeline-item:nth-child(even) .timeline-year { text-align: left; padding-left: 3rem; padding-right: 0; order: 2; }
+        .timeline-item:nth-child(even) .timeline-content { order: 1; text-align: right; padding-right: 3rem; }
+        .timeline-content { padding-left: 3rem; }
+        .timeline-content h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .timeline-content p { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.7; }
+
+        /* TIM */
+        #team { background: var(--bg); }
+        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .team-member { text-align: center; }
+        .team-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; filter: grayscale(100%); transition: filter 0.5s, transform 0.5s; position: relative; border-radius: 0; }
+        .team-photo-wrap { overflow: hidden; position: relative; margin-bottom: 1.5rem; }
+        .team-photo-wrap::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform 0.5s; transform-origin: left; }
+        .team-member:hover .team-photo-wrap::after { transform: scaleX(1); }
+        .team-member:hover .team-photo { filter: grayscale(0); transform: scale(1.03); }
+        .team-member h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; margin-bottom: 0.3rem; }
+        .team-member span { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); }
+        .team-member p { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; line-height: 1.6; max-width: 280px; margin-left: auto; margin-right: auto; }
+
+        /* KONTAKT */
+        #contact { background: #fff; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; }
+        .contact-info { }
+        .contact-info h2 { font-family: var(--serif); font-size: 2.5rem; font-weight: 400; margin-bottom: 2rem; line-height: 1.2; }
+        .contact-info h2 em { color: var(--gold); font-style: italic; }
+        .contact-detail { padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
+        .contact-detail:first-of-type { border-top: 1px solid var(--line); }
+        .contact-detail h4 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); font-weight: 600; margin-bottom: 0.4rem; }
+        .contact-detail p { font-size: 0.95rem; color: var(--text-muted); }
+        .contact-form { }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .form-field { margin-bottom: 1.8rem; }
+        .form-field label { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2.5px; color: var(--text-muted); margin-bottom: 0.6rem; font-weight: 500; }
+        .form-field input, .form-field textarea, .form-field select { width: 100%; padding: 0.9rem 1rem; border: 1px solid var(--line); font-family: var(--sans); font-size: 0.9rem; background: var(--bg); color: var(--text); outline: none; transition: border-color 0.3s; }
+        .form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color: var(--gold); }
+        .form-field textarea { height: 120px; resize: none; }
+        .btn-submit { display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; background: var(--navy); color: #fff; border: none; font-family: var(--sans); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.3s; }
+        .btn-submit:hover { background: var(--gold); color: var(--navy); }
+
+        /* FOOTER */
+        footer { background: var(--navy); color: rgba(255,255,255,0.3); padding: 4rem 4% 2rem; }
+        .footer-inner { max-width: 1300px; margin: 0 auto; }
+        .footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .footer-brand .footer-logo { font-family: var(--serif); font-size: 1.3rem; color: #fff; font-weight: 600; display: block; margin-bottom: 1rem; }
+        .footer-brand p { font-size: 0.8rem; line-height: 1.7; }
+        .footer-col h4 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 1rem; font-weight: 600; }
+        .footer-col a { display: block; font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-bottom: 0.6rem; transition: color 0.3s; }
+        .footer-col a:hover { color: #fff; }
+        .footer-bottom { max-width: 1300px; margin: 0 auto; padding-top: 2rem; display: flex; justify-content: space-between; font-size: 0.75rem; }
+
+        /* REVEAL */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .r-d1 { transition-delay: 0.1s; }
+        .r-d2 { transition-delay: 0.2s; }
+        .r-d3 { transition-delay: 0.3s; }
+        .r-d4 { transition-delay: 0.4s; }
+        .r-d5 { transition-delay: 0.5s; }
+
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .hero-badge { display: none; }
+            .areas-grid { grid-template-columns: 1fr 1fr; }
+            .area-card:nth-child(2n) { border-right: none; }
+            .area-card:nth-child(3n) { border-right: 1px solid var(--line); }
+            .about-layout { grid-template-columns: 1fr; }
+            .about-img-col { max-width: 400px; }
+            .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
+            .timeline::before { left: 0; }
+            .timeline-item::before { left: 0; }
+            .timeline-year { text-align: left !important; padding: 0 0 0 2rem !important; font-size: 2.5rem; }
+            .timeline-content { text-align: left !important; padding: 0 0 0 2rem !important; }
+            .timeline-item:nth-child(even) .timeline-year { order: unset; }
+            .timeline-item:nth-child(even) .timeline-content { order: unset; }
+        }
+        @media (max-width: 768px) {
+            section { padding: 4rem 4%; }
+            .areas-grid { grid-template-columns: 1fr; }
+            .area-card { border-right: none !important; }
+            .area-card { padding: 2rem 1.5rem; }
+            .team-grid { grid-template-columns: 1fr; max-width: 500px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .contact-info h2 { font-size: 2rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-top { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 0.5rem; }
+            .gold-strip-inner { flex-direction: column; align-items: flex-start; }
+            .section-heading { font-size: clamp(1.8rem, 3vw, 3.2rem); }
+            .hero h1 { font-size: clamp(2.5rem, 5vw, 5.5rem); }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="siteHeader">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon"><span>PP</span></div>
+                <span class="logo-text">Pravo &amp; Pravda</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#areas">Područja</a></li>
+                    <li><a href="#about">O Nama</a></li>
+                    <li><a href="#history">Povijest</a></li>
+                    <li><a href="#team">Tim</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1400&q=80" alt="Pravna knjižnica">
+        </div>
+        <div class="hero-badge">
+            <div class="hero-badge-inner">
+                <span>25+</span>
+                <small>Godina iskustva</small>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-container">
+                <div>
+                    <h1>Pravo je<br>složeno.<br><em>Mi ga činimo jasnim.</em></h1>
+                </div>
+                <div class="hero-right">
+                    <p>Odvjetnički ured s tradicijom od 25 godina pruža vrhunsku pravnu zaštitu za građane i poduzeća. Svaki slučaj pristupamo s predanošću, integritetom i dubinskim razumijevanjem zakona.</p>
+                    <a href="#contact" class="btn-primary">Zakažite konzultaciju &#8594;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="gold-strip">
+        <div class="gold-strip-inner">
+            <div class="gold-strip-item">
+                <strong>3500+</strong>
+                <span>Riješenih slučajeva</span>
+            </div>
+            <div class="gold-strip-item">
+                <strong>95%</strong>
+                <span>Uspješnost</span>
+            </div>
+            <div class="gold-strip-item">
+                <strong>12</strong>
+                <span>Odvjetnika</span>
+            </div>
+            <div class="gold-strip-item">
+                <strong>25+</strong>
+                <span>Godina tradicije</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="areas">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-eyebrow">Područja rada</span>
+                <h2 class="section-heading">Specijalizirani smo za<br>kompleksne pravne izazove</h2>
+            </div>
+            <div class="areas-grid" style="margin-top:3rem;">
+                <div class="area-card reveal">
+                    <span class="area-num">01</span>
+                    <div class="area-icon">&#9878;</div>
+                    <h3>Gospodarsko pravo</h3>
+                    <p>Osnivanje društava, ugovori, spajanja i preuzimanja, korporativna restrukturiranja i trgovačko zastupanje pred sudovima.</p>
+                </div>
+                <div class="area-card reveal r-d1">
+                    <span class="area-num">02</span>
+                    <div class="area-icon">&#9879;</div>
+                    <h3>Kazneno pravo</h3>
+                    <p>Obrana u kaznenim postupcima, gospodarski kriminal, korupcija te zastupanje oštećenika u kaznenom procesu.</p>
+                </div>
+                <div class="area-card reveal r-d2">
+                    <span class="area-num">03</span>
+                    <div class="area-icon">&#9825;</div>
+                    <h3>Obiteljsko pravo</h3>
+                    <p>Razvod braka, skrbništvo nad djecom, alimentacija, bračna stečevina i medijacija u obiteljskim sporovima.</p>
+                </div>
+                <div class="area-card reveal r-d3">
+                    <span class="area-num">04</span>
+                    <div class="area-icon">&#127970;</div>
+                    <h3>Imovinsko pravo</h3>
+                    <p>Kupoprodajni ugovori, uknjižba nekretnina, etažiranje, zemljišnoknjižni postupci i rješavanje vlasničkih sporova.</p>
+                </div>
+                <div class="area-card reveal r-d4">
+                    <span class="area-num">05</span>
+                    <div class="area-icon">&#128188;</div>
+                    <h3>Radno pravo</h3>
+                    <p>Ugovori o radu, otkazi, mobbing, kolektivni ugovori, zastupanje pred radnim sudovima i savjetovanje poslodavaca.</p>
+                </div>
+                <div class="area-card reveal r-d5">
+                    <span class="area-num">06</span>
+                    <div class="area-icon">&#127760;</div>
+                    <h3>EU Pravo</h3>
+                    <p>Usklađivanje s EU regulativama, GDPR, natječaji za EU fondove i zastupanje pred europskim institucijama.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-layout">
+                <div class="about-img-col reveal">
+                    <div style="position:relative;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Osnivač" class="about-img">
+                        <div class="about-img-accent"></div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <div class="reveal">
+                        <span class="section-eyebrow">O nama</span>
+                        <h2>Tradicija. Integritet.<br><em>Rezultati.</em></h2>
+                    </div>
+                    <p class="about-body reveal">Odvjetnički ured Pravo &amp; Pravda osnovan je 2001. godine s jasnom vizijom: pružiti pravnu pomoć najviše kvalitete, temeljem na etičnosti, stručnosti i potpunoj posvećenosti svakom klijentu. Danas, nakon više od dva desetljeća, ta vizija ostaje nepromijenjena.</p>
+                    <p class="about-body reveal">Naš tim od 12 odvjetnika i pravnih savjetnika pokriva širok spektar pravnih područja, ali svaki slučaj obrađujemo s jednakom razinom predanosti. Razumijemo da iza svakog pravnog pitanja stoji ljudska priča &mdash; i prema njoj se odnosimo s maksimalnim poštovanjem.</p>
+                    <div class="about-signature reveal">
+                        <div>
+                            <div class="about-signature-line">Dr. Luka Petrović</div>
+                            <div class="about-signature-name">Osnivač i glavni partner</div>
+                            <div class="about-signature-title">Odvjetnik od 1998.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="history">
+        <div class="container">
+            <div class="reveal" style="text-align:center; margin-bottom:4rem;">
+                <span class="section-eyebrow" style="justify-content:center;">Naša povijest</span>
+                <h2 class="section-heading" style="color:#fff;">Ključni trenuci<br>naše priče</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2001</div>
+                    <div class="timeline-content">
+                        <h3>Osnivanje ureda</h3>
+                        <p>Dr. Luka Petrović otvara odvjetnički ured u centru Zagreba s vizijom pružanja vrhunske pravne pomoći.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2008</div>
+                    <div class="timeline-content">
+                        <h3>Širenje tima</h3>
+                        <p>Ured raste na 5 odvjetnika i otvara odjel za gospodarsko pravo, postajući referentni ured za korporativne klijente.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <h3>Preseljenje u nove prostore</h3>
+                        <p>Seli u reprezentativne prostore na Zrinjevcu. Otvara se odjel za EU pravo, kao odgovor na ulazak Hrvatske u EU.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h3>Priznanje i tradicija</h3>
+                        <p>Proglašeni jednim od vodećih odvjetničkih ureda u Hrvatskoj. Tim broji 12 stručnjaka s više od 3500 uspješno riješenih slučajeva.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="container">
+            <div class="reveal" style="text-align:center; margin-bottom:4rem;">
+                <span class="section-eyebrow" style="justify-content:center;">Naš tim</span>
+                <h2 class="section-heading">Stručnjaci kojima<br>možete vjerovati</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-member reveal">
+                    <div class="team-photo-wrap">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Dr. Luka Petrović" class="team-photo">
+                    </div>
+                    <h3>Dr. Luka Petrović</h3>
+                    <span>Glavni partner</span>
+                    <p>Specijalist za gospodarsko i kazneno pravo s 25+ godina iskustva.</p>
+                </div>
+                <div class="team-member reveal r-d1">
+                    <div class="team-photo-wrap">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="Marina Knežević" class="team-photo">
+                    </div>
+                    <h3>Marina Knežević</h3>
+                    <span>Partnerica</span>
+                    <p>Voditeljica odjela za obiteljsko pravo i medijaciju.</p>
+                </div>
+                <div class="team-member reveal r-d2">
+                    <div class="team-photo-wrap">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=500&q=80" alt="Tomislav Radić" class="team-photo">
+                    </div>
+                    <h3>Tomislav Radić</h3>
+                    <span>Senior odvjetnik</span>
+                    <p>Ekspert za imovinsko pravo i složene nekretninske transakcije.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <span class="section-eyebrow">Kontakt</span>
+                    <h2>Potrebna vam je<br><em>pravna pomoć?</em></h2>
+                    <div class="contact-detail">
+                        <h4>Adresa</h4>
+                        <p>Trg Nikole Zrinskog 10<br>10000 Zagreb, Hrvatska</p>
+                    </div>
+                    <div class="contact-detail">
+                        <h4>Telefon</h4>
+                        <p>+385 1 234 5678</p>
+                    </div>
+                    <div class="contact-detail">
+                        <h4>Email</h4>
+                        <p>info@pravoipravda.hr</p>
+                    </div>
+                    <div class="contact-detail">
+                        <h4>Radno vrijeme</h4>
+                        <p>Pon &ndash; Pet: 08:00 &ndash; 18:00<br>Sub: po dogovoru</p>
+                    </div>
+                </div>
+                <div class="contact-form reveal">
+                    <h3 style="font-family:var(--serif);font-size:1.6rem;font-weight:600;margin-bottom:2rem;">Zakažite konzultaciju</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Ime</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Prezime</label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Email</label>
+                                <input type="email" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Telefon</label>
+                                <input type="tel">
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label>Područje prava</label>
+                            <select>
+                                <option value="" disabled selected>Odaberite područje</option>
+                                <option>Gospodarsko pravo</option>
+                                <option>Kazneno pravo</option>
+                                <option>Obiteljsko pravo</option>
+                                <option>Imovinsko pravo</option>
+                                <option>Radno pravo</option>
+                                <option>EU Pravo</option>
+                                <option>Ostalo</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label>Opišite vaš slučaj</label>
+                            <textarea></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Pošalji upit &#8594;</button>
+                        <div id="formStatus" style="margin-top:1rem;font-size:0.85rem;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo">Pravo &amp; Pravda</span>
+                    <p>Odvjetnički ured s tradicijom od 25 godina. Integritet, stručnost, rezultati.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigacija</h4>
+                    <a href="#areas">Područja rada</a>
+                    <a href="#about">O nama</a>
+                    <a href="#team">Naš tim</a>
+                    <a href="#contact">Kontakt</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Područja</h4>
+                    <a href="#areas">Gospodarsko pravo</a>
+                    <a href="#areas">Kazneno pravo</a>
+                    <a href="#areas">Obiteljsko pravo</a>
+                    <a href="#areas">Imovinsko pravo</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Pravo &amp; Pravda d.o.o. Sva prava pridržana.</span>
+                <span>Odvjetnički ured upisan u imenik HOK</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll
+        const header = document.getElementById('siteHeader');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Reveal on scroll
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Form  
+        document.getElementById('contactForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const status = document.getElementById('formStatus');
+            btn.textContent = 'Šaljem...';
+            setTimeout(() => {
+                e.target.reset();
+                btn.innerHTML = 'Pošalji upit &#8594;';
+                status.textContent = '\u2713 Vaš upit je zaprimljen. Kontaktirat ćemo vas u najkraćem roku.';
+                status.style.color = 'var(--gold)';
+                setTimeout(() => status.textContent = '', 5000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

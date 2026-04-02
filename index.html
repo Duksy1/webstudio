@@ -56,9 +56,6 @@
             transform: translateY(-4px);
             box-shadow: 0 10px 15px -3px rgb(253 224 71 / 0.2), 0 4px 6px -4px rgb(253 224 71 / 0.2);
         }
-
-        /* #work section is hidden until portfolio is ready.
-           Uncomment the section in HTML when ready to show. */
     </style>
     
     <script>
@@ -111,6 +108,7 @@
                 
                 <nav class="hidden md:flex space-x-8">
                     <a href="#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
+                    <a href="/radovi.html" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
                     <a href="#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
                     <a href="/blog/" class="text-secondary hover:text-primary transition-colors duration-200">Blog</a>
                 </nav>
@@ -133,6 +131,7 @@
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-surface border-b border-gray-700 z-40 md:hidden">
             <div class="container mx-auto max-w-7xl px-6 py-8 space-y-6">
                 <a href="#services" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Usluge</a>
+                <a href="/radovi.html" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Radovi</a>
                 <a href="#about" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">O nama</a>
                 <a href="/blog/" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Blog</a>
                 <a href="#contact" class="block w-full text-center bg-accent text-base font-semibold px-5 py-3 rounded-lg hover:bg-accent-dark transition-all">
@@ -244,7 +243,6 @@
             </div>
         </section>
 
-        <!-- Portfolio section — uncomment when ready to display
         <section id="work" class="py-24 md:py-32 bg-surface border-y border-surface">
             <div class="container mx-auto max-w-7xl px-6">
                 <div class="text-center max-w-3xl mx-auto">
@@ -252,34 +250,70 @@
                     <h2 class="font-heading text-5xl md:text-6xl text-primary mt-4">
                         Odabrani Projekti
                     </h2>
+                    <p class="mt-6 text-secondary text-lg">
+                        Svaki projekt radimo od nule — prilagođen industriji, brendu i ciljevima klijenta.
+                    </p>
                 </div>
                 
                 <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                    <a href="https://frizerskistudios.com/" target="_blank" rel="noopener noreferrer" class="block group bg-base p-6 rounded-lg border border-surface card-lift">
-                        <div class="overflow-hidden rounded-md">
-                            <img src="https://placehold.co/600x400/111111/fde047?text=Frizerski+Studio+S" 
-                                 alt="Frizerski Studio S web stranica" 
-                                 width="600" height="400" loading="lazy"
-                                 class="w-full h-auto object-cover transform transition-transform duration-300 group-hover:scale-105">
+
+                    <a href="/webprimjeri/frizerski-salon-web.html" class="block group bg-base p-6 rounded-lg border border-surface card-lift">
+                        <div class="overflow-hidden rounded-md" style="aspect-ratio:16/10; background: linear-gradient(135deg, #f3ede4, #c9a2a7); display: flex; align-items: center; justify-content: center;">
+                            <div class="text-center px-6">
+                                <p style="font-family: serif; color: #8b6f7d; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;">Frizerski salon</p>
+                                <p style="font-family: serif; color: #3d2f35; font-size: 1.75rem; line-height: 1.1; margin-top: 0.4rem;">Bella Studio</p>
+                                <div style="width: 30px; height: 1px; background: #8b6f7d; margin: 0.5rem auto;"></div>
+                            </div>
                         </div>
-                        <h3 class="font-heading text-3xl text-primary mt-6">Frizerski Studio S</h3>
+                        <h3 class="font-heading text-3xl text-primary mt-6 group-hover:text-accent transition-colors">Bella Studio</h3>
                         <p class="text-secondary text-lg mt-2">Web Dizajn / Web Izrada</p>
                     </a>
 
-                    <a href="https://dentalnicentar.pages.dev/" target="_blank" rel="noopener noreferrer" class="block group bg-base p-6 rounded-lg border border-surface card-lift">
-                        <div class="overflow-hidden rounded-md">
-                            <img src="https://placehold.co/600x400/111111/fde047?text=Dentalni+Centar" 
-                                 alt="Dentalni Centar web stranica" 
-                                 width="600" height="400" loading="lazy"
-                                 class="w-full h-auto object-cover transform transition-transform duration-300 group-hover:scale-105">
+                    <a href="/webprimjeri/autosalon-web.html" class="block group bg-base p-6 rounded-lg border border-surface card-lift">
+                        <div class="overflow-hidden rounded-md" style="aspect-ratio:16/10; background: linear-gradient(135deg, #09090b, #1a1a2e); display: flex; align-items: center; justify-content: center;">
+                            <div class="text-center px-6">
+                                <p style="color: #ef4444; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;">Premium vozila</p>
+                                <p style="color: #fff; font-size: 1.75rem; font-weight: 800; line-height: 1.1; margin-top: 0.4rem;">AutoElite</p>
+                                <div style="width: 30px; height: 2px; background: #ef4444; margin: 0.5rem auto;"></div>
+                            </div>
                         </div>
-                        <h3 class="font-heading text-3xl text-primary mt-6">Dentalni Centar</h3>
-                        <p class="text-secondary text-lg mt-2">Web Izrada / Optimizacija</p>
+                        <h3 class="font-heading text-3xl text-primary mt-6 group-hover:text-accent transition-colors">AutoElite</h3>
+                        <p class="text-secondary text-lg mt-2">Web Dizajn / Web Izrada</p>
+                    </a>
+
+                    <a href="/webprimjeri/gastro-web.html" class="block group bg-base p-6 rounded-lg border border-surface card-lift">
+                        <div class="overflow-hidden rounded-md" style="aspect-ratio:16/10; background: linear-gradient(135deg, #111111, #2a2a2a); display: flex; align-items: center; justify-content: center;">
+                            <div class="text-center px-6">
+                                <p style="color: #cda434; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;">Restoran & Wine Bar</p>
+                                <p style="font-family: serif; color: #fff; font-size: 1.75rem; line-height: 1.1; margin-top: 0.4rem;">Gastro</p>
+                                <div style="width: 30px; height: 1px; background: #cda434; margin: 0.5rem auto;"></div>
+                            </div>
+                        </div>
+                        <h3 class="font-heading text-3xl text-primary mt-6 group-hover:text-accent transition-colors">Gastro</h3>
+                        <p class="text-secondary text-lg mt-2">Web Dizajn / Web Izrada</p>
+                    </a>
+
+                    <a href="/webprimjeri/nekretnine-web.html" class="block group bg-base p-6 rounded-lg border border-surface card-lift">
+                        <div class="overflow-hidden rounded-md" style="aspect-ratio:16/10; background: linear-gradient(135deg, #0a0a0a, #1a1a1a); display: flex; align-items: center; justify-content: center;">
+                            <div class="text-center px-6">
+                                <p style="color: #c45d3e; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600;">Luksuzne nekretnine</p>
+                                <p style="color: #f5f0e8; font-size: 1.75rem; font-weight: 600; line-height: 1.1; margin-top: 0.4rem;">Dominium</p>
+                                <div style="width: 30px; height: 2px; background: #c45d3e; margin: 0.5rem auto;"></div>
+                            </div>
+                        </div>
+                        <h3 class="font-heading text-3xl text-primary mt-6 group-hover:text-accent transition-colors">Dominium</h3>
+                        <p class="text-secondary text-lg mt-2">Web Dizajn / Web Izrada</p>
+                    </a>
+
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="/radovi.html" class="inline-block px-8 py-3 rounded-lg border border-accent text-accent font-semibold hover:bg-accent hover:text-base transition-all">
+                        Pogledaj sve projekte →
                     </a>
                 </div>
             </div>
         </section>
-        End of portfolio section -->
 
         <section class="bg-base py-24 md:py-32 border-b border-surface">
             <div class="container mx-auto max-w-7xl px-6">

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="hr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primjeri Web Stranica Zagreb – Portfolio | abcweb.studio</title>
+    <meta name="description" content="Pogledajte primjere web stranica koje smo izradili — od frizerskih salona i restorana do fitness centara i odvjetničkih ureda. Svaki projekt prilagođen industriji.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="abcweb.studio">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="canonical" href="https://abcweb.studio/radovi.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Primjeri Web Stranica Zagreb – Portfolio | abcweb.studio">
+    <meta property="og:description" content="Pogledajte primjere web stranica koje smo izradili — od frizerskih salona i restorana do fitness centara i odvjetničkih ureda.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://abcweb.studio/radovi.html">
+    <meta property="og:locale" content="hr_HR">
+    <meta property="og:site_name" content="abcweb.studio">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Primjeri Web Stranica Zagreb – Portfolio | abcweb.studio">
+    <meta name="twitter:description" content="Pogledajte primjere web stranica koje smo izradili — svaki projekt prilagođen industriji.">
+
+    <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml" sizes="32x32">
+    <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/images/favicon-180x180.svg" sizes="180x180">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Početna", "item": "https://abcweb.studio/"},
+        {"@type": "ListItem", "position": 2, "name": "Radovi", "item": "https://abcweb.studio/radovi.html"}
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/fonts/fonts.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-heading {
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+        .card-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(253 224 71 / 0.1), 0 8px 10px -6px rgb(253 224 71 / 0.1);
+        }
+        .preview-mockup {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            aspect-ratio: 16 / 10;
+        }
+        .preview-mockup .browser-bar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            background: rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+        .preview-mockup .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+        }
+        .preview-mockup .url-bar {
+            flex: 1;
+            margin-left: 8px;
+            height: 18px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            padding: 0 8px;
+            font-size: 9px;
+            color: rgba(255,255,255,0.4);
+            font-family: monospace;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'base': '#111111',
+                        'surface': '#1c1c1c',
+                        'primary': '#f9fafb',
+                        'secondary': '#a1a1aa',
+                        'accent': '#fde047',
+                        'accent-dark': '#facc15',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-base text-primary antialiased">
+
+    <header class="sticky top-0 bg-base/90 backdrop-blur-md z-50 border-b border-surface">
+        <div class="container mx-auto max-w-7xl px-6 py-5">
+            <div class="flex justify-between items-center">
+                <a href="/index.html" class="text-2xl font-bold text-accent font-heading">abcweb</a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="/index.html#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
+                    <a href="/radovi.html" class="text-primary font-semibold transition-colors duration-200">Radovi</a>
+                    <a href="/index.html#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
+                    <a href="/blog/" class="text-secondary hover:text-primary transition-colors duration-200">Blog</a>
+                </nav>
+                <a href="/index.html#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">Kontakt</a>
+                <button id="mobile-menu-button" class="md:hidden text-accent z-50 relative w-6 h-6" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-surface border-b border-gray-700 z-40 md:hidden">
+            <div class="container mx-auto max-w-7xl px-6 py-8 space-y-6">
+                <a href="/index.html#services" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Usluge</a>
+                <a href="/radovi.html" class="block text-lg font-semibold text-accent transition-colors">Radovi</a>
+                <a href="/index.html#about" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">O nama</a>
+                <a href="/blog/" class="block text-lg font-semibold text-primary hover:text-accent transition-colors">Blog</a>
+                <a href="/index.html#contact" class="block w-full text-center bg-accent text-base font-semibold px-5 py-3 rounded-lg hover:bg-accent-dark transition-all">Kontakt</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="bg-surface py-32 md:py-40 border-b border-surface">
+            <div class="container mx-auto max-w-5xl px-6">
+                <a href="/index.html" class="text-base font-semibold text-primary hover:text-accent transition-colors inline-block py-2 mb-4">&larr; Početna</a>
+                <h1 class="font-heading text-6xl md:text-8xl lg:text-9xl text-primary leading-none tracking-tighter mt-4">
+                    Naši Radovi<span class="text-accent">.</span>
+                </h1>
+                <p class="mt-8 text-lg md:text-xl text-secondary max-w-2xl">
+                    Pogledajte primjere web stranica prilagođenih različitim industrijama — svaki projekt ima unikatan dizajn, strukturu i korisničko iskustvo.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-base py-24 md:py-32">
+            <div class="container mx-auto max-w-7xl px-6">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+                    <!-- 1. Bella Studio — Frizerski salon -->
+                    <a href="/webprimjeri/frizerski-salon-web.html" class="block group bg-surface border border-surface rounded-xl overflow-hidden card-lift">
+                        <div class="preview-mockup" style="background: linear-gradient(135deg, #f3ede4, #c9a2a7);">
+                            <div class="browser-bar">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="url-bar">bellastudio.hr</span>
+                            </div>
+                            <div class="flex items-center justify-center h-full pb-8">
+                                <div class="text-center px-6">
+                                    <p style="font-family: serif; color: #8b6f7d; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;">Frizerski salon</p>
+                                    <p style="font-family: serif; color: #3d2f35; font-size: 2rem; line-height: 1.1; margin-top: 0.5rem;">Bella Studio</p>
+                                    <div style="width: 40px; height: 2px; background: #8b6f7d; margin: 0.75rem auto;"></div>
+                                    <p style="color: #8b6f7d; font-size: 0.7rem;">Šišanje · Bojanje · Styling · Tretmani</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-2xl text-primary group-hover:text-accent transition-colors">Bella Studio</h3>
+                            <p class="text-secondary text-sm mt-1">Frizerski salon — elegantni editorial dizajn</p>
+                            <div class="flex gap-2 mt-3">
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Dizajn</span>
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Izrada</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 2. DentaVita — Stomatolog -->
+                    <a href="/webprimjeri/stomatolog-web.html" class="block group bg-surface border border-surface rounded-xl overflow-hidden card-lift">
+                        <div class="preview-mockup" style="background: linear-gradient(135deg, #e8f8f5, #00b894);">
+                            <div class="browser-bar">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="url-bar">dentavita.hr</span>
+                            </div>
+                            <div class="flex items-center justify-center h-full pb-8">
+                                <div class="text-center px-6">
+                                    <p style="color: #0d1f3c; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;">Stomatološka ordinacija</p>
+                                    <p style="color: #0d1f3c; font-size: 2rem; font-weight: 700; line-height: 1.1; margin-top: 0.5rem;">DentaVita</p>
+                                    <div style="width: 40px; height: 3px; background: #00b894; margin: 0.75rem auto; border-radius: 2px;"></div>
+                                    <p style="color: #0d1f3c; font-size: 0.7rem; opacity: 0.6;">Implantati · Ortodoncija · Estetika</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-2xl text-primary group-hover:text-accent transition-colors">DentaVita</h3>
+                            <p class="text-secondary text-sm mt-1">Stomatološka ordinacija — moderan klinički dizajn</p>
+                            <div class="flex gap-2 mt-3">
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Dizajn</span>
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Izrada</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 3. AutoElite — Autosalon -->
+                    <a href="/webprimjeri/autosalon-web.html" class="block group bg-surface border border-surface rounded-xl overflow-hidden card-lift">
+                        <div class="preview-mockup" style="background: linear-gradient(135deg, #09090b, #1a1a2e);">
+                            <div class="browser-bar">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="url-bar">autoelite.hr</span>
+                            </div>
+                            <div class="flex items-center justify-center h-full pb-8">
+                                <div class="text-center px-6">
+                                    <p style="color: #ef4444; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;">Premium vozila</p>
+                                    <p style="color: #fff; font-size: 2rem; font-weight: 800; line-height: 1.1; margin-top: 0.5rem;">AutoElite</p>
+                                    <div style="width: 40px; height: 3px; background: #ef4444; margin: 0.75rem auto;"></div>
+                                    <p style="color: rgba(255,255,255,0.5); font-size: 0.7rem;">Nova · Rabljena · Leasing · Servis</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-2xl text-primary group-hover:text-accent transition-colors">AutoElite</h3>
+                            <p class="text-secondary text-sm mt-1">Autosalon — premium tamni dizajn s kalkulatorom</p>
+                            <div class="flex gap-2 mt-3">
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Dizajn</span>
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Izrada</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 4. BurgerBox — Fast food -->
+                    <a href="/webprimjeri/fastfood-web.html" class="block group bg-surface border border-surface rounded-xl overflow-hidden card-lift">
+                        <div class="preview-mockup" style="background: linear-gradient(135deg, #1d3557, #264573);">
+                            <div class="browser-bar">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="url-bar">burgerbox.hr</span>
+                            </div>
+                            <div class="flex items-center justify-center h-full pb-8">
+                                <div class="text-center px-6">
+                                    <span style="display: inline-block; background: #e63946; color: #fff; padding: 0.2rem 0.8rem; border-radius: 50px; font-size: 0.65rem; font-weight: 700;">🍔 BRZA HRANA</span>
+                                    <p style="color: #f1faee; font-size: 2rem; font-weight: 800; line-height: 1.1; margin-top: 0.75rem;">BurgerBox</p>
+                                    <p style="color: #f4a261; font-size: 0.7rem; margin-top: 0.5rem;">Burgeri · Pomfrit · Shake-ovi</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-2xl text-primary group-hover:text-accent transition-colors">BurgerBox</h3>
+                            <p class="text-secondary text-sm mt-1">Fast food — energičan dizajn s online narudžbom</p>
+                            <div class="flex gap-2 mt-3">
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Dizajn</span>
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Izrada</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 5. IronPulse — Fitness -->
+                    <a href="/webprimjeri/fitness-web.html" class="block group bg-surface border border-surface rounded-xl overflow-hidden card-lift">
+                        <div class="preview-mockup" style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a);">
+                            <div class="browser-bar">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="url-bar">ironpulse.hr</span>
+                            </div>
+                            <div class="flex items-center justify-center h-full pb-8">
+                                <div class="text-center px-6">
+                                    <p style="color: #c8ff00; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 700;">Fitness & performance</p>
+                                    <p style="color: #fff; font-size: 2.2rem; font-weight: 900; line-height: 1; margin-top: 0.5rem; letter-spacing: 0.05em;">IRONPULSE</p>
+                                    <div style="width: 40px; height: 3px; background: #c8ff00; margin: 0.75rem auto;"></div>
+                                    <p style="color: rgba(255,255,255,0.4); font-size: 0.7rem;">Treninzi · Programi · Oprema</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-2xl text-primary group-hover:text-accent transition-colors">IronPulse</h3>
+                            <p class="text-secondary text-sm mt-1">Fitness centar — bold neon dizajn s rasporedom treninga</p>
+                            <div class="flex gap-2 mt-3">
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Dizajn</span>
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Izrada</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 6. Gastro — Restoran -->
+                    <a href="/webprimjeri/gastro-web.html" class="block group bg-surface border border-surface rounded-xl overflow-hidden card-lift">
+                        <div class="preview-mockup" style="background: linear-gradient(135deg, #111111, #2a2a2a);">
+                            <div class="browser-bar">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="url-bar">gastro-restaurant.hr</span>
+                            </div>
+                            <div class="flex items-center justify-center h-full pb-8">
+                                <div class="text-center px-6">
+                                    <p style="color: #cda434; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;">Restoran & Wine Bar</p>
+                                    <p style="font-family: serif; color: #fff; font-size: 2rem; line-height: 1.1; margin-top: 0.5rem;">Gastro</p>
+                                    <div style="width: 40px; height: 1px; background: #cda434; margin: 0.75rem auto;"></div>
+                                    <p style="color: rgba(255,255,255,0.4); font-size: 0.7rem; font-style: italic;">Okusi koji pričaju priču</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-2xl text-primary group-hover:text-accent transition-colors">Gastro</h3>
+                            <p class="text-secondary text-sm mt-1">Restoran — elegantni dizajn s jelovnikom i rezervacijama</p>
+                            <div class="flex gap-2 mt-3">
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Dizajn</span>
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Izrada</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 7. Dominium — Nekretnine -->
+                    <a href="/webprimjeri/nekretnine-web.html" class="block group bg-surface border border-surface rounded-xl overflow-hidden card-lift">
+                        <div class="preview-mockup" style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a);">
+                            <div class="browser-bar">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="url-bar">dominium.hr</span>
+                            </div>
+                            <div class="flex items-center justify-center h-full pb-8">
+                                <div class="text-center px-6">
+                                    <p style="color: #c45d3e; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600;">Luksuzne nekretnine</p>
+                                    <p style="color: #f5f0e8; font-size: 2rem; font-weight: 600; line-height: 1.1; margin-top: 0.5rem;">Dominium</p>
+                                    <div style="width: 40px; height: 2px; background: #c45d3e; margin: 0.75rem auto;"></div>
+                                    <p style="color: #d4c5a9; font-size: 0.7rem;">Stanovi · Kuće · Poslovni prostori</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-2xl text-primary group-hover:text-accent transition-colors">Dominium</h3>
+                            <p class="text-secondary text-sm mt-1">Nekretnine — sofisticirani dizajn s horizontalnim scrollom</p>
+                            <div class="flex gap-2 mt-3">
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Dizajn</span>
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Izrada</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 8. Pravo & Pravda — Odvjetnički ured -->
+                    <a href="/webprimjeri/odvjetnicki-ured-web.html" class="block group bg-surface border border-surface rounded-xl overflow-hidden card-lift">
+                        <div class="preview-mockup" style="background: linear-gradient(135deg, #1b2541, #2a3a5c);">
+                            <div class="browser-bar">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="url-bar">pravoipravda.hr</span>
+                            </div>
+                            <div class="flex items-center justify-center h-full pb-8">
+                                <div class="text-center px-6">
+                                    <p style="color: #b8963e; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;">Odvjetnički ured</p>
+                                    <p style="font-family: serif; color: #f8f6f1; font-size: 1.8rem; line-height: 1.1; margin-top: 0.5rem;">Pravo &amp; Pravda</p>
+                                    <div style="width: 40px; height: 1px; background: #b8963e; margin: 0.75rem auto;"></div>
+                                    <p style="color: rgba(248,246,241,0.5); font-size: 0.7rem;">Gospodarsko · Kazneno · Obiteljsko pravo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-2xl text-primary group-hover:text-accent transition-colors">Pravo & Pravda</h3>
+                            <p class="text-secondary text-sm mt-1">Odvjetnički ured — profesionalni dizajn s timeline sekcijom</p>
+                            <div class="flex gap-2 mt-3">
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Dizajn</span>
+                                <span class="text-xs px-2 py-1 rounded bg-base text-secondary">Web Izrada</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="bg-accent text-base">
+            <div class="container mx-auto max-w-4xl px-6 py-24 md:py-32 text-center">
+                <h2 class="text-5xl md:text-6xl font-heading">Želite nešto slično?</h2>
+                <p class="mt-6 text-xl text-gray-800 max-w-2xl mx-auto">
+                    Svaki projekt radimo od nule — prilagođen vašoj industriji, brendu i ciljevima. Javite nam se i krenimo.
+                </p>
+                <a href="mailto:ab@abcreations.site" class="mt-10 inline-block bg-base text-primary px-10 py-4 rounded-lg text-lg font-bold hover:bg-surface transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                    ab@abcreations.site
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-base border-t border-surface">
+        <div class="container mx-auto max-w-7xl px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div>
+                    <a href="/index.html" class="text-2xl font-bold text-accent font-heading">abcweb</a>
+                    <p class="text-secondary mt-2">&copy; 2026 abcweb.studio. Sva prava pridržana. Zagreb, Hrvatska.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('icon-open');
+            const iconClose = document.getElementById('icon-close');
+            if (menuButton && mobileMenu && iconOpen && iconClose) {
+                const toggleMenu = () => {
+                    mobileMenu.classList.toggle('hidden');
+                    iconOpen.classList.toggle('hidden');
+                    iconClose.classList.toggle('hidden');
+                };
+                menuButton.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => { if (!mobileMenu.classList.contains('hidden')) toggleMenu(); });
+                });
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !menuButton.contains(e.target)) toggleMenu();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

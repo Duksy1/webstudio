@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoElite | Premium Vozila</title>
+    <meta name="description" content="AutoElite — premium autosalon u Zagrebu. Nova i rabljena vozila, leasing, servis i održavanje.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #09090b;
+            --surface: #111113;
+            --surface2: #18181b;
+            --border: rgba(255,255,255,0.06);
+            --red: #ef4444;
+            --red-glow: rgba(239,68,68,0.15);
+            --white: #fafafa;
+            --text: rgba(255,255,255,0.8);
+            --muted: rgba(255,255,255,0.35);
+            --font: 'Outfit', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font); color: var(--text); background: var(--bg); overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* NAV — glass morphism */
+        header { position: fixed; top: 1rem; left: 50%; transform: translateX(-50%); z-index: 100; width: 94%; max-width: 1300px; }
+        .nav-glass { background: rgba(17,17,19,0.8); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 16px; padding: 0.8rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.2rem; font-weight: 800; color: var(--white); letter-spacing: -0.5px; }
+        .logo span { color: var(--red); }
+        nav ul { display: flex; gap: 2rem; }
+        nav ul li a { font-size: 0.75rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.3s; }
+        nav ul li a:hover { color: var(--red); }
+        .nav-phone { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.5px; transition: color 0.3s; }
+        .nav-phone:hover { color: var(--red); }
+
+        /* HERO — cinematic full bleed */
+        .hero { height: 100vh; position: relative; display: flex; align-items: flex-end; }
+        .hero-bg { position: absolute; inset: 0; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
+        .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, var(--bg) 0%, rgba(9,9,11,0.3) 50%, var(--bg) 100%); }
+        .hero-content { position: relative; z-index: 2; width: 100%; max-width: 1300px; margin: 0 auto; padding: 5rem 3%; }
+        .hero-eyebrow { font-family: var(--mono); font-size: 0.7rem; color: var(--red); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 1rem; }
+        .hero h1 { font-size: clamp(3rem, 7vw, 6rem); font-weight: 900; color: var(--white); line-height: 0.95; letter-spacing: -2px; margin-bottom: 1.5rem; }
+        .hero h1 .thin { font-weight: 200; color: var(--muted); }
+        .hero-desc { font-size: 1rem; color: var(--muted); max-width: 450px; margin-bottom: 2.5rem; line-height: 1.8; }
+        .hero-btns { display: flex; gap: 1rem; }
+        .btn-red { padding: 0.9rem 2.5rem; background: var(--red); color: var(--white); font-family: var(--font); font-size: 0.8rem; font-weight: 700; border: none; border-radius: 10px; cursor: pointer; transition: all 0.3s; letter-spacing: 0.5px; }
+        .btn-red:hover { background: #dc2626; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(239,68,68,0.3); }
+        .btn-dark { padding: 0.9rem 2.5rem; background: var(--surface2); color: var(--white); font-family: var(--font); font-size: 0.8rem; font-weight: 600; border: 1px solid var(--border); border-radius: 10px; cursor: pointer; transition: all 0.3s; }
+        .btn-dark:hover { border-color: rgba(255,255,255,0.15); }
+        .hero-dashboard { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; }
+        .dashboard-bar { max-width: 1300px; margin: 0 auto; padding: 0 3%; }
+        .dashboard-inner { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border); }
+        .dash-item { padding: 1.5rem 0; text-align: center; border-right: 1px solid var(--border); }
+        .dash-item:last-child { border-right: none; }
+        .dash-item h3 { font-family: var(--mono); font-size: 1.8rem; font-weight: 700; color: var(--white); }
+        .dash-item h3 span { color: var(--red); font-size: 1rem; }
+        .dash-item p { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-top: 0.2rem; }
+
+        /* SECTIONS */
+        section { padding: 6rem 3%; }
+        .container { max-width: 1300px; margin: 0 auto; }
+        .section-tag { font-family: var(--mono); font-size: 0.65rem; color: var(--red); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 0.5rem; }
+        .section-heading { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; color: var(--white); letter-spacing: -1px; line-height: 1.1; margin-bottom: 1rem; }
+        .section-heading .thin { font-weight: 300; color: var(--muted); }
+
+        /* VOZILA — card grid with filter */
+        #vehicles { background: var(--bg); }
+        .filter-bar { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .filter-btn { padding: 0.5rem 1.2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; font-family: var(--font); font-size: 0.75rem; color: var(--muted); cursor: pointer; transition: all 0.3s; font-weight: 500; }
+        .filter-btn:hover, .filter-btn.active { background: var(--red); color: var(--white); border-color: var(--red); }
+        .vehicles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .vehicle-card { background: var(--surface); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); transition: all 0.4s; }
+        .vehicle-card:hover { border-color: rgba(255,255,255,0.1); transform: translateY(-5px); }
+        .vehicle-img { height: 240px; overflow: hidden; position: relative; }
+        .vehicle-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+        .vehicle-card:hover .vehicle-img img { transform: scale(1.05); }
+        .vehicle-badge { position: absolute; top: 1rem; left: 1rem; padding: 0.3rem 0.8rem; border-radius: 6px; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .badge-new { background: var(--red); color: #fff; }
+        .badge-used { background: var(--surface2); color: var(--muted); border: 1px solid var(--border); }
+        .vehicle-body { padding: 1.5rem; }
+        .vehicle-body h3 { font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
+        .vehicle-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.2rem; }
+        .vehicle-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-bottom: 1.5rem; }
+        .spec-item { text-align: center; padding: 0.5rem; background: var(--bg); border-radius: 8px; }
+        .spec-item strong { font-family: var(--mono); font-size: 0.85rem; color: var(--white); display: block; }
+        .spec-item span { font-size: 0.6rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+        .vehicle-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--border); }
+        .vehicle-price { font-size: 1.3rem; font-weight: 800; color: var(--white); }
+        .vehicle-price small { font-size: 0.7rem; font-weight: 400; color: var(--muted); }
+        .btn-detail { padding: 0.5rem 1.2rem; background: transparent; border: 1px solid var(--border); border-radius: 8px; color: var(--muted); font-family: var(--font); font-size: 0.72rem; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .btn-detail:hover { border-color: var(--red); color: var(--red); }
+
+        /* ZAŠTO MI — metrics dashboard */
+        #why { background: var(--surface); }
+        .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+        .why-visual { position: relative; }
+        .why-visual img { width: 100%; border-radius: 20px; aspect-ratio: 4/3; object-fit: cover; }
+        .why-visual::after { content: ''; position: absolute; inset: 0; border-radius: 20px; border: 1px solid var(--border); }
+        .why-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .why-card { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 2rem; transition: all 0.3s; }
+        .why-card:hover { border-color: var(--red); }
+        .why-card .wc-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+        .why-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+        .why-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+        .why-metric { font-family: var(--mono); font-size: 2rem; font-weight: 700; color: var(--red); display: block; margin-bottom: 0.3rem; }
+
+        /* LEASING CALCULATOR */
+        #calculator { background: var(--bg); }
+        .calc-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .calc-form { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; }
+        .calc-form h3 { font-size: 1.3rem; font-weight: 700; color: var(--white); margin-bottom: 2rem; }
+        .calc-field { margin-bottom: 2rem; }
+        .calc-field label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
+        .calc-field label span { font-family: var(--mono); color: var(--white); font-weight: 600; }
+        .calc-field input[type="range"] { width: 100%; -webkit-appearance: none; height: 4px; background: var(--surface2); border-radius: 4px; outline: none; }
+        .calc-field input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: var(--red); cursor: pointer; box-shadow: 0 0 10px rgba(239,68,68,0.4); }
+        .calc-result { background: var(--bg); border-radius: 14px; padding: 2rem; text-align: center; margin-top: 1rem; }
+        .calc-result p { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 0.3rem; }
+        .calc-result h2 { font-family: var(--mono); font-size: 2.5rem; font-weight: 700; color: var(--red); }
+        .calc-result h2 small { font-size: 1rem; color: var(--muted); font-weight: 400; }
+        .calc-desc h2 { font-size: 2.5rem; font-weight: 800; color: var(--white); margin-bottom: 1.5rem; line-height: 1.1; }
+        .calc-desc h2 span { color: var(--red); }
+        .calc-desc p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
+        .calc-perks { display: flex; flex-direction: column; gap: 1rem; }
+        .calc-perk { display: flex; align-items: center; gap: 0.8rem; font-size: 0.88rem; color: var(--text); }
+        .calc-perk::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
+
+        /* KONTAKT */
+        #contact { background: var(--surface); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; }
+        .contact-info h2 { font-size: 2.5rem; font-weight: 800; color: var(--white); margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -1px; }
+        .contact-info h2 span { color: var(--red); }
+        .contact-block { padding: 1.2rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 1rem; }
+        .cb-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+        .contact-block strong { font-size: 0.85rem; color: var(--white); display: block; }
+        .contact-block small { font-size: 0.8rem; color: var(--muted); }
+        .form-field { margin-bottom: 1.3rem; }
+        .form-field label { display: block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 0.4rem; font-weight: 500; }
+        .form-field input, .form-field select, .form-field textarea { width: 100%; padding: 0.85rem 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; font-family: var(--font); font-size: 0.88rem; color: var(--white); outline: none; transition: border-color 0.3s; }
+        .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--red); }
+        .form-field textarea { height: 100px; resize: none; }
+        .form-field select option { background: var(--bg); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .btn-submit { width: 100%; padding: 0.9rem; background: var(--red); color: var(--white); border: none; border-radius: 10px; font-family: var(--font); font-size: 0.82rem; font-weight: 700; cursor: pointer; transition: all 0.3s; letter-spacing: 0.5px; }
+        .btn-submit:hover { background: #dc2626; }
+
+        /* FOOTER */
+        footer { background: var(--bg); padding: 4rem 3% 2rem; border-top: 1px solid var(--border); }
+        .footer-inner { max-width: 1300px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
+        .footer-brand p { font-size: 0.82rem; color: var(--muted); line-height: 1.7; margin-top: 0.8rem; }
+        .footer-col h4 { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px; color: var(--red); margin-bottom: 1rem; font-weight: 700; }
+        .footer-col a { display: block; font-size: 0.82rem; color: var(--muted); margin-bottom: 0.5rem; transition: color 0.3s; }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom { max-width: 1300px; margin: 0 auto; padding-top: 2rem; display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--muted); }
+
+        /* REVEAL */
+        .reveal { opacity: 0; transform: translateY(25px); transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .rd1 { transition-delay: 0.1s; } .rd2 { transition-delay: 0.2s; } .rd3 { transition-delay: 0.3s; }
+
+        @media (max-width: 1024px) {
+            .vehicles-grid { grid-template-columns: 1fr 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .calc-layout { grid-template-columns: 1fr; }
+            .dashboard-inner { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            section { padding: 4rem 4%; }
+            .hero { height: auto; min-height: 100vh; flex-direction: column; align-items: stretch; }
+            .hero-content { padding: 8rem 4% 3rem; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+            .hero-dashboard { position: relative; bottom: auto; }
+            .hero-btns { flex-wrap: wrap; }
+            .btn-red, .btn-dark { padding: 0.8rem 2rem; font-size: 0.75rem; }
+            .vehicles-grid { grid-template-columns: 1fr; max-width: 500px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .contact-info h2 { font-size: 2rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .why-cards { grid-template-columns: 1fr; }
+            .why-grid { gap: 3rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .footer-bottom { flex-direction: column; gap: 0.5rem; }
+            .dashboard-inner { grid-template-columns: 1fr 1fr; }
+            .dash-item h3 { font-size: 1.4rem; }
+            .dash-item { padding: 1rem 0; }
+            .calc-layout { gap: 2rem; }
+            .calc-form { padding: 2rem; }
+            .calc-desc h2 { font-size: 2rem; }
+            nav ul { display: none; }
+            .nav-phone { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-glass">
+            <a href="#" class="logo">Auto<span>Elite</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#vehicles">Vozila</a></li>
+                    <li><a href="#why">Zašto mi</a></li>
+                    <li><a href="#calculator">Leasing</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+38512345678" class="nav-phone">+385 1 234 5678</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1400&q=80" alt="Luksuzni automobil">
+        </div>
+        <div class="hero-content">
+            <span class="hero-eyebrow">&#9670; Premium autosalon Zagreb</span>
+            <h1>Vozite<br><span class="thin">izuzetno.</span></h1>
+            <p class="hero-desc">Novi i certificirani rabljeni automobili premium klase. Fleksibilni leasing, garancija i servis na jednom mjestu.</p>
+            <div class="hero-btns">
+                <button class="btn-red" onclick="document.getElementById('vehicles').scrollIntoView({behavior:'smooth'})">Pogledaj ponudu</button>
+                <button class="btn-dark" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Izračunaj ratu</button>
+            </div>
+        </div>
+        <div class="hero-dashboard">
+            <div class="dashboard-bar">
+                <div class="dashboard-inner">
+                    <div class="dash-item">
+                        <h3>120<span>+</span></h3>
+                        <p>Vozila na lageru</p>
+                    </div>
+                    <div class="dash-item">
+                        <h3>8<span>k</span></h3>
+                        <p>Prodanih vozila</p>
+                    </div>
+                    <div class="dash-item">
+                        <h3>15</h3>
+                        <p>Godina iskustva</p>
+                    </div>
+                    <div class="dash-item">
+                        <h3>4.8<span>&#9733;</span></h3>
+                        <p>Google ocjena</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vehicles">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-tag">Ponuda</span>
+                <h2 class="section-heading">Istaknuta <span class="thin">vozila</span></h2>
+            </div>
+            <div class="filter-bar reveal">
+                <button class="filter-btn active">Sve</button>
+                <button class="filter-btn">Nova</button>
+                <button class="filter-btn">Rabljena</button>
+                <button class="filter-btn">SUV</button>
+                <button class="filter-btn">Limuzina</button>
+                <button class="filter-btn">Coupe</button>
+            </div>
+            <div class="vehicles-grid">
+                <div class="vehicle-card reveal">
+                    <div class="vehicle-img">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=700&q=80" alt="BMW M4">
+                        <span class="vehicle-badge badge-new">Novo</span>
+                    </div>
+                    <div class="vehicle-body">
+                        <h3>BMW M4 Competition</h3>
+                        <p class="vehicle-sub">2024 &bull; M xDrive &bull; Frozen Portimao Blue</p>
+                        <div class="vehicle-specs">
+                            <div class="spec-item"><strong>510</strong><span>KS</span></div>
+                            <div class="spec-item"><strong>3.9s</strong><span>0-100</span></div>
+                            <div class="spec-item"><strong>0</strong><span>km</span></div>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">98.500 &euro; <small>+ PDV</small></div>
+                            <button class="btn-detail">Detalji &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="vehicle-card reveal rd1">
+                    <div class="vehicle-img">
+                        <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=700&q=80" alt="Mercedes AMG">
+                        <span class="vehicle-badge badge-used">Rabljeno</span>
+                    </div>
+                    <div class="vehicle-body">
+                        <h3>Mercedes-AMG GT 63 S</h3>
+                        <p class="vehicle-sub">2023 &bull; 4MATIC+ &bull; Obsidian Black</p>
+                        <div class="vehicle-specs">
+                            <div class="spec-item"><strong>639</strong><span>KS</span></div>
+                            <div class="spec-item"><strong>3.2s</strong><span>0-100</span></div>
+                            <div class="spec-item"><strong>12k</strong><span>km</span></div>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">142.000 &euro;</div>
+                            <button class="btn-detail">Detalji &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="vehicle-card reveal rd2">
+                    <div class="vehicle-img">
+                        <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=700&q=80" alt="Porsche Cayenne">
+                        <span class="vehicle-badge badge-new">Novo</span>
+                    </div>
+                    <div class="vehicle-body">
+                        <h3>Porsche Cayenne Turbo GT</h3>
+                        <p class="vehicle-sub">2024 &bull; Tiptronic S &bull; Chalk Grey</p>
+                        <div class="vehicle-specs">
+                            <div class="spec-item"><strong>640</strong><span>KS</span></div>
+                            <div class="spec-item"><strong>3.3s</strong><span>0-100</span></div>
+                            <div class="spec-item"><strong>0</strong><span>km</span></div>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">195.000 &euro; <small>+ PDV</small></div>
+                            <button class="btn-detail">Detalji &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-visual reveal">
+                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80" alt="Autosalon interijer">
+                </div>
+                <div>
+                    <div class="reveal">
+                        <span class="section-tag">Zašto AutoElite</span>
+                        <h2 class="section-heading">Premium iskustvo<br><span class="thin">od A do Z</span></h2>
+                    </div>
+                    <div class="why-cards" style="margin-top:2rem;">
+                        <div class="why-card reveal">
+                            <span class="why-metric">150+</span>
+                            <h3>Inspektiranih točaka</h3>
+                            <p>Svako rabljeno vozilo prolazi rigoroznu 150-točkasnu inspekciju.</p>
+                        </div>
+                        <div class="why-card reveal rd1">
+                            <span class="why-metric">24mj</span>
+                            <h3>Garancija</h3>
+                            <p>Do 24 mjeseca garancije na svako vozilo. Vaša sigurnost je naš prioritet.</p>
+                        </div>
+                        <div class="why-card reveal rd2">
+                            <span class="why-metric">0%</span>
+                            <h3>Učešće moguće</h3>
+                            <p>Fleksibilni leasing uvjeti s mogućnošću financiranja bez učešća.</p>
+                        </div>
+                        <div class="why-card reveal rd3">
+                            <span class="why-metric">365</span>
+                            <h3>Dana podrške</h3>
+                            <p>Help desk dostupan svaki dan u godini za pitanja i podršku.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator">
+        <div class="container">
+            <div class="calc-layout">
+                <div class="calc-desc reveal">
+                    <span class="section-tag">Financiranje</span>
+                    <h2>Izračunajte svoju <span>mjesečnu ratu</span></h2>
+                    <p>Nudimo fleksibilne leasing pakete sa svim vodećim partnerima. Prilagodite iznos, trajanje i učešće prema vašim mogućnostima.</p>
+                    <div class="calc-perks">
+                        <div class="calc-perk">Bez skrivenih troškova</div>
+                        <div class="calc-perk">Fiksna ili varijabilna kamata</div>
+                        <div class="calc-perk">Odobrenje u 24h</div>
+                        <div class="calc-perk">Mogućnost otkupa nakon leasinga</div>
+                    </div>
+                </div>
+                <div class="calc-form reveal">
+                    <h3>Leasing kalkulator</h3>
+                    <div class="calc-field">
+                        <label>Cijena vozila <span id="priceVal">50.000 &euro;</span></label>
+                        <input type="range" min="10000" max="200000" value="50000" step="1000" id="priceRange">
+                    </div>
+                    <div class="calc-field">
+                        <label>Učešće <span id="downVal">20%</span></label>
+                        <input type="range" min="0" max="50" value="20" step="5" id="downRange">
+                    </div>
+                    <div class="calc-field">
+                        <label>Trajanje <span id="termVal">48 mjeseci</span></label>
+                        <input type="range" min="12" max="84" value="48" step="12" id="termRange">
+                    </div>
+                    <div class="calc-result">
+                        <p>Okvirna mjesečna rata</p>
+                        <h2 id="monthlyPayment">750 <small>&euro;/mj</small></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <span class="section-tag">Kontakt</span>
+                    <h2>Zainteresirani?<br>Javite <span>se.</span></h2>
+                    <div class="contact-block">
+                        <div class="cb-icon">&#128205;</div>
+                        <div>
+                            <strong>Salon Zagreb</strong>
+                            <small>Slavonska avenija 50, 10000 Zagreb</small>
+                        </div>
+                    </div>
+                    <div class="contact-block">
+                        <div class="cb-icon">&#128222;</div>
+                        <div>
+                            <strong>+385 1 234 5678</strong>
+                            <small>Pon&ndash;Pet: 08&ndash;19h | Sub: 09&ndash;15h</small>
+                        </div>
+                    </div>
+                    <div class="contact-block">
+                        <div class="cb-icon">&#128231;</div>
+                        <div>
+                            <strong>info@autoelite.hr</strong>
+                            <small>Odgovaramo u roku 2h</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <h3 style="font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:1.5rem;">Pošaljite upit</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Ime</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Prezime</label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Email</label>
+                                <input type="email" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Telefon</label>
+                                <input type="tel">
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label>Zanima me</label>
+                            <select>
+                                <option value="" disabled selected>Odaberite</option>
+                                <option>Kupnja novog vozila</option>
+                                <option>Kupnja rabljenog vozila</option>
+                                <option>Leasing informacije</option>
+                                <option>Servis i održavanje</option>
+                                <option>Prodaja mog vozila</option>
+                                <option>Ostalo</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label>Poruka</label>
+                            <textarea></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Pošalji upit &rarr;</button>
+                        <div id="formStatus" style="margin-top:1rem;font-size:0.85rem;text-align:center;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo" style="font-size:1.3rem;">Auto<span>Elite</span></span>
+                    <p>Premium autosalon u Zagrebu. Nova i certificirana rabljena vozila, leasing i servis.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigacija</h4>
+                    <a href="#vehicles">Vozila</a>
+                    <a href="#why">Zašto mi</a>
+                    <a href="#calculator">Leasing</a>
+                    <a href="#contact">Kontakt</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Brendovi</h4>
+                    <a href="#vehicles">BMW</a>
+                    <a href="#vehicles">Mercedes-Benz</a>
+                    <a href="#vehicles">Porsche</a>
+                    <a href="#vehicles">Audi</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <a href="#contact">+385 1 234 5678</a>
+                    <a href="#contact">info@autoelite.hr</a>
+                    <a href="#contact">Slavonska av. 50, Zagreb</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 AutoElite d.o.o. Sva prava pridržana.</span>
+                <span>OIB: 12345678901</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('active'); obs.unobserve(entry.target); }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // Calculator
+        const priceRange = document.getElementById('priceRange');
+        const downRange = document.getElementById('downRange');
+        const termRange = document.getElementById('termRange');
+
+        function updateCalc() {
+            const price = parseInt(priceRange.value);
+            const down = parseInt(downRange.value);
+            const term = parseInt(termRange.value);
+            document.getElementById('priceVal').innerHTML = price.toLocaleString('hr') + ' &euro;';
+            document.getElementById('downVal').textContent = down + '%';
+            document.getElementById('termVal').textContent = term + ' mjeseci';
+            const loanAmount = price * (1 - down / 100);
+            const monthlyRate = 0.035 / 12;
+            const monthly = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, term)) / (Math.pow(1 + monthlyRate, term) - 1);
+            document.getElementById('monthlyPayment').innerHTML = Math.round(monthly).toLocaleString('hr') + ' <small>&euro;/mj</small>';
+        }
+        priceRange.addEventListener('input', updateCalc);
+        downRange.addEventListener('input', updateCalc);
+        termRange.addEventListener('input', updateCalc);
+        updateCalc();
+
+        // Form
+        document.getElementById('contactForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const status = document.getElementById('formStatus');
+            btn.textContent = 'Šaljem...';
+            setTimeout(() => {
+                e.target.reset();
+                btn.innerHTML = 'Pošalji upit &rarr;';
+                status.textContent = '\u2713 Upit zaprimljen! Kontaktiramo vas uskoro.';
+                status.style.color = 'var(--red)';
+                setTimeout(() => status.textContent = '', 4000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
