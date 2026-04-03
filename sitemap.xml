@@ -59,7 +59,7 @@
 
     <url>
         <loc>https://abcweb.studio/blog/</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-04-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -102,6 +102,27 @@
     <url>
         <loc>https://abcweb.studio/blog/wordpress-ili-custom-web-stranica.html</loc>
         <lastmod>2026-04-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://abcweb.studio/blog/treba-li-vasem-biznisu-mobilna-aplikacija.html</loc>
+        <lastmod>2026-04-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://abcweb.studio/blog/custom-booking-sustav-za-biznis.html</loc>
+        <lastmod>2026-04-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://abcweb.studio/blog/custom-web-rjesenja-za-biznise.html</loc>
+        <lastmod>2026-04-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
