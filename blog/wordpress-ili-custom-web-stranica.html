@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="hr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>WordPress ili custom web stranica – što je bolje? – abcweb.studio</title>
+  <meta name="description" content="Usporedba WordPressa i custom web stranica. Prednosti, nedostaci, brzina, sigurnost i cijena – što je pravi izbor za vaš biznis u Hrvatskoj.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="abcweb.studio">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <link rel="canonical" href="https://abcweb.studio/blog/wordpress-ili-custom-web-stranica.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="WordPress ili custom web stranica – što je bolje? – abcweb.studio">
+  <meta property="og:description" content="Usporedba WordPressa i custom web stranica. Prednosti, nedostaci, brzina, sigurnost i cijena.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://abcweb.studio/blog/wordpress-ili-custom-web-stranica.html">
+  <meta property="og:locale" content="hr_HR">
+  <meta property="og:site_name" content="abcweb.studio">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="WordPress ili custom web stranica – što je bolje? – abcweb.studio">
+  <meta name="twitter:description" content="Usporedba WordPressa i custom web stranica. Što je pravi izbor za vaš biznis?">
+
+  <!-- Faviconi -->
+  <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml" sizes="32x32">
+  <link rel="icon" href="/images/favicon-32x32.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/favicon-180x180.svg" sizes="180x180">
+
+  <!-- Schema Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "WordPress ili custom web stranica – što je bolje?",
+    "author": {
+      "@type": "Organization",
+      "name": "abcweb.studio"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "abcweb.studio"
+    },
+    "inLanguage": "hr-HR",
+    "datePublished": "2026-04-02",
+    "dateModified": "2026-04-02",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://abcweb.studio/blog/wordpress-ili-custom-web-stranica.html"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Je li WordPress dobar za poslovnu web stranicu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WordPress je odličan izbor za stranice koje trebaju česte izmjene sadržaja, blog ili web shop (WooCommerce). Međutim, zahtijeva redovito ažuriranje, može biti sporiji i podložniji sigurnosnim prijetnjama bez pravilnog održavanja."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Što je custom web stranica?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Custom web stranica je stranica kodirana od nule ili pomoću modernih frameworka, bez CMS-a poput WordPressa. Rezultat je brža, sigurnija i potpuno prilagođena stranica, ali ne možete sami uređivati sadržaj bez tehničkog znanja."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Što je brže – WordPress ili custom stranica?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Custom web stranice su gotovo uvijek brže jer nemaju overhead CMS-a, pluginova i baze podataka. Optimiziran WordPress može postići dobre rezultate, ali zahtijeva znanje i ulaganje u caching i optimizaciju."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Početna", "item": "https://abcweb.studio/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://abcweb.studio/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "WordPress ili custom web stranica?", "item": "https://abcweb.studio/blog/wordpress-ili-custom-web-stranica.html"}
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="/fonts/fonts.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'base': '#111111',
+            'surface': '#1c1c1c',
+            'primary': '#f9fafb',
+            'secondary': '#a1a1aa',
+            'accent': '#fde047',
+            'accent-dark': '#facc15',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-heading {
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+    }
+    .prose-custom p {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+      color: #a1a1aa;
+    }
+    .prose-custom h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f9fafb;
+    }
+    .prose-custom h3 {
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      color: #f9fafb;
+    }
+    .prose-custom ul {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+      list-style-type: disc;
+      color: #a1a1aa;
+    }
+    .prose-custom li {
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+    .prose-custom a {
+      color: #fde047;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    .prose-custom table {
+      width: 100%;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-collapse: collapse;
+    }
+    .prose-custom th, .prose-custom td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #2a2a2a;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    .prose-custom th {
+      color: #f9fafb;
+      font-weight: 600;
+      background: #1c1c1c;
+    }
+    .prose-custom td {
+      color: #a1a1aa;
+    }
+  </style>
+</head>
+<body class="bg-base text-primary antialiased">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 bg-base/90 backdrop-blur-md z-50 border-b border-surface">
+    <div class="container mx-auto max-w-7xl px-6 py-5">
+      <div class="flex justify-between items-center">
+        <a href="/index.html" class="text-2xl font-bold text-accent font-heading">
+          abcweb
+        </a>
+        <nav class="hidden md:flex space-x-8">
+          <a href="/index.html#services" class="text-secondary hover:text-primary transition-colors duration-200">Usluge</a>
+          <a href="/radovi.html" class="text-secondary hover:text-primary transition-colors duration-200">Radovi</a>
+          <a href="/index.html#about" class="text-secondary hover:text-primary transition-colors duration-200">O nama</a>
+          <a href="/blog/" class="text-primary font-semibold transition-colors duration-200">Blog</a>
+        </nav>
+        <a href="/index.html#contact" class="hidden md:inline-block bg-accent text-base font-semibold px-5 py-2 rounded-lg hover:bg-accent-dark transition-all duration-200 transform hover:-translate-y-0.5">
+          Kontakt
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / naslov članka -->
+    <section class="bg-surface py-20 border-b border-surface">
+      <div class="container mx-auto max-w-3xl px-6">
+        <a href="/blog/" class="text-xs uppercase tracking-widest text-secondary hover:text-accent transition-colors">
+          ← Povratak na blog
+        </a>
+        <p class="mt-4 text-xs uppercase tracking-widest text-secondary">
+          Blog · Tehnologija
+        </p>
+        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl text-primary leading-tight tracking-tighter mt-4">
+          WordPress ili custom web stranica – što je bolje?
+        </h1>
+        <p class="mt-4 text-sm text-secondary">
+          Objavljeno: 02.04.2026. · abcweb.studio
+        </p>
+      </div>
+    </section>
+
+    <!-- Sadržaj članka -->
+    <section class="bg-base py-16 md:py-24">
+      <div class="container mx-auto max-w-3xl px-6">
+        <article class="prose-custom">
+          <p>
+            Kad se odlučite za <a href="/usluge/web-izrada.html">izradu web stranice</a>,
+            jedno od prvih pitanja je: <strong>&bdquo;WordPress ili nešto custom?&ldquo;</strong>
+          </p>
+          <p>
+            Oba pristupa imaju svoje prednosti i ni jedan nije univerzalno
+            &bdquo;bolji&ldquo;. Pravi odgovor ovisi o vašim potrebama, budžetu i planovima za budućnost.
+            U nastavku razdvajamo oba pristupa po ključnim kriterijima.
+          </p>
+
+          <h2>Što je WordPress?</h2>
+          <p>
+            WordPress je CMS (Content Management System) koji pokreće otprilike 40% svih web
+            stranica na internetu. Popularan je jer omogućuje upravljanje sadržajem
+            bez programerskog znanja &ndash; preko vizualnog editora možete dodavati
+            stranice, mijenjati tekstove i slike.
+          </p>
+          <p>
+            Kombinira se s <strong>temama</strong> (predlošci za dizajn) i
+            <strong>pluginovima</strong> (dodaci za funkcionalnosti poput kontakt formi,
+            web shopa, SEO-a i sl.).
+          </p>
+
+          <h2>Što je custom web stranica?</h2>
+          <p>
+            Custom (ili statička) web stranica je kodirana od nule &ndash; bez CMS-a u pozadini.
+            Koristi čist HTML, CSS i JavaScript, ili moderne frameworke poput
+            Next.js, Astro ili Tailwind CSS.
+          </p>
+          <p>
+            Rezultat je stranica koja je dizajnirana i programirana <strong>isključivo za
+            vaše potrebe</strong> &ndash; bez viška koda, pluginova ili ograničenja teme.
+          </p>
+
+          <h2>Usporedba po ključnim kriterijima</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Kriterij</th>
+                <th>WordPress</th>
+                <th>Custom</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Brzina</strong></td>
+                <td>Srednja (ovisi o temi i pluginovima)</td>
+                <td>Izvrsna (minimalan kod)</td>
+              </tr>
+              <tr>
+                <td><strong>Sigurnost</strong></td>
+                <td>Zahtijeva redovite nadogradnje</td>
+                <td>Vrlo visoka (nema CMS napada)</td>
+              </tr>
+              <tr>
+                <td><strong>Uređivanje sadržaja</strong></td>
+                <td>Jednostavno (vizualni editor)</td>
+                <td>Zahtijeva tehničko znanje</td>
+              </tr>
+              <tr>
+                <td><strong>Cijena izrade</strong></td>
+                <td>Niža (gotove teme)</td>
+                <td>Viša (sve od nule)</td>
+              </tr>
+              <tr>
+                <td><strong>Cijena održavanja</strong></td>
+                <td>Viša (pluginovi, updates, hosting)</td>
+                <td>Niža (statički hosting, bez updatea)</td>
+              </tr>
+              <tr>
+                <td><strong>SEO</strong></td>
+                <td>Dobar (uz prave pluginove)</td>
+                <td>Izvrstan (potpuna kontrola)</td>
+              </tr>
+              <tr>
+                <td><strong>Fleksibilnost dizajna</strong></td>
+                <td>Ograničena temom</td>
+                <td>Potpuna sloboda</td>
+              </tr>
+              <tr>
+                <td><strong>Web shop</strong></td>
+                <td>WooCommerce (provjereno rješenje)</td>
+                <td>Zahtijeva custom integracije</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Kada odabrati WordPress?</h2>
+          <p>WordPress je pravi izbor ako:</p>
+          <ul>
+            <li><strong>često mijenjate sadržaj</strong> &ndash; blog, novosti, katalog proizvoda,</li>
+            <li><strong>trebate web shop</strong> &ndash; WooCommerce je najrastepljivije rješenje za e-commerce u ovom cjenovnom rangu,</li>
+            <li><strong>imate marketinški tim</strong> koji mora samostalno objavljati sadržaj,</li>
+            <li><strong>budžet je ograničen</strong> i treba vam funkcionalan web brzo.</li>
+          </ul>
+          <p>
+            WordPress je posebno dobar za tvrtke koje planiraju redovito blogati,
+            jer je sustav za upravljanje objava iznimno intuitivan.
+          </p>
+
+          <h2>Kada odabrati custom?</h2>
+          <p>Custom web je bolji izbor ako:</p>
+          <ul>
+            <li><strong>brzina je prioritet</strong> &ndash; npr. landing stranice za Google Ads kampanje gdje svaka milisekunda utječe na konverziju,</li>
+            <li><strong>dizajn mora biti jedinstven</strong> &ndash; ne želite da vaš web izgleda kao još 1000 drugih,</li>
+            <li><strong>sigurnost je kritična</strong> &ndash; statičke stranice nemaju admin panel koji se može hakirati,</li>
+            <li><strong>sadržaj se rijetko mijenja</strong> &ndash; npr. prezentacijska stranica za obrt ili agenciju,</li>
+            <li><strong>trebate specifične funkcionalnosti</strong> &ndash; <a href="/usluge/custom-plugin-development.html">custom razvoj</a> daje potpunu kontrolu.</li>
+          </ul>
+
+          <h2>Hibridni pristup &ndash; najbolje od oba svijeta</h2>
+          <p>
+            U praksi ne mora biti ili-ili. Sve češći pristup je <strong>hibridno rješenje</strong>:
+          </p>
+          <ul>
+            <li><strong>Custom frontend</strong> (brz, siguran, jedinstven dizajn) + <strong>headless CMS</strong> u pozadini za uređivanje sadržaja.</li>
+            <li><strong>WordPress za blog</strong> + <strong>custom landing stranice</strong> za specifične kampanje.</li>
+            <li><strong>Custom prezentacijska stranica</strong> + <strong>WooCommerce subdomena</strong> za web shop.</li>
+          </ul>
+          <p>
+            Ovaj pristup daje vam brzinu i fleksibilnost customa, uz mogućnost
+            upravljanja sadržajem bez tehničkog znanja.
+          </p>
+
+          <h2>Što mi koristimo u abcweb.studio?</h2>
+          <p>
+            Radimo oboje. Za prezentacijske stranice najčešće koristimo
+            <strong>custom pristup</strong> (HTML/CSS/JS ili Tailwind) jer daje
+            maksimalnu brzinu i jedinstven dizajn.
+          </p>
+          <p>
+            Za projekte koji zahtijevaju česte izmjene sadržaja ili e-commerce,
+            koristimo <strong>WordPress s custom temama</strong> &ndash; ne gotove teme, nego
+            teme koje kodiramo od nule prema dizajnu.
+          </p>
+          <p>
+            Primjere naših radova možete vidjeti na <a href="/radovi.html">stranici s portfoliom</a>.
+          </p>
+
+          <h2>Zaključak</h2>
+          <p>
+            <strong>Nema univerzalnog odgovora.</strong> WordPress je odličan za dinamične stranice s
+            puno sadržaja i web shopove. Custom pristup je bolji za brzinu, sigurnost i
+            jedinstven dizajn.
+          </p>
+          <p>
+            Najbolji savjet? <strong>Recite agenciji što vam trebate</strong> &ndash; a ne
+            koju tehnologiju želite. Dobra agencija predložit će pravi alat za vaš problem.
+          </p>
+          <p>
+            Niste sigurni što je pravo za vas?
+            <a href="/index.html#contact">Javite nam se</a> &ndash;
+            analizirat ćemo vaše potrebe i predložiti optimalno rješenje.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-base border-t border-surface">
+    <div class="container mx-auto max-w-7xl px-6 py-12">
+      <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <div>
+          <a href="/index.html" class="text-2xl font-bold text-accent font-heading">
+            abcweb
+          </a>
+          <p class="text-secondary mt-2">
+            &copy; 2026 abcweb.studio. Sva prava pridržana. Zagreb, Hrvatska.
+          </p>
+        </div>
+        <div class="flex justify-center space-x-6 mt-6 md:mt-0">
+          <a href="#" class="text-secondary hover:text-primary">Twitter</a>
+          <a href="#" class="text-secondary hover:text-primary">LinkedIn</a>
+          <a href="#" class="text-secondary hover:text-primary">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
